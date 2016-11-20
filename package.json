@@ -1,0 +1,27 @@
+{
+  "name": "RedrawStates",
+  "version": "1.0.0",
+  "description": "A simple tool to redraw the American states",
+  "main": "server.js",
+  "dependencies": {
+    "express": "~4.14.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/khwilson/RedrawStates.git"
+  },
+  "keywords": [
+    "elections",
+    "states",
+    "USA"
+  ],
+  "author": "Kevin H. Wilson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/khwilson/RedrawStates/issues"
+  },
+  "homepage": "https://github.com/khwilson/RedrawStates#readme"
+}
