@@ -1,9 +1,301 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Simple Map</title>
+    <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+    .gop-color-one {
+      fill: #c4b7ea; stroke: #fff; stroke-width: .5px;
+    }
+    .dem-color-one {
+      fill: #c6d7a0; stroke: #fff; stroke-width: .5px;
+    }
+    .gop-color-three {
+      fill: #e8add7; stroke: #fff; stroke-width: .5px;
+    }
+    .dem-color-three {
+      fill: #9adabe; stroke: #fff; stroke-width: .5px;
+    }
+    .gop-color-two {
+      fill: #ebabad; stroke: #fff; stroke-width: .5px;
+    }
+    .dem-color-two {
+      fill: #74d5e0; stroke: #fff; stroke-width: .5px;
+    }
+    .gop-color-four {
+      fill: #e3c297; stroke: #fff; stroke-width: .5px;
+    }
+    .dem-color-four {
+      fill: #8ec3ed; stroke: #fff; stroke-width: .5px;
+    }
+    .selection-color {
+      fill: #f0f; stroke: #fff; stroke-width: .5px;
+    }
+
+
+    .state-boundary {
+      fill: none;
+      stroke: #000;
+      stroke-width: 1px;
+    }
+
+    .dem-color-one:hover,
+    .dem-color-two:hover,
+    .dem-color-three:hover,
+    .dem-color-four:hover,
+    .gop-color-one:hover,
+    .gop-color-two:hover,
+    .gop-color-three:hover,
+    .gop-color-four:hover {
+      fill: #00f;
+    }
+
+    </style>
   </head>
-  <body>
-    <h1>Hello!</h1>
-  </body>
+<body>
+<script src="js/d3.v3.min.js"></script>
+<script src="js/topojson.v1.min.js"></script>
+<script>
+
+var currentMode = 'pickup';
+
+var width = 960,
+    height = 500;
+
+var path = d3.geo.path();
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+var colorToClass = function(color, demWin) {
+  var cls = '';
+  if (color === 0) {
+    cls = 'color-one';
+  } else if (color === 1) {
+    cls = 'color-two';
+  } else if (color === 2) {
+    cls = 'color-three';
+  } else {
+    cls = 'color-four';
+  }
+  return (demWin ? 'dem-' : 'gop-') + cls;
+}
+
+var countyToState = {}
+var stateTotals = {}
+
+var STATE_ABBREVS = [
+  'AL', // 'AK', Alaska is screwy in the data
+  'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL',
+  'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME',
+  'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH',
+  'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI',
+  'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI',
+  'WY'];
+
+var computeElectors = function() {
+  let priorities = [];
+  let allocated = 153;
+  for (let state of STATE_ABBREVS) {
+    stateTotals[state].electors = 3;
+    if (state !== 'DC' && state !== 'AK') {
+      priorities.push({key: state, val: stateTotals[state].population / Math.sqrt(2)});
+    }
+  }
+  priorities.sort(function(a, b) {
+    if (a.val === b.val) {
+      return 0;
+    }
+    return a.val < b.val ? 1 : -1;
+  });
+  while (allocated < 538) {
+    let nextUp = priorities[0];
+    let nextState = stateTotals[nextUp.key];
+    nextState.electors += 1;
+    allocated += 1;
+    nextUp.val = nextState.population / Math.sqrt((nextState.electors - 2) * (nextState.electors - 1));
+    priorities.sort(function(a, b) {
+      if (a.val === b.val) {
+        return 0;
+      }
+      return a.val < b.val ? 1 : -1;
+    });
+  }
+}
+
+var hasOrZero = function(obj, prop) {
+  if (obj.hasOwnProperty(prop)) {
+    return obj[prop];
+  } else {
+    return 0;
+  }
+}
+
+var update = function(us) {
+  computeElectors();
+  var tr = d3.select('#states')
+    .selectAll("tr")
+      .data(STATE_ABBREVS);
+
+  tr.enter().append("tr");
+  var td = tr.selectAll("td")
+        .data(function (d, i) {
+          let state = stateTotals[STATE_ABBREVS[i]];
+          return [STATE_ABBREVS[i], state.population, state.electors, state.dem, state.gop, state.grn, state.lib, state.una, state.oth];
+        })
+  td.enter()
+    .append("td")
+  td.text(function (d, i) { return d.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); })
+    .attr("color", function(d, i) {
+      if (i === 0) {
+        return stateTotals[d].dem > stateTotals[d].gop ? "blue" : "red";
+      } else {
+        return null;
+      }
+    });
+  td.exit().remove();
+  tr.exit().remove();
+
+  let mapPath = svg.selectAll("path")
+     .data(topojson.feature(us, us.objects.counties).features);
+
+  mapPath
+     .enter().append("path")
+     .attr("d", path)
+     .classed('county-path', true)
+     .on("click", function(d) {
+        if (currentMode === 'pickup') {
+          d3.select(this)
+            .attr('class', 'selection-color');
+        } else if (currentMode === 'dropoff') {
+          let newState = d.properties.state;
+          let newStateData = stateTotals[newState];
+          d3.selectAll("path.selection-color")
+            .each(function(dd) {
+              let oldState = dd.properties.state;
+              dd.properties.state = newState;
+              let oldStateData = stateTotals[oldState];
+              for (let key of ['population', 'electors', 'dem', 'gop', 'lib', 'grn', 'una', 'oth']) {
+                newStateData[key] += hasOrZero(dd.properties, key);
+                oldStateData[key] -= hasOrZero(dd.properties, key);
+              }
+            });
+          update(us);
+          currentMode = 'pickup';
+        }
+      });
+
+  let demTotal = 0;
+  let gopTotal = 3; // AK is not fixed yet
+  mapPath
+     .attr("class", function(d) {
+        if (d.properties.hasOwnProperty('state')) {
+          let s = stateTotals[d.properties.state];
+          if (s.dem > s.gop) {
+            return colorToClass(s.color, true);
+          } else {
+            return colorToClass(s.color, false);
+          }
+        } else {
+          return "black";
+        }
+      });
+
+  let count = 0;
+  for (let state of STATE_ABBREVS) {
+    count += 1;
+    let s = stateTotals[state];
+    if (s.dem > s.gop) {
+      demTotal += s.electors;
+    } else {
+      gopTotal += s.electors;
+    }
+  }
+  console.log("Count ", count);
+
+  $("#totals-dem").text(demTotal);
+  $("#totals-gop").text(gopTotal);
+}
+
+d3.json("data/us.json", function(error, us) {
+  if (error) throw error;
+
+  for (let i=0; i<us.objects.counties.geometries.length; ++i) {
+    let county = us.objects.counties.geometries[i];
+    if (!county.hasOwnProperty('properties') || !county.properties.hasOwnProperty("state")) {
+      // There are a few numbers in the 72000s which appear to be part of nothing in particular.
+      continue;
+    }
+    countyToState[county.id] = county.properties.state;
+    let state;
+    if (stateTotals.hasOwnProperty(county.properties.state)) {
+      state = stateTotals[county.properties.state];
+    } else {
+      state = {population: 0, electors: 0, color: county.properties.color, dem: 0, gop: 0, grn: 0, lib: 0, una: 0, oth: 0};
+      stateTotals[county.properties.state] = state;
+    }
+    state.population += hasOrZero(county.properties, 'population');
+    state.dem += hasOrZero(county.properties, 'dem');
+    state.gop += hasOrZero(county.properties, 'gop');
+    state.grn += hasOrZero(county.properties, 'grn');
+    state.lib += hasOrZero(county.properties, 'lib');
+    state.una += hasOrZero(county.properties, 'una');
+    state.oth += hasOrZero(county.properties, 'oth');
+  }
+
+  update(us);
+
+  svg.insert("path")
+     .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
+     .attr("d", path)
+     .attr("class", "state-boundary");
+
+});
+
+</script>
+
+
+<div class="container">
+  <div class="row">
+     <div class="col-sm-10">
+       <svg></svg>
+     </div>
+     <div class="col-sm-2">
+      <table class="table">
+        <thead>
+          <td>Clinton</td>
+          <td>Trump</td>
+        </thead>
+      </thead>
+      <tbody id="totals">
+        <td id="totals-dem"></td>
+        <td id="totals-gop"></td>
+      </tbody>
+    </table>
+    <button onclick="currentMode='pickup';">Pickup</button>
+    <button onclick="currentMode='dropoff';">Drop Off</button>
+  </div>
+  </div class="row">
+    <div class="col-sm-12">
+      <table class="table table-striped">
+        <thead>
+          <td>State</td>
+          <td>Population</td>
+          <td>Electors</td>
+          <td>Democrat</td>
+          <td>GOP</td>
+          <td>Libertarian</td>
+          <td>Green</td>
+          <td>Evan</td>
+          <td>Other</td>
+        </thead>
+        <tbody id="states"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
 </html>
