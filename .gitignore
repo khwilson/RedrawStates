@@ -1,2 +1,5 @@
 node_modules
 .ipynb_checkpoints
+python/__pycache__
+python/venv
+build
