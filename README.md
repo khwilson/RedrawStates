@@ -21,6 +21,17 @@ difficult to use, but what I found, basically, is that
 In total, if only 8 counties move (3 from CA -> AZ, Camden -> PA, Lake -> WI, 3
 from FL -> AL), Clinton wins 301 to 237.
 
+## Usage
+
+If you want to try to make sense of the current draft product, then just run
+
+```bash
+> node server.js
+```
+
+and then point your browser to `localhost:8080/map.html`. If you do try to make
+sense of it, greenish shades represent state where Clinton wins and reddish shades
+represent where Trump wins.
 
 ## Acknowledgements
 
