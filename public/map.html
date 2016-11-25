@@ -7,6 +7,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
+      h2.instructions {
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      p.instructions {
+        font-size: 10px;
+      }
+
       .dem-95 { fill: rgb(42,161,236); stroke: #ccf; stroke-width: .5px; }
       .dem-90 { fill: rgb(79,169,238); stroke: #ccf; stroke-width: .5px; }
       .dem-85 { fill: rgb(105,178,240); stroke: #ccf; stroke-width: .5px; }
@@ -30,6 +39,41 @@
       .dem-40 { fill: rgb(255,219,210); stroke: #fcc; stroke-width: .5px; }
       .dem-45 { fill: rgb(255,231,225); stroke: #fcc; stroke-width: .5px; }
       .dem-greater-than-50 { fill: #fff; stroke: #fcc; stroke-width: .5px; }
+
+  .ev-bar {
+    width: 100%;
+    height: 25px;
+  }
+
+  .ev-bar:after {
+    content: "";
+    position: absolute;
+    z-index=-1;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    border-left: 2px solid #000;
+  }
+
+  .ev-bar-dem-total {
+    float: left;
+    padding: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    stroke: #000;
+    stroke-width: .5px;
+  }
+
+  .ev-bar-gop-total {
+    float: right;
+    padding: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    stroke: #000;
+    stroke-width: .5px;
+  }
 
     .state-boundary {
       fill: none;
@@ -104,13 +148,66 @@
     </style>
   </head>
 <body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="ev-bar">
+        <div class='ev-bar-dem-total'></div>
+        <div class='ev-bar-gop-total'></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+     <div class="col-sm-10">
+       <svg></svg>
+     </div>
+     <div class="col-sm-2">
+      <button type="button" class="btn btn-primary" id="switchModeButton">Dropoff</button>
+      <h2 class="instructions">Instructions</h2>
+      <p class="instructions">Choose some counties</p>
+      <p class="instructions">Click the Dropoff button</p>
+      <p class="instructions">Click new state</p>
+    </div>
+  </div>
+  </div class="row">
+    <div class="col-sm-12">
+      <table class="table table-striped">
+        <thead>
+          <td>State</td>
+          <td>Population</td>
+          <td>Electors</td>
+          <td>Democrat</td>
+          <td>GOP</td>
+          <td>Libertarian</td>
+          <td>Green</td>
+          <td>Evan</td>
+          <td>Other</td>
+        </thead>
+        <tbody id="states"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
 <script src="js/d3.v3.min.js"></script>
 <script src="js/topojson.v1.min.js"></script>
 <script>
 
 var currentMode = 'pickup';
+var switchModeButton = d3.select('#switchModeButton').html('Dropoff');
+var switchModeFunction = function() {
+  if (currentMode === 'pickup') {
+    switchModeButton.html('Cancel dropoff').classed('btn-primary', false).classed('btn-warning', true);
+    currentMode = 'dropoff';
+  } else {
+    switchModeButton.html('Dropoff').classed('btn-primary', true).classed('btn-warning', false);
+    currentMode = 'pickup';
+  }
+}
+switchModeButton.on('click', switchModeFunction);
 
-var width = 960,
+var width = 960;
     height = 500;
 
 var path = d3.geo.path();
@@ -126,10 +223,9 @@ tooltipTr.append('th').html('Candidate');
 tooltipTr.append('th').html('Votes');
 var tooltipTbody = tooltipTable.append('tbody');
 
-
-var svg = d3.select("body").append("svg")
-    .attr("width", width)
-    .attr("height", height);
+var svg = d3.select("svg").attr('width', '100%').attr('viewBox', '0 0 ' + width + ' ' + height);
+/*    .attr("width", width)
+    .attr("height", height); */
 
 var countyToState = {}
 var stateTotals = {}
@@ -201,6 +297,9 @@ var getColorClass = function(d) {
           return "black";
         }
       }
+var intWithCommas = function(d) {
+  return d.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 var update = function(us) {
   computeElectors();
@@ -216,7 +315,7 @@ var update = function(us) {
         })
   td.enter()
     .append("td")
-  td.text(function (d, i) { return d.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); })
+  td.text(function (d, i) { return intWithCommas(d); })
     .attr("color", function(d, i) {
       if (i === 0) {
         return stateTotals[d].dem > stateTotals[d].gop ? "blue" : "red";
@@ -256,7 +355,7 @@ var update = function(us) {
               }
             });
           update(us);
-          currentMode = 'pickup';
+          switchModeFunction();
         }
       })
      .on('mousemove', function(d) {
@@ -264,7 +363,7 @@ var update = function(us) {
         return parseInt(d);
        });
        tooltip.classed('hidden', false)
-         .attr('style', 'left:' + (mouse[0] + 15) + 'px; top:' + (mouse[1] - 35) + 'px');
+         .attr('style', 'left:' + (d3.event.pageX + 15) + 'px; top:' + (d3.event.pageY - 15) + 'px');
        })
      .on('mouseover', function(d) {
        let theHeading = tooltipTitle.selectAll("h2").data([d.properties.name])
@@ -275,7 +374,7 @@ var update = function(us) {
        theData.enter().append('tr')
        let theRow = theData.selectAll("td").data(function(dd, i) { return dd; })
        theRow.enter().append('td');
-       theRow.html(function(elt) { return elt; });
+       theRow.html(function(elt, i) { return i === 0 ? elt : intWithCommas(elt); })
        theRow.exit().remove();
        theData.exit().remove();
      })
@@ -285,10 +384,7 @@ var update = function(us) {
 
   let demTotal = 0;
   let gopTotal = 3; // AK is not fixed yet
-  mapPath
-     .attr("class", getColorClass)
-
-
+  mapPath.attr("class", getColorClass);
 
   mapPath = svg.selectAll("path.state-boundary")
     .data(d3.nest()
@@ -311,8 +407,9 @@ var update = function(us) {
     }
   }
 
-  $("#totals-dem").text(demTotal);
-  $("#totals-gop").text(gopTotal);
+  d3.select('.ev-bar').attr('style', 'background: linear-gradient(to right, #179ee0 0%, #179ee0 ' + (demTotal / 538 * 100) + '%, #ff5d40 ' + (demTotal / 538 * 100) + '%, #ff5d40 100%)');
+  $(".ev-bar-dem-total").text(demTotal);
+  $(".ev-bar-gop-total").text(gopTotal);
 }
 
 d3.json("data/us.json", function(error, us) {
@@ -348,48 +445,4 @@ d3.json("data/us.json", function(error, us) {
 
 </script>
 
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-    </div>
-  </div>
-  <div class="row">
-     <div class="col-sm-10">
-       <svg></svg>
-     </div>
-     <div class="col-sm-2">
-      <table class="table">
-        <thead>
-          <td>Clinton</td>
-          <td>Trump</td>
-        </thead>
-      </thead>
-      <tbody id="totals">
-        <td id="totals-dem"></td>
-        <td id="totals-gop"></td>
-      </tbody>
-    </table>
-    <button onclick="currentMode='pickup';">Pickup</button>
-    <button onclick="currentMode='dropoff';">Drop Off</button>
-  </div>
-  </div class="row">
-    <div class="col-sm-12">
-      <table class="table table-striped">
-        <thead>
-          <td>State</td>
-          <td>Population</td>
-          <td>Electors</td>
-          <td>Democrat</td>
-          <td>GOP</td>
-          <td>Libertarian</td>
-          <td>Green</td>
-          <td>Evan</td>
-          <td>Other</td>
-        </thead>
-        <tbody id="states"></tbody>
-      </table>
-    </div>
-  </div>
-</div>
 </html>
