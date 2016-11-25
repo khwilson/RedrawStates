@@ -39,6 +39,8 @@ I ganked a lot of stuff from the interwebs to make this. Here is a list:
   * Mike Bostock's tutorial on how to make a bubble map underlies a lot of the shape data:
     [link](https://bost.ocks.org/mike/bubble-map/)
   * Townhall.com's election data [by county](http://townhall.com/election/2016/president/)
+  * D3 Tooltips from Lee Howorko [here](http://bl.ocks.org/lhoworko/7753a11efc189a936371)
+  * Colors for the map from [FiveThirtyEight's](http://www.fivethirtyeight.com)'s election coverage
 
 ## License
 
