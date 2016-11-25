@@ -7,34 +7,29 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
-    .gop-color-one {
-      fill: #c4b7ea; stroke: #fff; stroke-width: .5px;
-    }
-    .dem-color-one {
-      fill: #c6d7a0; stroke: #fff; stroke-width: .5px;
-    }
-    .gop-color-three {
-      fill: #e8add7; stroke: #fff; stroke-width: .5px;
-    }
-    .dem-color-three {
-      fill: #9adabe; stroke: #fff; stroke-width: .5px;
-    }
-    .gop-color-two {
-      fill: #ebabad; stroke: #fff; stroke-width: .5px;
-    }
-    .dem-color-two {
-      fill: #74d5e0; stroke: #fff; stroke-width: .5px;
-    }
-    .gop-color-four {
-      fill: #e3c297; stroke: #fff; stroke-width: .5px;
-    }
-    .dem-color-four {
-      fill: #8ec3ed; stroke: #fff; stroke-width: .5px;
-    }
-    .selection-color {
-      fill: #f0f; stroke: #fff; stroke-width: .5px;
-    }
+      .dem-95 { fill: rgb(42,161,236); stroke: #ccf; stroke-width: .5px; }
+      .dem-90 { fill: rgb(79,169,238); stroke: #ccf; stroke-width: .5px; }
+      .dem-85 { fill: rgb(105,178,240); stroke: #ccf; stroke-width: .5px; }
+      .dem-80 { fill: rgb(125,185,242); stroke: #ccf; stroke-width: .5px; }
+      .dem-75 { fill: rgb(144,194,243); stroke: #ccf; stroke-width: .5px; }
+      .dem-70 { fill: rgb(162,203,245); stroke: #ccf; stroke-width: .5px; }
+      .dem-65 { fill: rgb(178,211,247); stroke: #ccf; stroke-width: .5px; }
+      .dem-60 { fill: rgb(194,220,249); stroke: #ccf; stroke-width: .5px; }
+      .dem-55 { fill: rgb(210,228,250); stroke: #ccf; stroke-width: .5px; }
+      /*.dem-50 { fill: rgb(226,237,252); stroke: #fff; stroke-width: .5px; } */
+      .dem-50 { fill: rgb(255,255,255); stroke: #ccf; stroke-width: .5px; }
 
+      .dem-0 { fill: rgb(254,106,89); stroke: #fcc; stroke-width: .5px; }
+      .dem-5 { fill: rgb(255,122,104); stroke: #fcc; stroke-width: .5px; }
+      .dem-10 { fill: rgb(255,139,120); stroke: #fcc; stroke-width: .5px; }
+      .dem-15 { fill: rgb(255,153,135); stroke: #fcc; stroke-width: .5px; }
+      .dem-20 { fill: rgb(255,167,150); stroke: #fcc; stroke-width: .5px; }
+      .dem-25 { fill: rgb(255,180,166); stroke: #fcc; stroke-width: .5px; }
+      .dem-30 { fill: rgb(255,194,181); stroke: #fcc; stroke-width: .5px; }
+      .dem-35 { fill: rgb(255,206,196); stroke: #fcc; stroke-width: .5px; }
+      .dem-40 { fill: rgb(255,219,210); stroke: #fcc; stroke-width: .5px; }
+      /*.dem-45 { fill: rgb(255,231,225); stroke: #fff; stroke-width: .5px; } */
+      .dem-45 { fill: rgb(255,255,255); stroke: #fcc; stroke-width: .5px; }
 
     .state-boundary {
       fill: none;
@@ -42,17 +37,57 @@
       stroke-width: 1px;
     }
 
-    .dem-color-one:hover,
-    .dem-color-two:hover,
-    .dem-color-three:hover,
-    .dem-color-four:hover,
-    .gop-color-one:hover,
-    .gop-color-two:hover,
-    .gop-color-three:hover,
-    .gop-color-four:hover {
-      fill: #00f;
+    .selection-color {
+      fill: #f0f;
+      stroke: #000;
+      stroke-width: .5px;
     }
 
+    .dem-95:hover,
+    .dem-90:hover,
+    .dem-85:hover,
+    .dem-80:hover,
+    .dem-75:hover,
+    .dem-70:hover,
+    .dem-65:hover,
+    .dem-60:hover,
+    .dem-55:hover,
+    .dem-50:hover,
+    .dem-45:hover,
+    .dem-40:hover,
+    .dem-35:hover,
+    .dem-30:hover,
+    .dem-25:hover,
+    .dem-20:hover,
+    .dem-15:hover,
+    .dem-10:hover,
+    .dem-5:hover,
+    .dem-0:hover {
+      fill: #0ff;
+    }
+
+    .hidden {
+        display: none;
+    }
+      div.tooltip {
+      display: block;
+      opacity: 0.95;
+      pointer-events: none;
+      z-index: 999;
+      border: 1px solid #ddd;
+      padding: 7px;
+      background-color: #FFF;
+      min-width: 250px;
+    } /*
+    div.tooltip {
+        color: #222;
+        background-color: #fff;
+        padding: .5em;
+        text-shadow: #f5f5f5 0 1px 0;
+        border-radius: 2px;
+        opacity: 0.9;
+        position: absolute;
+    }*/
     </style>
   </head>
 <body>
@@ -66,6 +101,18 @@ var width = 960,
     height = 500;
 
 var path = d3.geo.path();
+
+/*var tooltip = d3.select('body').append('div')
+            .attr('class', 'hidden tooltip');
+
+var tooltipInner = tooltip.append('div').attr('tooltip-inner');
+var tooltipTitle = tooltipInner.append('div').attr('class', 'tooltip-title');
+var tooltipTable = tooltipInner.append('div').attr('class', 'tooltip-content').append('div').attr('class', 'table county-results');
+var tooltipTr = tooltipTable.append('thead').append('tr')
+tooltipTr.append('th').html('Candidate');
+tooltipTr.append('th').html('Votes');
+var tooltipTbody = tooltipTable.append('tbody');*/
+
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
@@ -135,6 +182,27 @@ var hasOrZero = function(obj, prop) {
   }
 }
 
+var getColorClass = function(d) {
+        if (d.properties.hasOwnProperty('state')) {
+          let s = stateTotals[d.properties.state];
+          if (s.dem > s.gop) {
+            let demPercent = Math.floor(d.properties.dem / (d.properties.gop + d.properties.dem) * 20) * 5;
+            if (demPercent < 50) {
+              demPercent = 50;
+            }
+            return 'dem-' + demPercent;
+          } else {
+            let demPercent = Math.floor(d.properties.dem / (d.properties.gop + d.properties.dem) * 20) * 5;
+            if (demPercent >= 50) {
+              demPercent = 45;
+            }
+            return 'dem-' + demPercent;
+          }
+        } else {
+          return "black";
+        }
+      }
+
 var update = function(us) {
   computeElectors();
   var tr = d3.select('#states')
@@ -169,8 +237,12 @@ var update = function(us) {
      .classed('county-path', true)
      .on("click", function(d) {
         if (currentMode === 'pickup') {
-          d3.select(this)
-            .attr('class', 'selection-color');
+          let me = d3.select(this);
+          if (me.classed('selection-color')) {
+            me.attr("class", getColorClass(d));
+          } else {
+            me.attr("class", 'selection-color');
+          }
         } else if (currentMode === 'dropoff') {
           let newState = d.properties.state;
           let newStateData = stateTotals[newState];
@@ -187,23 +259,43 @@ var update = function(us) {
           update(us);
           currentMode = 'pickup';
         }
-      });
+      })
+/*     .on('mousemove', function(d) {
+       var mouse = d3.mouse(svg.node()).map(function(d) {
+        return parseInt(d);
+       });
+       tooltip.classed('hidden', false)
+         .attr('style', 'left:' + (mouse[0] + 15) + 'px; top:' + (mouse[1] - 35) + 'px');
+       })
+     .on('mouseover', function(d) {
+       let theData = tooltipTbody.data([['Hillary Clinton', hasOrZero(d.properties, 'dem')], ['Donald Trump', hasOrZero(d.properties, 'gop')]]);
+       theData.enter().append('tr')
+       let theRow = theData.data(function(theRow) { return theRow; });
+       theRow.enter().append('td');
+       theRow.html(d);
+       theRow.exit().remove();
+       theData.exit().remove();
+     })
+     .on('mouseout', function() {
+       tooltip.classed('hidden', true);
+     }); */
 
   let demTotal = 0;
   let gopTotal = 3; // AK is not fixed yet
   mapPath
-     .attr("class", function(d) {
-        if (d.properties.hasOwnProperty('state')) {
-          let s = stateTotals[d.properties.state];
-          if (s.dem > s.gop) {
-            return colorToClass(s.color, true);
-          } else {
-            return colorToClass(s.color, false);
-          }
-        } else {
-          return "black";
-        }
-      });
+     .attr("class", getColorClass)
+
+
+
+  mapPath = svg.selectAll("path.state-boundary")
+    .data(d3.nest()
+            .key(function(d) { return d.hasOwnProperty('properties') ? (d.properties.state || 'other') : 'other'; })
+            .entries(us.objects.counties.geometries));
+
+  mapPath.enter().append("path")
+    .attr("class", "state-boundary");
+
+  mapPath.attr("d", function(d) { return path(topojson.merge(us, d.values)); });
 
   let count = 0;
   for (let state of STATE_ABBREVS) {
@@ -215,7 +307,6 @@ var update = function(us) {
       gopTotal += s.electors;
     }
   }
-  console.log("Count ", count);
 
   $("#totals-dem").text(demTotal);
   $("#totals-gop").text(gopTotal);
@@ -249,10 +340,6 @@ d3.json("data/us.json", function(error, us) {
 
   update(us);
 
-  svg.insert("path")
-     .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
-     .attr("d", path)
-     .attr("class", "state-boundary");
 
 });
 
@@ -260,6 +347,10 @@ d3.json("data/us.json", function(error, us) {
 
 
 <div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+    </div>
+  </div>
   <div class="row">
      <div class="col-sm-10">
        <svg></svg>
