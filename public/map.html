@@ -40,6 +40,28 @@
       .dem-45 { fill: rgb(255,231,225); stroke: #fcc; stroke-width: .5px; }
       .dem-greater-than-50 { fill: #fff; stroke: #fcc; stroke-width: .5px; }
 
+      .dem-95-state { fill: rgb(42,161,236); stroke: #000; stroke-width: .5px; }
+      .dem-90-state { fill: rgb(79,169,238); stroke: #000; stroke-width: .5px; }
+      .dem-85-state { fill: rgb(105,178,240); stroke: #000; stroke-width: .5px; }
+      .dem-80-state { fill: rgb(125,185,242); stroke: #000; stroke-width: .5px; }
+      .dem-75-state { fill: rgb(144,194,243); stroke: #000; stroke-width: .5px; }
+      .dem-70-state { fill: rgb(162,203,245); stroke: #000; stroke-width: .5px; }
+      .dem-65-state { fill: rgb(178,211,247); stroke: #000; stroke-width: .5px; }
+      .dem-60-state { fill: rgb(194,220,249); stroke: #000; stroke-width: .5px; }
+      .dem-55-state { fill: rgb(210,228,250); stroke: #000; stroke-width: .5px; }
+      .dem-50-state { fill: rgb(226,237,252); stroke: #000; stroke-width: .5px; }
+
+      .dem-0-state { fill: rgb(254,106,89); stroke: #000; stroke-width: .5px; }
+      .dem-5-state { fill: rgb(255,122,104); stroke: #000; stroke-width: .5px; }
+      .dem-10-state { fill: rgb(255,139,120); stroke: #000; stroke-width: .5px; }
+      .dem-15-state { fill: rgb(255,153,135); stroke: #000; stroke-width: .5px; }
+      .dem-20-state { fill: rgb(255,167,150); stroke: #000; stroke-width: .5px; }
+      .dem-25-state { fill: rgb(255,180,166); stroke: #000; stroke-width: .5px; }
+      .dem-30-state { fill: rgb(255,194,181); stroke: #000; stroke-width: .5px; }
+      .dem-35-state { fill: rgb(255,206,196); stroke: #000; stroke-width: .5px; }
+      .dem-40-state { fill: rgb(255,219,210); stroke: #000; stroke-width: .5px; }
+      .dem-45-state { fill: rgb(255,231,225); stroke: #000; stroke-width: .5px; }
+
   .ev-bar {
     width: 100%;
     height: 25px;
@@ -75,7 +97,7 @@
     stroke-width: .5px;
   }
 
-    .state-boundary {
+    .state-boundary-filled {
       fill: none;
       stroke: #000;
       stroke-width: 1px;
@@ -164,6 +186,7 @@
      </div>
      <div class="col-sm-2">
       <button type="button" class="btn btn-primary" id="switchModeButton">Dropoff</button>
+      <button type="button" class="btn btn-primary" id="countyModeButton">Hide Counties</button>
       <h2 class="instructions">Instructions</h2>
       <p class="instructions">Choose some counties</p>
       <p class="instructions">Click the Dropoff button</p>
@@ -194,7 +217,12 @@
 <script src="js/topojson.v1.min.js"></script>
 <script>
 
+var us = null;
+
 var currentMode = 'pickup';
+var countyMode = 'show';
+var showStateColors = true;
+
 var switchModeButton = d3.select('#switchModeButton').html('Dropoff');
 var switchModeFunction = function() {
   if (currentMode === 'pickup') {
@@ -206,6 +234,28 @@ var switchModeFunction = function() {
   }
 }
 switchModeButton.on('click', switchModeFunction);
+
+var countyModeButton = d3.select("#countyModeButton").html("Hide Counties");
+var countyModeFunction = function () {
+  if (countyMode === 'show') {
+    countyMode = 'hide';
+    countyModeButton.html("Hide Colors");
+    d3.selectAll("path").remove();
+    update();
+  } else if (countyMode === 'hide' && showStateColors) {
+    showStateColors = false;
+    countyModeButton.html("Show Counties");
+    d3.selectAll("path").remove();
+    update();
+  } else {
+    countyMode = 'show';
+    showStateColors = true;
+    countyModeButton.html("Hide Counties");
+    d3.selectAll("path").remove();
+    update();
+  }
+}
+countyModeButton.on('click', countyModeFunction);
 
 var width = 960;
     height = 500;
@@ -224,8 +274,6 @@ tooltipTr.append('th').html('Votes');
 var tooltipTbody = tooltipTable.append('tbody');
 
 var svg = d3.select("svg").attr('width', '100%').attr('viewBox', '0 0 ' + width + ' ' + height);
-/*    .attr("width", width)
-    .attr("height", height); */
 
 var countyToState = {}
 var stateTotals = {}
@@ -301,7 +349,7 @@ var intWithCommas = function(d) {
   return d.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-var update = function(us) {
+var update = function() {
   computeElectors();
   var tr = d3.select('#states')
     .selectAll("tr")
@@ -326,20 +374,24 @@ var update = function(us) {
   td.exit().remove();
   tr.exit().remove();
 
-  let mapPath = svg.selectAll("path")
+  let mapPath;
+
+  if (countyMode === 'show') {
+    mapPath = svg.selectAll("path.county-path")
      .data(topojson.feature(us, us.objects.counties).features);
 
   mapPath
      .enter().append("path")
      .attr("d", path)
-     .classed('county-path', true)
      .on("click", function(d) {
         if (currentMode === 'pickup') {
           let me = d3.select(this);
           if (me.classed('selection-color')) {
-            me.attr("class", getColorClass(d));
+            me.classed(getColorClass(d), true);
+            me.classed("selection-color", false);
           } else {
-            me.attr("class", 'selection-color');
+            me.classed(getColorClass(d), false);
+            me.classed("selection-color", true);
           }
         } else if (currentMode === 'dropoff') {
           let newState = d.properties.state;
@@ -354,7 +406,7 @@ var update = function(us) {
                 oldStateData[key] -= hasOrZero(dd.properties, key);
               }
             });
-          update(us);
+          update();
           switchModeFunction();
         }
       })
@@ -381,10 +433,12 @@ var update = function(us) {
      .on('mouseout', function() {
        tooltip.classed('hidden', true);
      });
+  mapPath.attr("class", function(d) { return "county-path " + getColorClass(d); })
+
+  }
 
   let demTotal = 0;
   let gopTotal = 3; // AK is not fixed yet
-  mapPath.attr("class", getColorClass);
 
   mapPath = svg.selectAll("path.state-boundary")
     .data(d3.nest()
@@ -392,9 +446,22 @@ var update = function(us) {
             .entries(us.objects.counties.geometries));
 
   mapPath.enter().append("path")
-    .attr("class", "state-boundary");
+    .attr("class", "state-boundary state-boundary-filled");
 
   mapPath.attr("d", function(d) { return path(topojson.merge(us, d.values)); });
+  if (countyMode === 'hide' && showStateColors) {
+    mapPath.attr('class', function (d) {
+      if (stateTotals.hasOwnProperty(d.key)) {
+        let s = stateTotals[d.key];
+        let dem = hasOrZero(s, 'dem');
+        let gop = hasOrZero(s, 'gop');
+        let demPercent = Math.floor(dem / (dem + gop) * 20) * 5;
+        return "state-boundary dem-" + demPercent + '-state';
+      } else {
+        return 'state-boundary';
+      }
+    });
+  }
 
   let count = 0;
   for (let state of STATE_ABBREVS) {
@@ -412,8 +479,9 @@ var update = function(us) {
   $(".ev-bar-gop-total").text(gopTotal);
 }
 
-d3.json("data/us.json", function(error, us) {
+d3.json("data/us.json", function(error, usData) {
   if (error) throw error;
+  us = usData;
 
   for (let i=0; i<us.objects.counties.geometries.length; ++i) {
     let county = us.objects.counties.geometries[i];
@@ -438,8 +506,7 @@ d3.json("data/us.json", function(error, us) {
     state.oth += hasOrZero(county.properties, 'oth');
   }
 
-  update(us);
-
+  update();
 
 });
 
