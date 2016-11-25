@@ -16,8 +16,8 @@
       .dem-65 { fill: rgb(178,211,247); stroke: #ccf; stroke-width: .5px; }
       .dem-60 { fill: rgb(194,220,249); stroke: #ccf; stroke-width: .5px; }
       .dem-55 { fill: rgb(210,228,250); stroke: #ccf; stroke-width: .5px; }
-      /*.dem-50 { fill: rgb(226,237,252); stroke: #fff; stroke-width: .5px; } */
-      .dem-50 { fill: rgb(255,255,255); stroke: #ccf; stroke-width: .5px; }
+      .dem-50 { fill: rgb(226,237,252); stroke: #ccf; stroke-width: .5px; }
+      .dem-less-than-50 { fill: rgb(255,255,255); stroke: #ccf; stroke-width: .5px; }
 
       .dem-0 { fill: rgb(254,106,89); stroke: #fcc; stroke-width: .5px; }
       .dem-5 { fill: rgb(255,122,104); stroke: #fcc; stroke-width: .5px; }
@@ -28,8 +28,8 @@
       .dem-30 { fill: rgb(255,194,181); stroke: #fcc; stroke-width: .5px; }
       .dem-35 { fill: rgb(255,206,196); stroke: #fcc; stroke-width: .5px; }
       .dem-40 { fill: rgb(255,219,210); stroke: #fcc; stroke-width: .5px; }
-      /*.dem-45 { fill: rgb(255,231,225); stroke: #fff; stroke-width: .5px; } */
-      .dem-45 { fill: rgb(255,255,255); stroke: #fcc; stroke-width: .5px; }
+      .dem-45 { fill: rgb(255,231,225); stroke: #fcc; stroke-width: .5px; }
+      .dem-greater-than-50 { fill: #fff; stroke: #fcc; stroke-width: .5px; }
 
     .state-boundary {
       fill: none;
@@ -62,7 +62,9 @@
     .dem-15:hover,
     .dem-10:hover,
     .dem-5:hover,
-    .dem-0:hover {
+    .dem-0:hover,
+    .dem-less-than-50:hover,
+    .dem-greater-than-50:hover {
       fill: #0ff;
     }
 
@@ -75,19 +77,30 @@
       pointer-events: none;
       z-index: 999;
       border: 1px solid #ddd;
-      padding: 7px;
+      padding: 0px 2px;
       background-color: #FFF;
-      min-width: 250px;
-    } /*
-    div.tooltip {
-        color: #222;
-        background-color: #fff;
-        padding: .5em;
-        text-shadow: #f5f5f5 0 1px 0;
-        border-radius: 2px;
-        opacity: 0.9;
-        position: absolute;
-    }*/
+    }
+
+    h2.tooltip-title-heading {
+     font-size: 14px;
+     font-weight: normal;
+     padding: 0 0 0 0;
+     text-align: left;
+     text-transform: uppercase;
+    }
+
+    table.county-results {
+      background-color: transparent;
+      font-size: 12px;
+      color: #333;
+    }
+
+    .tooltip-inner {
+      max-width: 200px;
+      padding: 0px 3px;
+      color: #333;
+      background-color: transparent;
+    }
     </style>
   </head>
 <body>
@@ -102,35 +115,21 @@ var width = 960,
 
 var path = d3.geo.path();
 
-/*var tooltip = d3.select('body').append('div')
+var tooltip = d3.select('body').append('div')
             .attr('class', 'hidden tooltip');
 
-var tooltipInner = tooltip.append('div').attr('tooltip-inner');
+var tooltipInner = tooltip.append('div').attr('class', 'tooltip-inner');
 var tooltipTitle = tooltipInner.append('div').attr('class', 'tooltip-title');
 var tooltipTable = tooltipInner.append('div').attr('class', 'tooltip-content').append('div').attr('class', 'table county-results');
 var tooltipTr = tooltipTable.append('thead').append('tr')
 tooltipTr.append('th').html('Candidate');
 tooltipTr.append('th').html('Votes');
-var tooltipTbody = tooltipTable.append('tbody');*/
+var tooltipTbody = tooltipTable.append('tbody');
 
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
-
-var colorToClass = function(color, demWin) {
-  var cls = '';
-  if (color === 0) {
-    cls = 'color-one';
-  } else if (color === 1) {
-    cls = 'color-two';
-  } else if (color === 2) {
-    cls = 'color-three';
-  } else {
-    cls = 'color-four';
-  }
-  return (demWin ? 'dem-' : 'gop-') + cls;
-}
 
 var countyToState = {}
 var stateTotals = {}
@@ -188,13 +187,13 @@ var getColorClass = function(d) {
           if (s.dem > s.gop) {
             let demPercent = Math.floor(d.properties.dem / (d.properties.gop + d.properties.dem) * 20) * 5;
             if (demPercent < 50) {
-              demPercent = 50;
+              demPercent = 'less-than-50';
             }
             return 'dem-' + demPercent;
           } else {
             let demPercent = Math.floor(d.properties.dem / (d.properties.gop + d.properties.dem) * 20) * 5;
             if (demPercent >= 50) {
-              demPercent = 45;
+              demPercent = 'greater-than-50';
             }
             return 'dem-' + demPercent;
           }
@@ -260,7 +259,7 @@ var update = function(us) {
           currentMode = 'pickup';
         }
       })
-/*     .on('mousemove', function(d) {
+     .on('mousemove', function(d) {
        var mouse = d3.mouse(svg.node()).map(function(d) {
         return parseInt(d);
        });
@@ -268,17 +267,21 @@ var update = function(us) {
          .attr('style', 'left:' + (mouse[0] + 15) + 'px; top:' + (mouse[1] - 35) + 'px');
        })
      .on('mouseover', function(d) {
-       let theData = tooltipTbody.data([['Hillary Clinton', hasOrZero(d.properties, 'dem')], ['Donald Trump', hasOrZero(d.properties, 'gop')]]);
+       let theHeading = tooltipTitle.selectAll("h2").data([d.properties.name])
+       theHeading.enter().append("h2").attr('class', 'tooltip-title-heading');
+       theHeading.html(function(dd) { return dd; });
+       let theData = tooltipTbody.selectAll("tr")
+         .data([['Hillary Clinton', hasOrZero(d.properties, 'dem')], ['Donald Trump', hasOrZero(d.properties, 'gop')]]);
        theData.enter().append('tr')
-       let theRow = theData.data(function(theRow) { return theRow; });
+       let theRow = theData.selectAll("td").data(function(dd, i) { return dd; })
        theRow.enter().append('td');
-       theRow.html(d);
+       theRow.html(function(elt) { return elt; });
        theRow.exit().remove();
        theData.exit().remove();
      })
      .on('mouseout', function() {
        tooltip.classed('hidden', true);
-     }); */
+     });
 
   let demTotal = 0;
   let gopTotal = 3; // AK is not fixed yet
