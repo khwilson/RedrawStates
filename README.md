@@ -41,6 +41,8 @@ I ganked a lot of stuff from the interwebs to make this. Here is a list:
   * Townhall.com's election data [by county](http://townhall.com/election/2016/president/)
   * D3 Tooltips from Lee Howorko [here](http://bl.ocks.org/lhoworko/7753a11efc189a936371)
   * Colors for the map from [FiveThirtyEight's](http://www.fivethirtyeight.com)'s election coverage
+  * Lines in the middle of divs from [this StackOverflow](http://stackoverflow.com/questions/1179928/how-can-i-put-a-vertical-line-down-the-center-of-a-div)
+  * `getParameterByName` function from [this StackOverflow](http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript)
 
 ## License
 
