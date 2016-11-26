@@ -6,7 +6,32 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.13/clipboard.min.js"></script>
     <style>
+
+
+.share-box:after {
+    content: "Copy to clipboard";
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #f5f5f5;
+    color: #9da0a4;
+    border-radius: 4px 0 4px 0;
+}
+
+.share-box {
+    position: relative;
+    margin: 15px 0 0;
+    padding: 39px 19px 14px;
+    background-color: #fff;
+    border-radius: 4px 4px 0 0;
+    border: 1px solid #ddd;
+    z-index: 2;
+}
       h2.instructions {
         font-size: 14px;
         font-weight: bold;
@@ -171,6 +196,13 @@
   </head>
 <body>
 
+<div class="input-group" id="shareGroup">
+  <input type="text" class="form-control" value="http://woot.com" onclick="this.select();" id="clipboard-target" readonly>
+  <span class="input-group-btn">
+    <button id="copy-button" class="btn btn-secondary" data-clipboard-tooltip data-clipboard-target="#clipboard-target" type="button"><img src="clippy.svg" width="14"></button>
+  </span>
+</div>
+
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
@@ -182,15 +214,17 @@
   </div>
   <div class="row">
      <div class="col-sm-10">
-       <svg></svg>
+       <svg id='states-svg'></svg>
      </div>
      <div class="col-sm-2">
-      <button type="button" class="btn btn-primary" id="switchModeButton">Dropoff</button>
-      <button type="button" class="btn btn-primary" id="countyModeButton">Hide Counties</button>
+      <button type="button" class="btn btn-primary btn-md btn-block" id="switchModeButton">Dropoff</button>
+      <button type="button" class="btn btn-primary btn-md btn-block" id="countyModeButton">Hide Counties</button>
+      <a tabindex=0 role="button" class="btn btn-primary btn-md btn-block" id="shareButton">Share</a>
       <h2 class="instructions">Instructions</h2>
       <p class="instructions">Choose some counties</p>
       <p class="instructions">Click the Dropoff button</p>
       <p class="instructions">Click new state</p>
+      <p class="instructions">Repeat and share!</p>
     </div>
   </div>
   </div class="row">
@@ -273,6 +307,9 @@ var path = d3.geo.path();
 var tooltip = d3.select('body').append('div')
             .attr('class', 'hidden tooltip');
 
+//var shareTooltip = d3.select("body").append('div').attr('class', 'hidden tooltip');
+
+
 var tooltipInner = tooltip.append('div').attr('class', 'tooltip-inner');
 var tooltipTitle = tooltipInner.append('div').attr('class', 'tooltip-title');
 var tooltipTable = tooltipInner.append('div').attr('class', 'tooltip-content').append('div').attr('class', 'table county-results');
@@ -281,7 +318,7 @@ tooltipTr.append('th').html('Candidate');
 tooltipTr.append('th').html('Votes');
 var tooltipTbody = tooltipTable.append('tbody');
 
-var svg = d3.select("svg").attr('width', '100%').attr('viewBox', '0 0 ' + width + ' ' + height);
+var svg = d3.select("#states-svg").attr('width', '100%').attr('viewBox', '0 0 ' + width + ' ' + height);
 
 var countyToState = {}
 var stateTotals = {}
@@ -504,7 +541,7 @@ var getParameterByName = function (name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-var doShare = function() {
+var getShareUrl = function() {
   us.objects.counties.geometries.sort(function(x, y) {
     if (x.id < y.id) {
       return -1;
@@ -522,7 +559,12 @@ var doShare = function() {
       shareUrl.push(numberToLetter[51]);
     }
   }
-  return window.location.href + '?share=' + shareUrl.join('');
+  return window.location.origin + window.location.pathname + '?share=' + shareUrl.join('');
+}
+
+
+var doShare = function() {
+  d3.select("#clipboard-target").attr("value", getShareUrl());
 }
 
 d3.json("data/us.json", function(error, usData) {
@@ -543,6 +585,9 @@ d3.json("data/us.json", function(error, usData) {
     for (let i=0; i<shareParameter.length; ++i) {
       let num = letterToNumber[shareParameter[i]];
       let geom = us.objects.counties.geometries[i];
+      if (!geom) {
+        console.log("problem ", i);
+      }
       if (num !== 51 && geom && geom.hasOwnProperty('properties')) {
         geom.properties.state = STATE_ABBREVS[num];
       }
@@ -574,6 +619,27 @@ d3.json("data/us.json", function(error, usData) {
 
   update();
 
+});
+
+$("#shareGroup").hide();
+
+$("#shareButton").popover({
+  container: 'body',
+  content: $("#shareGroup"),
+  title: "Copy URL to Share",
+  html: true,
+  placement: "left",
+  trigger: "focus"
+}).on('show.bs.popover', function() { doShare(); $("#shareGroup").show(); });
+
+var clipboard = new Clipboard('[data-clipboard-tooltip]');
+clipboard.on('success', function(e) {
+  e.clearSelection();
+  console.info('Action:', e.action);
+  console.info('Text:', e.text);
+  console.info('Trigger:', e.trigger);
+  //e.trigger.setAttribute('class', 'btn tooltipped tooltipped-s');
+  //e.trigger.setAttribute('aria-label', msg);
 });
 
 </script>
