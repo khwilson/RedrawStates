@@ -29,9 +29,8 @@ If you want to try to make sense of the current draft product, then just run
 > node server.js
 ```
 
-and then point your browser to `localhost:8080/map.html`. If you do try to make
-sense of it, greenish shades represent state where Clinton wins and reddish shades
-represent where Trump wins.
+and then point your browser to `localhost:8080/map.html`. Or, if you want, go
+[here](khwilson.github.com/maps/map.html) for the latest live version.
 
 ## Acknowledgements
 
@@ -43,6 +42,8 @@ I ganked a lot of stuff from the interwebs to make this. Here is a list:
   * Colors for the map from [FiveThirtyEight's](http://www.fivethirtyeight.com)'s election coverage
   * Lines in the middle of divs from [this StackOverflow](http://stackoverflow.com/questions/1179928/how-can-i-put-a-vertical-line-down-the-center-of-a-div)
   * `getParameterByName` function from [this StackOverflow](http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript)
+  * The copy-paste examples from [clipboard.js](www.clipboardjs.com) are copied verbatim
+  * [Bootstrap](www.getbootstrap.com), [D3](www.d3js.com), and [jQuery](www.jquery.com) are, of course, indispensable
 
 ## License
 
