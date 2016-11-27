@@ -8,7 +8,15 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.13/clipboard.min.js"></script>
     <style>
+.blue-state {
+  color: #179ee0;
+  font-weight: bold;
+}
 
+.red-state {
+  color: #ff5d40;
+  font-weight: bold;
+}
 
 .share-box:after {
     content: "Copy to clipboard";
@@ -182,6 +190,7 @@
      font-size: 14px;
      font-weight: normal;
      padding: 0 0 0 0;
+     margin: 10px 5px 0px 0px;
      text-align: left;
      text-transform: uppercase;
     }
@@ -190,11 +199,25 @@
       background-color: transparent;
       font-size: 12px;
       color: #333;
+      margin-bottom: 3px;
+      text-align: left;
+      border-top: 0;
+      padding: 4px 10px;
+    }
+
+    table.county-results>tbody>tr>td {
+      background-color: transparent;
+      font-size: 10px;
+      color: #333;
+      margin-bottom: 3px;
+      text-align: left;
+      border-top: 0;
+      padding: 4px 10px;
     }
 
     .tooltip-inner {
       max-width: 200px;
-      padding: 0px 3px;
+      padding: 0px;
       color: #333;
       background-color: transparent;
     }
@@ -273,6 +296,15 @@
 <script src="js/topojson.v1.min.js"></script>
 <script>
 
+var partyToCandidate = {
+  'dem': 'Hillary Clinton',
+  'gop': 'Donald Trump',
+  'grn': "Jill Stein",
+  'lib': 'Gary Johnson',
+  'una': 'Evan McMullin',
+  'oth': 'Other'
+}
+
 var numberToLetter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
                       'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
@@ -329,15 +361,13 @@ var path = d3.geo.path();
 var tooltip = d3.select('body').append('div')
             .attr('class', 'hidden tooltip');
 
-//var shareTooltip = d3.select("body").append('div').attr('class', 'hidden tooltip');
-
-
 var tooltipInner = tooltip.append('div').attr('class', 'tooltip-inner');
 var tooltipTitle = tooltipInner.append('div').attr('class', 'tooltip-title');
-var tooltipTable = tooltipInner.append('div').attr('class', 'tooltip-content').append('div').attr('class', 'table county-results');
+var tooltipTable = tooltipInner.append('div').attr('class', 'tooltip-content').append('table').attr('class', 'table county-results');
 var tooltipTr = tooltipTable.append('thead').append('tr')
 tooltipTr.append('th').html('Candidate');
 tooltipTr.append('th').html('Votes');
+tooltipTr.append('th').html('Pct.');
 var tooltipTbody = tooltipTable.append('tbody');
 
 var svg = d3.select("#states-svg").attr('width', '100%').attr('viewBox', '0 0 ' + width + ' ' + height);
@@ -346,7 +376,7 @@ var countyToState = {}
 var stateTotals = {}
 
 var STATE_ABBREVS = [
-  'AL', // 'AK', Alaska is screwy in the data
+  'AL', 'AK',
   'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL',
   'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME',
   'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH',
@@ -436,9 +466,9 @@ var update = function() {
   td.enter()
     .append("td")
   td.text(function (d, i) { return intWithCommas(d); })
-    .attr("color", function(d, i) {
+    .attr("class", function(d, i) {
       if (i === 0) {
-        return stateTotals[d].dem > stateTotals[d].gop ? "blue" : "red";
+        return stateTotals[d].dem > stateTotals[d].gop ? "blue-state" : "red-state";
       } else {
         return null;
       }
@@ -493,10 +523,21 @@ var update = function() {
        let theHeading = tooltipTitle.selectAll("h2").data([d.properties.name])
        theHeading.enter().append("h2").attr('class', 'tooltip-title-heading');
        theHeading.html(function(dd) { return dd; });
+       let thisData = [];
+       let total = 0;
+       for (let party in partyToCandidate) {
+         let partyTotal = hasOrZero(d.properties, party);
+         if (partyTotal > 0) {
+           thisData.push([partyToCandidate[party], partyTotal]);
+           total += partyTotal;
+         }
+       }
        let theData = tooltipTbody.selectAll("tr")
-         .data([['Hillary Clinton', hasOrZero(d.properties, 'dem')], ['Donald Trump', hasOrZero(d.properties, 'gop')]]);
+         .data(thisData);
        theData.enter().append('tr')
-       let theRow = theData.selectAll("td").data(function(dd, i) { return dd; })
+       let theRow = theData.selectAll("td").data(function(dd, i) {
+         return [dd[0], dd[1], (100 * dd[1] / total).toFixed(2) + '%'];
+       });
        theRow.enter().append('td');
        theRow.html(function(elt, i) { return i === 0 ? elt : intWithCommas(elt); })
        theRow.exit().remove();
@@ -510,7 +551,7 @@ var update = function() {
   }
 
   let demTotal = 0;
-  let gopTotal = 3; // AK is not fixed yet
+  let gopTotal = 0;
 
   mapPath = svg.selectAll("path.state-boundary")
     .data(d3.nest()
