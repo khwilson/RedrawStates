@@ -1,0 +1,213 @@
+/* Electoral college vote bar colors */
+.ev-bar {
+  width: 100%;
+  height: 25px;
+}
+
+.ev-bar:after {
+  content: "";
+  position: absolute;
+  z-index=-1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: 2px solid #000;
+}
+
+.ev-bar-dem-total {
+  float: left;
+  padding: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  stroke: #000;
+  stroke-width: .5px;
+}
+
+.ev-bar-gop-total {
+  float: right;
+  padding: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  stroke: #000;
+  stroke-width: .5px;
+}
+
+/* Detail table state colors (from ev-bar) */
+
+.blue-state {
+  color: #179ee0;
+  font-weight: bold;
+}
+
+.red-state {
+  color: #ff5d40;
+  font-weight: bold;
+}
+
+/* Share box related css */
+.share-box {
+  position: relative;
+  margin: 15px 0 0;
+  padding: 39px 19px 14px;
+  background-color: #fff;
+  border-radius: 4px 4px 0 0;
+  border: 1px solid #ddd;
+  z-index: 2;
+}
+
+.share-box:after {
+    content: "Copy to clipboard";
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #f5f5f5;
+    color: #9da0a4;
+    border-radius: 4px 0 4px 0;
+}
+
+/* Instructions and interface */
+
+.btn-space {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+h2.instructions {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+p.instructions {
+  line-height: 16px;
+  font-size: 12px;
+}
+
+/* County tooltip detail */
+.hidden {
+  display: none;
+}
+div.tooltip {
+  display: block;
+  opacity: 0.95;
+  pointer-events: none;
+  z-index: 999;
+  border: 1px solid #ddd;
+  padding: 0px 2px;
+  background-color: #FFF;
+}
+
+h2.tooltip-title-heading {
+ font-size: 14px;
+ font-weight: normal;
+ padding: 0 0 0 0;
+ margin: 10px 5px 0px 0px;
+ text-align: left;
+ text-transform: uppercase;
+}
+
+table.county-results {
+  background-color: transparent;
+  font-size: 12px;
+  color: #333;
+  margin-bottom: 3px;
+  text-align: left;
+  border-top: 0;
+  padding: 4px 10px;
+}
+
+table.county-results>tbody>tr>td {
+  background-color: transparent;
+  font-size: 10px;
+  color: #333;
+  margin-bottom: 3px;
+  text-align: left;
+  border-top: 0;
+  padding: 4px 10px;
+}
+
+.tooltip-inner {
+  max-width: 200px;
+  padding: 0px;
+  color: #333;
+  background-color: transparent;
+}
+
+/* Map coloring */
+
+/* Counties: Dems won the state */
+.dem-95 { fill: rgb(42,161,236); stroke: #ccf; stroke-width: .5px; }
+.dem-90 { fill: rgb(79,169,238); stroke: #ccf; stroke-width: .5px; }
+.dem-85 { fill: rgb(105,178,240); stroke: #ccf; stroke-width: .5px; }
+.dem-80 { fill: rgb(125,185,242); stroke: #ccf; stroke-width: .5px; }
+.dem-75 { fill: rgb(144,194,243); stroke: #ccf; stroke-width: .5px; }
+.dem-70 { fill: rgb(162,203,245); stroke: #ccf; stroke-width: .5px; }
+.dem-65 { fill: rgb(178,211,247); stroke: #ccf; stroke-width: .5px; }
+.dem-60 { fill: rgb(194,220,249); stroke: #ccf; stroke-width: .5px; }
+.dem-55 { fill: rgb(210,228,250); stroke: #ccf; stroke-width: .5px; }
+.dem-50 { fill: rgb(226,237,252); stroke: #ccf; stroke-width: .5px; }
+.dem-less-than-50 { fill: rgb(255,255,255); stroke: #ccf; stroke-width: .5px; }
+
+/* Counties: GOP won the state */
+.dem-0 { fill: rgb(254,106,89); stroke: #fcc; stroke-width: .5px; }
+.dem-5 { fill: rgb(255,122,104); stroke: #fcc; stroke-width: .5px; }
+.dem-10 { fill: rgb(255,139,120); stroke: #fcc; stroke-width: .5px; }
+.dem-15 { fill: rgb(255,153,135); stroke: #fcc; stroke-width: .5px; }
+.dem-20 { fill: rgb(255,167,150); stroke: #fcc; stroke-width: .5px; }
+.dem-25 { fill: rgb(255,180,166); stroke: #fcc; stroke-width: .5px; }
+.dem-30 { fill: rgb(255,194,181); stroke: #fcc; stroke-width: .5px; }
+.dem-35 { fill: rgb(255,206,196); stroke: #fcc; stroke-width: .5px; }
+.dem-40 { fill: rgb(255,219,210); stroke: #fcc; stroke-width: .5px; }
+.dem-45 { fill: rgb(255,231,225); stroke: #fcc; stroke-width: .5px; }
+.dem-greater-than-50 { fill: #fff; stroke: #fcc; stroke-width: .5px; }
+
+/* States: Dems won the state */
+.dem-95-state { fill: rgb(42,161,236); stroke: #000; stroke-width: .5px; }
+.dem-90-state { fill: rgb(79,169,238); stroke: #000; stroke-width: .5px; }
+.dem-85-state { fill: rgb(105,178,240); stroke: #000; stroke-width: .5px; }
+.dem-80-state { fill: rgb(125,185,242); stroke: #000; stroke-width: .5px; }
+.dem-75-state { fill: rgb(144,194,243); stroke: #000; stroke-width: .5px; }
+.dem-70-state { fill: rgb(162,203,245); stroke: #000; stroke-width: .5px; }
+.dem-65-state { fill: rgb(178,211,247); stroke: #000; stroke-width: .5px; }
+.dem-60-state { fill: rgb(194,220,249); stroke: #000; stroke-width: .5px; }
+.dem-55-state { fill: rgb(210,228,250); stroke: #000; stroke-width: .5px; }
+.dem-50-state { fill: rgb(226,237,252); stroke: #000; stroke-width: .5px; }
+
+/* States: GOP won the state */
+.dem-0-state { fill: rgb(254,106,89); stroke: #000; stroke-width: .5px; }
+.dem-5-state { fill: rgb(255,122,104); stroke: #000; stroke-width: .5px; }
+.dem-10-state { fill: rgb(255,139,120); stroke: #000; stroke-width: .5px; }
+.dem-15-state { fill: rgb(255,153,135); stroke: #000; stroke-width: .5px; }
+.dem-20-state { fill: rgb(255,167,150); stroke: #000; stroke-width: .5px; }
+.dem-25-state { fill: rgb(255,180,166); stroke: #000; stroke-width: .5px; }
+.dem-30-state { fill: rgb(255,194,181); stroke: #000; stroke-width: .5px; }
+.dem-35-state { fill: rgb(255,206,196); stroke: #000; stroke-width: .5px; }
+.dem-40-state { fill: rgb(255,219,210); stroke: #000; stroke-width: .5px; }
+.dem-45-state { fill: rgb(255,231,225); stroke: #000; stroke-width: .5px; }
+
+/* County selection: hover */
+.dem-95:hover, .dem-90:hover, .dem-85:hover, .dem-80:hover,
+.dem-75:hover, .dem-70:hover, .dem-65:hover, .dem-60:hover,
+.dem-55:hover, .dem-50:hover, .dem-45:hover, .dem-40:hover,
+.dem-35:hover, .dem-30:hover, .dem-25:hover, .dem-20:hover,
+.dem-15:hover, .dem-10:hover, .dem-5:hover, .dem-0:hover,
+.dem-less-than-50:hover, .dem-greater-than-50:hover {
+  fill: #0ff;
+}
+
+/* County selection: selected */
+.selection-color {
+  fill: #f0f;
+  stroke: #000;
+  stroke-width: .5px;
+}
+
+.state-boundary-filled {
+  fill: none;
+  stroke: #000;
+  stroke-width: 1px;
+}
