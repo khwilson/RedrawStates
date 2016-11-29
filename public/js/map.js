@@ -1,12 +1,42 @@
 /* Translation maps */
 
-var partyToCandidate = {
-  'dem': 'Hillary Clinton',
-  'gop': 'Donald Trump',
-  'grn': "Jill Stein",
-  'lib': 'Gary Johnson',
-  'una': 'Evan McMullin',
-  'oth': 'Other'
+/* Return a query parameter from a URL */
+var getParameterByName = function (name, url) {
+  if (!url) {
+    url = window.location.href;
+  }
+  name = name.replace(/[\[\]]/g, "\\$&");
+  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+      results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+/* Splits based on 2012 vs 2016 data */
+
+if (getParameterByName('year') === '2012') {
+  var year = 2012;
+  var dataFile = 'data/us2012.json';
+  var partyToCandidate = {
+    'dem': 'Barack Obama',
+    'gop': 'Mitt Romney',
+    'grn': "Green Party",
+    'lib': 'Gary Johnson',
+    'una': 'Unaffiliated',
+    'oth': 'Other'
+  }
+} else {
+  var year = 2016;
+  var dataFile = 'data/us.json';
+  var partyToCandidate = {
+    'dem': 'Hillary Clinton',
+    'gop': 'Donald Trump',
+    'grn': "Jill Stein",
+    'lib': 'Gary Johnson',
+    'una': 'Evan McMullin',
+    'oth': 'Other'
+  }
 }
 
 var numberToLetter = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
@@ -148,19 +178,6 @@ var hasOrZero = function(obj, prop) {
 /* Return the integer d with commas at thousands places */
 var intWithCommas = function(d) {
   return d.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-/* Return a query parameter from a URL */
-var getParameterByName = function (name, url) {
-  if (!url) {
-    url = window.location.href;
-  }
-  name = name.replace(/[\[\]]/g, "\\$&");
-  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-      results = regex.exec(url);
-  if (!results) return null;
-  if (!results[2]) return '';
-  return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
 var getColorClass = function(d) {
@@ -347,7 +364,7 @@ var update = function() {
 }
 
 /* Read data once! */
-d3.json("data/us.json", function(error, usData) {
+d3.json(dataFile, function(error, usData) {
   if (error) throw error;
   us = usData;
 
@@ -423,7 +440,11 @@ var getShareUrl = function() {
       shareUrl.push(numberToLetter[51]);
     }
   }
-  return window.location.origin + window.location.pathname + '?share=' + shareUrl.join('');
+  let baseUrl = window.location.origin + window.location.pathname + '?';
+  if (year !== 2016) {
+    baseUrl += 'year=' + year + '&';
+  }
+  return baseUrl + shareUrl.join('');
 }
 
 /* Setup sharing URL in the share box */
