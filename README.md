@@ -45,6 +45,12 @@ I ganked a lot of stuff from the interwebs to make this. Here is a list:
   * The copy-paste examples from [clipboard.js](www.clipboardjs.com) are copied verbatim
   * [Bootstrap](www.getbootstrap.com), [D3](www.d3js.com), and [jQuery](www.jquery.com) are, of course, indispensable
 
+## Contributors
+
+Kevin Wilson (the owner of the repo) is the main contributor. But some others have helped as well.
+Notably:
+  * @herbiemarkwort contributed the "0 population => 0 electors" computation
+
 ## License
 
 GPL v3
