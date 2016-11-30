@@ -17,6 +17,7 @@ var getParameterByName = function (name, url) {
 
 var year = null;
 var dataFile = null;
+var data = {};
 var partyToCandidate = null;
 
 var setYear = function(newYear) {
@@ -377,9 +378,18 @@ var update = function() {
 
 /* Read data once! */
 var reset = function(dataFile) {
-d3.json(dataFile, function(error, usData) {
-  console.log(dataFile);
-  if (error) throw error;
+  if (dataFile in data) {
+    execReset(data[dataFile]);
+  } else {
+    d3.json(dataFile, function(error, usData) {
+      if (error) throw error;
+      data[dataFile] = usData;
+      execReset(usData);
+    });
+  }
+}
+
+var execReset = function(usData) {
   us = usData;
   stateTotals = {};
   d3.selectAll('path').remove();
@@ -431,8 +441,6 @@ d3.json(dataFile, function(error, usData) {
   }
 
   update();
-
-});
 }
 
 reset(dataFile);
@@ -495,7 +503,6 @@ $("#selectYear").change(function() {
   $("#selectYear>option:selected").each(function() {
     newYear = this.value;
   });
-  console.log(newYear);
   setYear(newYear);
   reset(dataFile);
 });
