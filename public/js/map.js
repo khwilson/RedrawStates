@@ -154,9 +154,18 @@ var svg = d3.select("#states-svg")
  */
 var computeElectors = function() {
   var priorities = [];
-  var allocated = 153;
+  var allocated = 0;
+  var maxElectors = 538;
   for (var state of STATE_ABBREVS) {
-    stateTotals[state].electors = 3;
+	if (stateTotals[state].population > 0) {
+		stateTotals[state].electors = 3;
+	} else {
+		stateTotals[state].electors = 0;
+		(state !== 'DC') ? maxElectors -= 2 : maxElectors -= 3;
+		// If a state does not exist, then neither does it have any senators.
+		// For DC, must also subtract the phantom "representative".
+	}
+	allocated += stateTotals[state].electors;
     if (state !== 'DC') {
       // DC doesn't get any more electors than the least populous state,
       // which for the lifespan of this tool we can safely assume to be 3.
@@ -169,7 +178,7 @@ var computeElectors = function() {
     }
     return a.val < b.val ? 1 : -1;
   });
-  while (allocated < 538) {
+  while (allocated < maxElectors) {
     var nextUp = priorities[0];
     var nextState = stateTotals[nextUp.key];
     nextState.electors += 1;
