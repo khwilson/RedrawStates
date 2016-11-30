@@ -23,7 +23,7 @@ var year = null,
 
 var setYear = function(newYear) {
   if (newYear === '2012') {
-    year = 2012;
+    year = newYear;
     dataFile = 'data/us2012.json';
     partyToCandidate = {
       'dem': 'Barack Obama',
@@ -34,8 +34,20 @@ var setYear = function(newYear) {
       'oth': 'Other'
     }
     loser = 'Mitt Romney';
+  } else if (newYear === '2016i') {
+    year = newYear;
+    dataFile = 'data/us2016income.json';
+    partyToCandidate = {
+      'dem': 'Hillary Clinton',
+      'gop': 'Donald Trump',
+      'grn': "Jill Stein",
+      'lib': 'Gary Johnson',
+      'una': 'Evan McMullin',
+      'oth': 'Other'
+    }
+    loser = 'Hillary Clinton';
   } else {
-    year = 2016;
+    year = newYear;
     dataFile = 'data/us.json';
     partyToCandidate = {
       'dem': 'Hillary Clinton',
@@ -51,6 +63,8 @@ var setYear = function(newYear) {
 
 if (getParameterByName('year') === '2012') {
   setYear('2012');
+} else if (getParameterByName('year') === '2016i') {
+  setYear('2016i');
 } else {
   setYear('2016');
 }
@@ -488,7 +502,7 @@ var getShareUrl = function() {
     }
   }
   var baseUrl = window.location.origin + window.location.pathname + '?';
-  if (year !== 2016) {
+  if (year !== '2016') {
     baseUrl += 'year=' + year + '&';
   }
   return baseUrl + shareUrl.join('');
