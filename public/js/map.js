@@ -155,7 +155,9 @@ var computeElectors = function() {
   let allocated = 153;
   for (let state of STATE_ABBREVS) {
     stateTotals[state].electors = 3;
-    if (state !== 'DC' && state !== 'AK') {
+    if (state !== 'DC') {
+      // DC doesn't get any more electors than the least populous state,
+      // which for the lifespan of this tool we can safely assume to be 3.
       priorities.push({key: state, val: stateTotals[state].population / Math.sqrt(2)});
     }
   }
