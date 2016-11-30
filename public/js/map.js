@@ -15,10 +15,11 @@ var getParameterByName = function (name, url) {
 
 /* Splits based on 2012 vs 2016 data */
 
-var year = null;
-var dataFile = null;
-var data = {};
-var partyToCandidate = null;
+var year = null,
+    loser = null,
+    dataFile = null,
+    data = {},
+    partyToCandidate = null;
 
 var setYear = function(newYear) {
   if (newYear === '2012') {
@@ -32,6 +33,7 @@ var setYear = function(newYear) {
       'una': 'Unaffiliated',
       'oth': 'Other'
     }
+    loser = 'Mitt Romney';
   } else {
     year = 2016;
     dataFile = 'data/us.json';
@@ -43,6 +45,7 @@ var setYear = function(newYear) {
       'una': 'Evan McMullin',
       'oth': 'Other'
     }
+    loser = 'Hillary Clinton';
   }
 }
 
@@ -393,6 +396,7 @@ var execReset = function(usData) {
   us = usData;
   stateTotals = {};
   d3.selectAll('path').remove();
+  $("#lede").html("How few counties can you move to make " + loser + " win the " + year + " election?");
 
   let shareParameter = getParameterByName('share');
   if (shareParameter) {
