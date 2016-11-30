@@ -15,28 +15,40 @@ var getParameterByName = function (name, url) {
 
 /* Splits based on 2012 vs 2016 data */
 
+var year = null;
+var dataFile = null;
+var partyToCandidate = null;
+
+var setYear = function(newYear) {
+  if (newYear === '2012') {
+    year = 2012;
+    dataFile = 'data/us2012.json';
+    partyToCandidate = {
+      'dem': 'Barack Obama',
+      'gop': 'Mitt Romney',
+      'grn': "Green Party",
+      'lib': 'Gary Johnson',
+      'una': 'Unaffiliated',
+      'oth': 'Other'
+    }
+  } else {
+    year = 2016;
+    dataFile = 'data/us.json';
+    partyToCandidate = {
+      'dem': 'Hillary Clinton',
+      'gop': 'Donald Trump',
+      'grn': "Jill Stein",
+      'lib': 'Gary Johnson',
+      'una': 'Evan McMullin',
+      'oth': 'Other'
+    }
+  }
+}
+
 if (getParameterByName('year') === '2012') {
-  var year = 2012;
-  var dataFile = 'data/us2012.json';
-  var partyToCandidate = {
-    'dem': 'Barack Obama',
-    'gop': 'Mitt Romney',
-    'grn': "Green Party",
-    'lib': 'Gary Johnson',
-    'una': 'Unaffiliated',
-    'oth': 'Other'
-  }
+  setYear('2012');
 } else {
-  var year = 2016;
-  var dataFile = 'data/us.json';
-  var partyToCandidate = {
-    'dem': 'Hillary Clinton',
-    'gop': 'Donald Trump',
-    'grn': "Jill Stein",
-    'lib': 'Gary Johnson',
-    'una': 'Evan McMullin',
-    'oth': 'Other'
-  }
+  setYear('2016');
 }
 
 var numberToLetter = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
@@ -364,9 +376,13 @@ var update = function() {
 }
 
 /* Read data once! */
+var reset = function(dataFile) {
 d3.json(dataFile, function(error, usData) {
+  console.log(dataFile);
   if (error) throw error;
   us = usData;
+  stateTotals = {};
+  d3.selectAll('path').remove();
 
   let shareParameter = getParameterByName('share');
   if (shareParameter) {
@@ -417,6 +433,9 @@ d3.json(dataFile, function(error, usData) {
   update();
 
 });
+}
+
+reset(dataFile);
 
 
 /**** Sharing ****/
@@ -469,4 +488,14 @@ clipboard.on('success', function(e) {
   console.info('Action:', e.action);
   console.info('Text:', e.text);
   console.info('Trigger:', e.trigger);
+});
+
+$("#selectYear").change(function() {
+  var newYear = null;
+  $("#selectYear>option:selected").each(function() {
+    newYear = this.value;
+  });
+  console.log(newYear);
+  setYear(newYear);
+  reset(dataFile);
 });
