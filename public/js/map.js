@@ -169,17 +169,19 @@ var svg = d3.select("#states-svg")
 var computeElectors = function() {
   var priorities = [];
   var allocated = 0;
-  var maxElectors = 538;
+  var maxElectors = 435; // Start with assumption that all states have zero population
   for (var state of STATE_ABBREVS) {
-	  if (stateTotals[state].population > 0) {
-	  	stateTotals[state].electors = 3;
-	  } else {
-	  	stateTotals[state].electors = 0;
-	  	(state !== 'DC') ? maxElectors -= 2 : maxElectors -= 3;
-	  	// If a state does not exist, then neither does it have any senators.
-	  	// For DC, must also subtract the phantom "representative".
-	  }
-	  allocated += stateTotals[state].electors;
+    if (stateTotals[state].population > 0) {
+      // All states, DC included, get a minimum of 3 electors
+      stateTotals[state].electors = 3;
+      // Increase the maximum number of electors by the number of senators for each state.
+      // For DC, must also add the phantom "representative".
+      // 435 representatives plus 2 senators for 50 states plus 3 electors for DC equals 538.
+      (state !== 'DC') ? maxElectors += 2 : maxElectors +=3;
+    } else {
+      stateTotals[state].electors = 0;
+    }
+    allocated += stateTotals[state].electors;
     if (state !== 'DC') {
       // DC doesn't get any more electors than the least populous state,
       // which for the lifespan of this tool we can safely assume to be 3.
