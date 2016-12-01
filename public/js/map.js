@@ -411,14 +411,14 @@ var update = function() {
 }
 
 /* Read data once! */
-var reset = function(dataFile) {
+var reset = function(dataFile, useUrl) {
   if (dataFile in data) {
-    execReset(data[dataFile]);
+    execReset(data[dataFile], useUrl);
   } else {
     d3.json(dataFile, function(error, usData) {
       if (error) throw error;
       data[dataFile] = usData;
-      execReset(usData);
+      execReset(usData, useUrl);
     });
   }
 }
@@ -439,6 +439,7 @@ var execReset = function(usData, useUrl) {
   $("#lede").html("How few counties can you move to make " + loser + " win the " + year + " election?");
 
   if (useUrl) {
+    console.log("HI");
     var shareParameter = getParameterByName('share');
     if (shareParameter) {
       us.objects.counties.geometries.sort(function(x, y) {
