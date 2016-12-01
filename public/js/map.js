@@ -507,7 +507,7 @@ var getShareUrl = function() {
   if (year !== '2016') {
     baseUrl += 'year=' + year + '&';
   }
-  return baseUrl + shareUrl.join('');
+  return baseUrl + 'share=' + shareUrl.join('');
 }
 
 /* Setup sharing URL in the share box */
