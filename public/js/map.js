@@ -423,31 +423,42 @@ var reset = function(dataFile) {
   }
 }
 
-var execReset = function(usData) {
+var execReset = function(usData, useUrl) {
   us = usData;
   stateTotals = {};
+
+  for (var i=0; i<STATE_ABBREVS.length; ++i) {
+    stateTotals[STATE_ABBREVS[i]] = {population: 0,
+                                     electors: 0,
+                                     color: 1,
+                                     dem: 0, gop: 0, grn: 0, lib: 0, una: 0, oth: 0};
+  }
+
   d3.selectAll('path').remove();
+  d3.selectAll('#states>tr').remove();
   $("#lede").html("How few counties can you move to make " + loser + " win the " + year + " election?");
 
-  var shareParameter = getParameterByName('share');
-  if (shareParameter) {
-    us.objects.counties.geometries.sort(function(x, y) {
-      if (x.id < y.id) {
-        return -1;
-      } else if (x.id > y.id) {
-        return 1;
-      } else {
-        return 0;
-      }
-    });
-    for (var i=0; i<shareParameter.length; ++i) {
-      var num = letterToNumber[shareParameter[i]];
-      var geom = us.objects.counties.geometries[i];
-      if (!geom) {
-        console.log("problem ", i);
-      }
-      if (num !== 51 && geom && geom.hasOwnProperty('properties')) {
-        geom.properties.state = STATE_ABBREVS[num];
+  if (useUrl) {
+    var shareParameter = getParameterByName('share');
+    if (shareParameter) {
+      us.objects.counties.geometries.sort(function(x, y) {
+        if (x.id < y.id) {
+          return -1;
+        } else if (x.id > y.id) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+      for (var i=0; i<shareParameter.length; ++i) {
+        var num = letterToNumber[shareParameter[i]];
+        var geom = us.objects.counties.geometries[i];
+        if (!geom) {
+          console.log("problem ", i);
+        }
+        if (num !== 51 && geom && geom.hasOwnProperty('properties')) {
+          geom.properties.state = STATE_ABBREVS[num];
+        }
       }
     }
   }
@@ -459,13 +470,7 @@ var execReset = function(usData) {
       continue;
     }
     countyToState[county.id] = county.properties.state;
-    var state;
-    if (stateTotals.hasOwnProperty(county.properties.state)) {
-      state = stateTotals[county.properties.state];
-    } else {
-      state = {population: 0, electors: 0, color: county.properties.color, dem: 0, gop: 0, grn: 0, lib: 0, una: 0, oth: 0};
-      stateTotals[county.properties.state] = state;
-    }
+    var state = stateTotals[county.properties.state];
     state.population += hasOrZero(county.properties, 'population');
     state.dem += hasOrZero(county.properties, 'dem');
     state.gop += hasOrZero(county.properties, 'gop');
@@ -478,7 +483,7 @@ var execReset = function(usData) {
   update();
 }
 
-reset(dataFile);
+reset(dataFile, true);
 
 
 /**** Sharing ****/
@@ -540,5 +545,5 @@ $("#selectYear").change(function() {
     newYear = this.value;
   });
   setYear(newYear);
-  reset(dataFile);
+  reset(dataFile, false);
 });
