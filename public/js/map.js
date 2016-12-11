@@ -127,18 +127,18 @@ var countyModeFunction = function () {
   if (countyMode === 'show') {
     countyMode = 'hide';
     countyModeButton.html("Outlines Only");
-    d3.selectAll("path").remove();
+    g.selectAll("path").remove();
     update();
   } else if (countyMode === 'hide' && showStateColors) {
     showStateColors = false;
     countyModeButton.html("Show Counties");
-    d3.selectAll("path").remove();
+    g.selectAll("path").remove();
     update();
   } else {
     countyMode = 'show';
     showStateColors = true;
     countyModeButton.html("Hide Counties");
-    d3.selectAll("path").remove();
+    g.selectAll("path").remove();
     update();
   }
 }
@@ -162,9 +162,29 @@ tooltipTr.append('th').html('Votes');
 tooltipTr.append('th').html('Pct.');
 var tooltipTbody = tooltipTable.append('tbody');
 
+var margin = {top: -5, right: -5, bottom: -5, left: -5},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var zoom = d3.behavior.zoom()
+    .scaleExtent([1, 10])
+    .on("zoom", zoomed);
+
 var svg = d3.select("#states-svg")
-            .attr('width', '100%')
-            .attr('viewBox', '0 0 ' + width + ' ' + height);
+            .attr('width', width + margin.left + margin.right)
+            .attr('height', height + margin.top + margin.bottom)
+//            .attr('viewBox', '0 0 ' + width + ' ' + height)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.right + ")")
+    .call(zoom);
+
+var rect = svg.append("rect")
+    .attr("width", width)
+    .attr("height", height)
+    .style("fill", "none")
+    .style("pointer-events", "all");
+
+var g = svg.append('g');
 
 /* On update, compute the number of electors a state would get.
  * Uses 2010 Census data and the algorithm described here:
@@ -291,13 +311,14 @@ var update = function() {
 
   if (countyMode === 'show') {
     // We do a full, county level rendering
-    mapPath = svg.selectAll("path.county-path")
+    mapPath = g.selectAll("path.county-path")
      .data(topojson.feature(us, us.objects.counties).features);
 
     mapPath
       .enter().append("path")
       .attr("d", path)
       .on("click", function(d) {
+        if (d3.event.defaultPrevented) return; // We're zooming
         if (currentMode === 'pickup') {
           // Select or deselect the county
           var me = d3.select(this);
@@ -329,7 +350,7 @@ var update = function() {
       })
       .on('mousemove', function(d) {
         // Show county level detail
-        var mouse = d3.mouse(svg.node()).map(function(d) {
+        var mouse = d3.mouse(g.node()).map(function(d) {
           return parseInt(d);
         });
 
@@ -371,7 +392,7 @@ var update = function() {
   }
 
   // Draw state boundaries
-  mapPath = svg.selectAll("path.state-boundary")
+  mapPath = g.selectAll("path.state-boundary")
     .data(d3.nest()
             .key(function(d) { return d.hasOwnProperty('properties') ? (d.properties.state || 'other') : 'other'; })
             .entries(us.objects.counties.geometries));
@@ -440,12 +461,11 @@ var execReset = function(usData, useUrl) {
                                      dem: 0, gop: 0, grn: 0, lib: 0, una: 0, oth: 0};
   }
 
-  d3.selectAll('path').remove();
+  g.selectAll('path').remove();
   d3.selectAll('#states>tr').remove();
   $("#lede").html("How few counties can you move to make " + loser + " win the " + year + " election?");
 
   if (useUrl) {
-    console.log("HI");
     var shareParameter = getParameterByName('share');
     if (shareParameter) {
       us.objects.counties.geometries.sort(function(x, y) {
@@ -554,3 +574,7 @@ $("#selectYear").change(function() {
   setYear(newYear);
   reset(dataFile, false);
 });
+
+function zoomed() {
+  g.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+}
