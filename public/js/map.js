@@ -359,9 +359,14 @@ var update = function() {
       })
       .on('mouseover', function(d) {
         // Initialize the county level detail
-        var theHeading = tooltipTitle.selectAll("h2").data([d.properties.name])
-        theHeading.enter().append("h2").attr('class', 'tooltip-title-heading');
+        var theHeading = tooltipTitle.selectAll(".tooltip-title-heading").data([d.properties.name]);
+        theHeading.enter().append("div").attr('class', 'tooltip-title-heading');
         theHeading.html(function(dd) { return dd; });
+
+        var theSubHeading = tooltipTitle.selectAll(".tooltip-title-state-heading").data([d.properties.state]);
+        theSubHeading.enter().append('div').attr('class', 'tooltip-title-state-heading');
+        theSubHeading.html(function(dd) { return dd; });
+
         let thisData = [];
         let total = 0;
         for (var party in partyToCandidate) {

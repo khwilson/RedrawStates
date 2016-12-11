@@ -101,12 +101,21 @@ div.tooltip {
   background-color: #FFF;
 }
 
-h2.tooltip-title-heading {
+div.tooltip-title-heading {
  font-size: 14px;
  font-weight: normal;
  padding: 0 0 0 0;
  margin: 10px 5px 0px 0px;
- text-align: left;
+ float: left;
+ text-transform: uppercase;
+}
+
+div.tooltip-title-state-heading {
+ font-size: 12px;
+ font-weight: normal;
+ padding: 0 0 0 0;
+ margin: 10px 5px 0px 0px;
+ float: right;
  text-transform: uppercase;
 }
 
