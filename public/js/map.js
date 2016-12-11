@@ -144,10 +144,13 @@ var countyModeFunction = function () {
 }
 countyModeButton.on('click', countyModeFunction);
 
-var width = 960;
-    height = 500;
+var width = parseInt(d3.select('#states-div').style('width')),
+    mapRatio = 0.5,
+    height = width * mapRatio;
 
-var path = d3.geo.path();
+var projection = d3.geo.albersUsa().scale(width).translate([width / 2, height / 2]);
+var path = d3.geo.path().projection(projection);
+var allExists = false;
 
 /* County detail tooltip */
 var tooltip = d3.select('body').append('div')
@@ -275,7 +278,7 @@ var getColorClass = function(d) {
 /**** D3 ****/
 
 /* The main D3 update loop */
-var update = function() {
+var update = function(resizeUpdate) {
   /* Update elector numbers */
   computeElectors();
 
@@ -314,8 +317,14 @@ var update = function() {
     mapPath = g.selectAll("path.county-path")
      .data(topojson.feature(us, us.objects.counties).features);
 
-    mapPath
-      .enter().append("path")
+    var updateMapPath = null;
+    if (resizeUpdate) {
+      updateMapPath = mapPath;
+      mapPath.enter().append('path');
+    } else {
+      updateMapPath = mapPath.enter().append('path');
+    }
+    updateMapPath
       .attr("d", path)
       .on("click", function(d) {
         if (d3.event.defaultPrevented) return; // We're zooming
@@ -451,6 +460,7 @@ var reset = function(dataFile, useUrl) {
       if (error) throw error;
       data[dataFile] = usData;
       execReset(usData, useUrl);
+      allExists = true;
     });
   }
 }
@@ -583,3 +593,11 @@ $("#selectYear").change(function() {
 function zoomed() {
   g.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
 }
+
+new ResizeSensor(document.getElementById("states-div"), function() {
+  width = parseInt(d3.select('#states-div').style('width')) * 1.1;
+  height = width * 0.5 * 1.1;
+  d3.select('#states-div').attr('height', height + "px");
+  projection.scale(width).translate([width / 2.1, height / 2.3]);
+  if (allExists) update(true);
+});
