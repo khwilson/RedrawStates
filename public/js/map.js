@@ -104,13 +104,13 @@ var stateTotals = {}
 var us = null;
 
 
-var switchModeButton = d3.select('#switchModeButton').html('Move');
+var switchModeButton = d3.select('#switchModeButton').html('<u>M</u>ove');
 var switchModeFunction = function() {
   if (currentMode === 'pickup') {
-    switchModeButton.html('Cancel move').classed('btn-danger', false).classed('btn-warning', true);
+    switchModeButton.html('Cancel <u>m</u>ove').classed('btn-danger', false).classed('btn-warning', true);
     currentMode = 'dropoff';
   } else {
-    switchModeButton.html('Move').classed('btn-danger', true).classed('btn-warning', false);
+    switchModeButton.html('<u>M</u>ove').classed('btn-danger', true).classed('btn-warning', false);
     currentMode = 'pickup';
   }
 }
