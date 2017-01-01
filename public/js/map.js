@@ -115,6 +115,12 @@ var switchModeFunction = function() {
   }
 }
 switchModeButton.on('click', switchModeFunction);
+// keyboard shortcut to activate moving counties
+d3.select("body").on("keydown", function(ev) {
+  if (d3.event.keyCode==77) {
+    switchModeFunction()
+  };
+});
 
 var countyModeButton = d3.select("#countyModeButton").html("Hide Counties");
 var countyModeFunction = function () {
