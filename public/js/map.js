@@ -151,6 +151,7 @@ var width = parseInt(d3.select('#states-div').style('width')),
 var projection = d3.geo.albersUsa().scale(width).translate([width / 2, height / 2]);
 var path = d3.geo.path().projection(projection);
 var allExists = false;
+var smallScale = true;
 
 /* County detail tooltip */
 var tooltip = d3.select('body').append('div')
@@ -592,6 +593,15 @@ $("#selectYear").change(function() {
 
 function zoomed() {
   g.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+  if (smallScale && (d3.event.scale > 3)) {
+    smallScale = false;
+    d3.selectAll('path').style('stroke-width', '0.1px');
+    console.log("become large");
+  } else if (!smallScale && (d3.event.scale < 3)) {
+    smallScale = true;
+    d3.selectAll('path').style('stroke-width', '.5px');
+    console.log("Become small", d3.event.scale);
+  }
 }
 
 new ResizeSensor(document.getElementById("states-div"), function() {
