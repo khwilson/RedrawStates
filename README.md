@@ -44,12 +44,14 @@ I ganked a lot of stuff from the interwebs to make this. Here is a list:
   * `getParameterByName` function from [this StackOverflow](http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript)
   * The copy-paste examples from [clipboard.js](www.clipboardjs.com) are copied verbatim
   * [Bootstrap](www.getbootstrap.com), [D3](www.d3js.com), and [jQuery](www.jquery.com) are, of course, indispensable
+  * [css-element-queries](https://github.com/marcj/css-element-queries) from @marcj were super useful for zooming
 
 ## Contributors
 
 Kevin Wilson (the owner of the repo) is the main contributor. But some others have helped as well.
 Notably:
   * @herbiemarkwort contributed the "0 population => 0 electors" computation
+  * @Euonia contributed the keyboard shortcut for going to "Move" mode
 
 ## License
 
