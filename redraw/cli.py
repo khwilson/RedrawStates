@@ -4,8 +4,11 @@ A CLI for manipulating NYT API election data into our format
 import asyncio
 
 import click
+from dotenv import load_dotenv
 
 from . import nyt, nyt2016, shared
+
+load_dotenv()
 
 
 @click.group()
