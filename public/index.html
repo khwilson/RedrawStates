@@ -43,7 +43,7 @@
       <div class="row">
         <div class="col-sm-12">
           <h2 class="instructions">Instructions</h2>
-          <p class="instructions" id="lede">How few counties can you move to make Hillary Clinton win the 2016 election?</p>
+          <p class="instructions" id="lede">How few counties can you move to make Donald Trump win the 2020 election?</p>
           <p class="instructions">Choose a county (or several) to move to a new state. Then click the <b>Move</b> button and the state you want to move your counties to.</p>
           <p class="instructions">We'll automatically recompute the number of electoral votes the state would get with their new counties, and update the electoral vote. However, we don't account for Maine and Nebraska's splitting of votes by congressional district.</p>
           <p class="instructions">Weep at <a href="https://medium.com/@khayeswilson/clinton-would-have-won-if-the-united-states-looked-like-this-7b9c844b76a9">how arbitrary our electoral system is<a/>.</p>
@@ -73,7 +73,8 @@
             <select class="form-control" id="selectYear">
               <option value="2012">2012</option>
               <option value="2016i">2016 Income</option>
-              <option value="2016" selected="selected">2016</option>
+              <option value="2016">2016</option>
+              <option value="2020" selected="selected">2020</option>
             </select>
             </div>
           </div>
@@ -106,18 +107,16 @@
   <div class="row">
     <div class="col-sm-12">
       Code available on <a href="https://github.com/khwilson/RedrawStates">GitHub</a>.
-      County election data compiled by <a href="http://townhall.com">Townhall</a>.
+      County election data compiled by the <a href="https://nyt.com">New York Times</a>.
       More acknowledgments available on GitHub.
-      Note that I'm not updating data constantly, so it is probably quite outdated by the time you see it.
-      Copyright 2016 <a href="http://github.com/khwilson">Kevin Hayes Wilson</a>.
+      Note that this data is neither complete nor frequently updated.
+      Copyright 2016-2020 <a href="http://github.com/khwilson">Kevin Hayes Wilson</a>.
     </div>
   </div>
 </div>
 
-<script src="js/d3.v3.min.js"></script>
-<script src="js/topojson.v1.min.js"></script>
-<script src="js/ResizeSensor.js"></script>
-<script src="js/ElementQueries.js"></script>
+<script src="js/d3.v6.min.js"></script>
+<script src="js/topojson.v3.min.js"></script>
 <script src="js/map.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

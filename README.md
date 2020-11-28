@@ -26,25 +26,43 @@ from FL -> AL), Clinton wins 301 to 237.
 If you want to try to make sense of the current draft product, then just run
 
 ```bash
-> node server.js
+cd public && python3 -m http.server
 ```
 
 and then point your browser to `localhost:8080/map.html`. Or, if you want, go
-[here](khwilson.github.com/maps/map.html) for the latest live version.
+[here](https://kevinhayeswilson.com/redraw) for the latest live version.
+
+## Grabbing data
+
+To grab data and structure it for production, you will need to have both Python 3.8 or above installed as well as node 12 or above. After that, you'll need to install dependencies with:
+
+```bash
+poetry install
+npm install -g topojson-server
+```
+
+After that, you can create the 2016 and 2020 data sets by running:
+
+```bash
+poetry run redraw 2016 public/data/us.json
+poetry run redraw 2020 public/data/us2020.json
+```
 
 ## Acknowledgements
 
 I ganked a lot of stuff from the interwebs to make this. Here is a list:
   * Mike Bostock's tutorial on how to make a bubble map underlies a lot of the shape data:
     [link](https://bost.ocks.org/mike/bubble-map/)
-  * Townhall.com's election data [by county](http://townhall.com/election/2016/president/)
+  * Townhall.com's election data [by county](http://townhall.com/election/2016/president/) was used in the original 2016 tool
+  * In 2020 I moved to the New York Times' data for 2020 and 2016
+  * Population and income data come from the Census Bureau's decennial SF1 file
   * D3 Tooltips from Lee Howorko [here](http://bl.ocks.org/lhoworko/7753a11efc189a936371)
   * Colors for the map from [FiveThirtyEight's](http://www.fivethirtyeight.com)'s election coverage
   * Lines in the middle of divs from [this StackOverflow](http://stackoverflow.com/questions/1179928/how-can-i-put-a-vertical-line-down-the-center-of-a-div)
   * `getParameterByName` function from [this StackOverflow](http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript)
   * The copy-paste examples from [clipboard.js](www.clipboardjs.com) are copied verbatim
   * [Bootstrap](www.getbootstrap.com), [D3](www.d3js.com), and [jQuery](www.jquery.com) are, of course, indispensable
-  * [css-element-queries](https://github.com/marcj/css-element-queries) from @marcj were super useful for zooming
+  * [css-element-queries](https://github.com/marcj/css-element-queries) from @marcj were super useful for zooming in the previous version of this tool
 
 ## Contributors
 

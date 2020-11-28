@@ -13,7 +13,7 @@ var getParameterByName = function (name, url) {
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-/* Splits based on 2012 vs 2016 data */
+/* Splits based on 2012 vs 2016 vs 2020 data */
 
 var year = null,
     loser = null,
@@ -46,6 +46,18 @@ var setYear = function(newYear) {
       'oth': 'Other'
     }
     loser = 'Hillary Clinton';
+  } else if (newYear == '2020') {
+    year = newYear;
+    dataFile = 'data/us2020.json';
+    partyToCandidate = {
+      'dem': 'Joe Biden',
+      'gop': 'Donald Trump',
+      'grn': 'Green',
+      'lib': 'Jo Jorgensen',
+      'una': 'Unaffiliated',
+      'oth': 'Other'
+    };
+    loser = 'Donald Trump';
   } else {
     year = newYear;
     dataFile = 'data/us.json';
@@ -65,8 +77,10 @@ if (getParameterByName('year') === '2012') {
   setYear('2012');
 } else if (getParameterByName('year') === '2016i') {
   setYear('2016i');
-} else {
+} else if (getParameterByName('year') == '2016') {
   setYear('2016');
+} else {
+  setYear('2020');
 }
 
 var numberToLetter = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
@@ -78,24 +92,29 @@ for (var i=0; i<numberToLetter.length; ++i) {
 var countyToState = {}
 
 var STATE_ABBREVS = [
-  'AL', 'AK',
-  'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL',
+  'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL',
   'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME',
   'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH',
   'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI',
   'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI',
-  'WY'];
+  'WY'
+];
 
-var stateToNumber = {};
-for (var i=0; i<STATE_ABBREVS.length; ++i) {
+const stateToNumber = {};
+for (let i = 0; i < STATE_ABBREVS.length; ++i) {
   stateToNumber[STATE_ABBREVS[i]] = i;
 }
 
-var tableHeaders = ['population', 'electors', 'dem', 'gop', 'lib', 'grn', 'una', 'oth'];
-
+const tableHeaders = ['population', 'electors', 'dem', 'gop', 'lib', 'grn', 'una', 'oth'];
 
 /* Global state variables */
+var MOVE_KEY = 77;
+var HOLD_KEY = 81;  // Q
+var ERASE_KEY = 87;  // W
+
 var currentMode = 'pickup';
+var isHoldDown = false;
+var isEraseDown = false;
 var countyMode = 'show';
 var showStateColors = true;
 var stateTotals = {}
@@ -116,11 +135,25 @@ var switchModeFunction = function() {
 }
 switchModeButton.on('click', switchModeFunction);
 // keyboard shortcut to activate moving counties
-d3.select("body").on("keydown", function(ev) {
-  if (d3.event.keyCode==77) {
-    switchModeFunction()
-  };
-});
+d3.select("body")
+  .on("keydown", function(ev) {
+    if (ev.keyCode == MOVE_KEY) {
+      switchModeFunction()
+    } else if (ev.keyCode == HOLD_KEY) {
+      isEraseDown = false;
+      isHoldDown = true;
+    } else if (ev.keyCode == ERASE_KEY) {
+      isEraseDown = true;
+      isHoldDown = false;
+    }
+  })
+  .on("keyup", function(ev) {
+    if (ev.keyCode == HOLD_KEY) {
+      isHoldDown = false;
+    } else if (ev.keyCode == ERASE_KEY) {
+      isEraseDown = false;
+    }
+  });
 
 var countyModeButton = d3.select("#countyModeButton").html("Hide Counties");
 var countyModeFunction = function () {
@@ -144,13 +177,13 @@ var countyModeFunction = function () {
 }
 countyModeButton.on('click', countyModeFunction);
 
-var width = parseInt(d3.select('#states-div').style('width')),
-    mapRatio = 0.5,
-    height = width * mapRatio;
+const margin = {top: 5, right: 5, bottom: 5, left: 5},
+  fullWidth = 960, fullHeight = 500,
+  width = fullWidth - margin.left - margin.right,
+  height = fullHeight - margin.top - margin.bottom;
 
-var projection = d3.geo.albersUsa().scale(width).translate([width / 2, height / 2]);
-var path = d3.geo.path().projection(projection);
-var allExists = false;
+var projection = d3.geoAlbersUsa().scale(width).translate([width / 2, height / 2]);
+var path = d3.geoPath().projection(projection);
 var smallScale = true;
 
 /* County detail tooltip */
@@ -166,27 +199,10 @@ tooltipTr.append('th').html('Votes');
 tooltipTr.append('th').html('Pct.');
 var tooltipTbody = tooltipTable.append('tbody');
 
-var margin = {top: -5, right: -5, bottom: -5, left: -5},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
-
-var zoom = d3.behavior.zoom()
-    .scaleExtent([1, 10])
-    .on("zoom", zoomed);
-
 var svg = d3.select("#states-svg")
-            .attr('width', width + margin.left + margin.right)
-            .attr('height', height + margin.top + margin.bottom)
-//            .attr('viewBox', '0 0 ' + width + ' ' + height)
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.right + ")")
-    .call(zoom);
-
-var rect = svg.append("rect")
-    .attr("width", width)
-    .attr("height", height)
-    .style("fill", "none")
-    .style("pointer-events", "all");
+  .attr('width', width)
+  .attr('height', height)
+  .attr("viewBox", [0, 0, fullWidth, fullHeight]);
 
 var g = svg.append('g');
 
@@ -279,27 +295,24 @@ var getColorClass = function(d) {
 /**** D3 ****/
 
 /* The main D3 update loop */
-var update = function(resizeUpdate) {
+var update = function() {
   /* Update elector numbers */
   computeElectors();
 
   /* Details table rendering */
-  var tr = d3.select('#states')
+  d3.select('#states')
     .selectAll("tr")
-      .data(STATE_ABBREVS);
-
-  tr.enter().append("tr");
-  var td = tr.selectAll("td")
+    .data(STATE_ABBREVS)
+    .join("tr")
+    .selectAll("td")
     .data(function (d, i) {
       var state = stateTotals[STATE_ABBREVS[i]];
       return [STATE_ABBREVS[i], state.population, state.electors,
               state.dem, state.gop, state.grn, state.lib, state.una, state.oth];
-    });
 
-  td.enter()
-    .append("td");
-
-  td.text(function (d, i) { return intWithCommas(d); })
+    })
+    .join("td")
+    .text(intWithCommas)
     .attr("class", function(d, i) {
       if (i === 0) {
         return stateTotals[d].dem > stateTotals[d].gop ? "blue-state" : "red-state";
@@ -307,8 +320,6 @@ var update = function(resizeUpdate) {
         return null;
       }
     });
-  td.exit().remove();
-  tr.exit().remove();
 
   /* Draw United States with colors! */
   var mapPath;
@@ -316,19 +327,12 @@ var update = function(resizeUpdate) {
   if (countyMode === 'show') {
     // We do a full, county level rendering
     mapPath = g.selectAll("path.county-path")
-     .data(topojson.feature(us, us.objects.counties).features);
-
-    var updateMapPath = null;
-    if (resizeUpdate) {
-      updateMapPath = mapPath;
-      mapPath.enter().append('path');
-    } else {
-      updateMapPath = mapPath.enter().append('path');
-    }
-    updateMapPath
+      .data(topojson.feature(us, us.objects.counties).features)
+      .join("path")
       .attr("d", path)
-      .on("click", function(d) {
-        if (d3.event.defaultPrevented) return; // We're zooming
+      .attr("class", d => "county-path " + getColorClass(d))
+      .on("click", function(ev, d) {
+        if (ev.defaultPrevented) return;  // We're zooming
         if (currentMode === 'pickup') {
           // Select or deselect the county
           var me = d3.select(this);
@@ -348,34 +352,47 @@ var update = function(resizeUpdate) {
               var oldState = dd.properties.state;
               dd.properties.state = newState;
               var oldStateData = stateTotals[oldState];
-              for (var i=0; i<tableHeaders.length; ++i) {
-                var key = tableHeaders[i];
+              for (let i = 0; i < tableHeaders.length; ++i) {
+                let key = tableHeaders[i];
                 newStateData[key] += hasOrZero(dd.properties, key);
                 oldStateData[key] -= hasOrZero(dd.properties, key);
               }
-            });
+            }
+          );
           update();
           switchModeFunction();
         }
       })
-      .on('mousemove', function(d) {
+      .on('mousemove', function(ev, d) {
         // Show county level detail
-        var mouse = d3.mouse(g.node()).map(function(d) {
-          return parseInt(d);
-        });
-
         tooltip.classed('hidden', false)
-          .attr('style', 'left:' + (d3.event.pageX + 15) + 'px; top:' + (d3.event.pageY - 15) + 'px');
+          .attr('style', 'left:' + (ev.pageX + 15) + 'px; top:' + (ev.pageY - 15) + 'px');
       })
-      .on('mouseover', function(d) {
-        // Initialize the county level detail
-        var theHeading = tooltipTitle.selectAll(".tooltip-title-heading").data([d.properties.name]);
-        theHeading.enter().append("div").attr('class', 'tooltip-title-heading');
-        theHeading.html(function(dd) { return dd; });
+      .on('mouseover', function(ev, d) {
+        if (isHoldDown && currentMode === 'pickup') {
+          // If the hold key is down and we're in pickup mode, select the county
+          var me = d3.select(this);
+          me.classed(getColorClass(d), false);
+          me.classed("selection-color", true);
+        } else if (isEraseDown && currentMode === 'pickup') {
+          // If the erase key is down and we're in pickup mode, deselect the county
+          var me = d3.select(this);
+          me.classed(getColorClass(d), true);
+          me.classed("selection-color", false);
+        }
 
-        var theSubHeading = tooltipTitle.selectAll(".tooltip-title-state-heading").data([d.properties.state]);
-        theSubHeading.enter().append('div').attr('class', 'tooltip-title-state-heading');
-        theSubHeading.html(function(dd) { return dd; });
+        // Initialize the county level detail
+        tooltipTitle.selectAll(".tooltip-title-heading")
+          .data([d.properties.name])
+          .join("div")
+          .attr("class", "tooltip-title-heading")
+          .html(d => d);
+
+        tooltipTitle.selectAll(".tooltip-title-state-heading")
+          .data([d.properties.state])
+          .join("div")
+          .attr("class", "tooltip-title-state-heading")
+          .html(d => d);
 
         let thisData = [];
         let total = 0;
@@ -386,50 +403,52 @@ var update = function(resizeUpdate) {
             total += partyTotal;
           }
         }
-        var theData = tooltipTbody.selectAll("tr")
-          .data(thisData);
-        theData.enter().append('tr')
-        var theRow = theData.selectAll("td").data(function(dd, i) {
-          return [dd[0], dd[1], (100 * dd[1] / total).toFixed(2) + '%'];
-        });
-        theRow.enter().append('td');
-        theRow.html(function(elt, i) { return i === 0 ? elt : intWithCommas(elt); })
-        theRow.exit().remove();
-        theData.exit().remove();
+
+        tooltipTbody.selectAll("tr")
+          .data(thisData)
+          .join("tr")
+          .selectAll("td")
+          .data(d => [d[0], d[1], (100 * d[1] / total).toFixed(2) + '%'])
+          .join("td")
+          .html((d, i) => i === 0 ? d : intWithCommas(d));
       })
       .on('mouseout', function() {
         // Hide the county level detail
         tooltip.classed('hidden', true);
       });
-
-    // Actually color the map
-    mapPath.attr("class", function(d) { return "county-path " + getColorClass(d); });
   }
 
   // Draw state boundaries
   mapPath = g.selectAll("path.state-boundary")
-    .data(d3.nest()
-            .key(function(d) { return d.hasOwnProperty('properties') ? (d.properties.state || 'other') : 'other'; })
-            .entries(us.objects.counties.geometries));
-
-  mapPath.enter().append("path")
-    .attr("class", "state-boundary state-boundary-filled");
-
-  mapPath.attr("d", function(d) { return path(topojson.merge(us, d.values)); });
-  if (countyMode === 'hide' && showStateColors) {
-    // If we're hiding the counties, we want to color whole states
-    mapPath.attr('class', function (d) {
-      if (stateTotals.hasOwnProperty(d.key)) {
-        var s = stateTotals[d.key];
-        var dem = hasOrZero(s, 'dem');
-        var gop = hasOrZero(s, 'gop');
-        var demPercent = Math.floor(dem / (dem + gop) * 20) * 5;
-        return "state-boundary dem-" + demPercent + '-state';
+    .data(
+      d3.group(
+        us.objects.counties.geometries,
+        d => d.hasOwnProperty("properties") ? (d.properties.state || "other") : "other"
+      )
+    )
+    .join("path")
+    .attr("class", "state-boundary state-boundary-filled")
+    .attr("d", d => path(topojson.merge(us, d[1])))
+    .attr("class", d => {
+      if (countyMode === "hide" && showStateColors) {
+        // If we're hiding the counties, we want to color whole states
+        if (stateTotals.hasOwnProperty(d[0])) {
+          let state = stateTotals[d[0]];
+          var dem = hasOrZero(state, 'dem');
+          var gop = hasOrZero(state, 'gop');
+          var demPercent = Math.floor(dem / (dem + gop) * 20) * 5;
+          return "state-boundary dem-" + demPercent + '-state';
+        } else {
+          return "state-boundary";
+        }
       } else {
-        return 'state-boundary';
+        // Else, we'll just keep the boundary
+        return "state-boundary state-boundary-filled";
       }
-    });
-  }
+    })
+
+  // Setup zoom. Order seems to be important, so it should go here.
+  svg.call(d3.zoom().extent([[0, 0], [960, 500]]).scaleExtent([1, 10]).on("zoom", zoomed));
 
   // Recompute the total number of electoral votes
   var demTotal = 0;
@@ -447,9 +466,10 @@ var update = function(resizeUpdate) {
   }
 
   // Color and fill in EV bar
-  d3.select('.ev-bar').attr('style', 'background: linear-gradient(to right, #179ee0 0%, #179ee0 ' + (demTotal / totalElectors * 100) + '%, #ff5d40 ' + (demTotal / totalElectors * 100) + '%, #ff5d40 100%)');
-  $(".ev-bar-dem-total").text(demTotal);
-  $(".ev-bar-gop-total").text(gopTotal);
+  d3.select('.ev-bar')
+    .attr('style', 'background: linear-gradient(to right, #179ee0 0%, #179ee0 ' + (demTotal / totalElectors * 100) + '%, #ff5d40 ' + (demTotal / totalElectors * 100) + '%, #ff5d40 100%)');
+  d3.select(".ev-bar-dem-total").text(demTotal);
+  d3.select(".ev-bar-gop-total").text(gopTotal);
 }
 
 /* Read data once! */
@@ -457,11 +477,9 @@ var reset = function(dataFile, useUrl) {
   if (dataFile in data) {
     execReset(data[dataFile], useUrl);
   } else {
-    d3.json(dataFile, function(error, usData) {
-      if (error) throw error;
+    d3.json(dataFile).then(function(usData) {
       data[dataFile] = usData;
       execReset(usData, useUrl);
-      allExists = true;
     });
   }
 }
@@ -484,17 +502,25 @@ var execReset = function(usData, useUrl) {
   if (useUrl) {
     var shareParameter = getParameterByName('share');
     if (shareParameter) {
-      us.objects.counties.geometries.sort(function(x, y) {
-        if (x.id < y.id) {
-          return -1;
-        } else if (x.id > y.id) {
-          return 1;
+      us.objects.counties.geometries.sort((x, y) => parseInt(x.properties.id) - parseInt(y.properties.id))
+
+      var newShareParameter = [];
+      var curNumber = '';
+      for (var i = 0; i < shareParameter.length; ++i) {
+        var letter = shareParameter[i];
+        if (/\d/.test(letter)) {
+          curNumber += letter;
         } else {
-          return 0;
+          curNumber = parseInt(curNumber || '1');
+          for (var j = 0; j < curNumber; ++j) {
+            newShareParameter.push(letter);
+          }
+          curNumber = '';
         }
-      });
-      for (var i=0; i<shareParameter.length; ++i) {
-        var num = letterToNumber[shareParameter[i]];
+      }
+
+      for (var i=0; i<newShareParameter.length; ++i) {
+        var num = letterToNumber[newShareParameter[i]];
         var geom = us.objects.counties.geometries[i];
         if (!geom) {
           console.log("problem ", i);
@@ -533,26 +559,34 @@ reset(dataFile, true);
 
 /* Turn map into URL */
 var getShareUrl = function() {
-  us.objects.counties.geometries.sort(function(x, y) {
-    if (x.id < y.id) {
-      return -1;
-    } else if (x.id > y.id) {
-      return 1;
-    } else {
-      return 0;
-    }
-  });
+  us.objects.counties.geometries.sort((x, y) => parseInt(x.properties.id) - parseInt(y.properties.id));
+
   shareUrl = [];
+  var curLetter = null;
+  var curStreak = 0;
+
   for (var i=0; i<us.objects.counties.geometries.length; ++i) {
     var geom = us.objects.counties.geometries[i];
-    if (geom.hasOwnProperty('properties')) {
-      shareUrl.push(numberToLetter[stateToNumber[geom.properties.state]]);
+    var letter = geom.hasOwnProperty('properties') ?
+      numberToLetter[stateToNumber[geom.properties.state]] :
+      numberToLetter[51];
+
+    if (letter === curLetter) {
+      curStreak++;
     } else {
-      shareUrl.push(numberToLetter[51]);
+      if (curStreak === 1) {
+        shareUrl.push(curLetter);
+      } else if (curStreak > 1) {
+        shareUrl.push(curStreak + curLetter);
+      }
+      curLetter = letter;
+      curStreak = 1;
     }
   }
+  shareUrl.push(curStreak + curLetter);
+
   var baseUrl = window.location.origin + window.location.pathname + '?';
-  if (year !== '2016') {
+  if (year !== '2020') {
     baseUrl += 'year=' + year + '&';
   }
   return baseUrl + 'share=' + shareUrl.join('');
@@ -582,32 +616,12 @@ clipboard.on('success', function(e) {
   console.info('Trigger:', e.trigger);
 });
 
-$("#selectYear").change(function() {
-  var newYear = null;
-  $("#selectYear>option:selected").each(function() {
-    newYear = this.value;
-  });
+d3.select("#selectYear").on("change", function(ev) {
+  var newYear = ev.target.selectedOptions[0].value;
   setYear(newYear);
   reset(dataFile, false);
-});
+})
 
-function zoomed() {
-  g.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
-  if (smallScale && (d3.event.scale > 3)) {
-    smallScale = false;
-    d3.selectAll('path').style('stroke-width', '0.1px');
-    console.log("become large");
-  } else if (!smallScale && (d3.event.scale < 3)) {
-    smallScale = true;
-    d3.selectAll('path').style('stroke-width', '.5px');
-    console.log("Become small", d3.event.scale);
-  }
+var zoomed = function({transform}) {
+  g.attr("transform", transform);
 }
-
-new ResizeSensor(document.getElementById("states-div"), function() {
-  width = parseInt(d3.select('#states-div').style('width')) * 1.1;
-  height = width * 0.5 * 1.1;
-  d3.select('#states-div').attr('height', height + "px");
-  projection.scale(width).translate([width / 2.1, height / 2.3]);
-  if (allExists) update(true);
-});

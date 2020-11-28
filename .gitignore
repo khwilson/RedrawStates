@@ -1,5 +1,14 @@
-node_modules
+# Python cruft
+.venv
 .ipynb_checkpoints
-python/__pycache__
-python/venv
-build
+__pycache__
+
+# Editor cruft
+.vscode
+*~
+
+# Node cruft
+node_modules/
+
+# Secrets
+.env
