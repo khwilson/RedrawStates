@@ -85,6 +85,7 @@ h2.instructions {
 p.instructions {
   line-height: 16px;
   font-size: 12px;
+  text-align: left;
 }
 
 /* County tooltip detail */

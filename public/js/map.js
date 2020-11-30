@@ -199,6 +199,16 @@ tooltipTr.append('th').html('Votes');
 tooltipTr.append('th').html('Pct.');
 var tooltipTbody = tooltipTable.append('tbody');
 
+/* Setup instructions tooltip */
+d3.select("#instructionsHelper")
+  .on("mousemove", function(ev) {
+    d3.select("#instructionsTooltip").classed('hidden', false)
+      .attr('style', 'left:' + (ev.pageX + 15) + 'px; top:' + (ev.pageY - 15) + 'px');
+  })
+  .on("mouseout", function(ev) {
+    d3.select("#instructionsTooltip").classed('hidden', true);
+  });
+
 var svg = d3.select("#states-svg")
   .attr('width', width)
   .attr('height', height)
