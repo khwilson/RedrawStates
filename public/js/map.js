@@ -111,8 +111,10 @@ const tableHeaders = ['population', 'electors', 'dem', 'gop', 'lib', 'grn', 'una
 var MOVE_KEY = 77;
 var HOLD_KEY = 81;  // Q
 var ERASE_KEY = 87;  // W
+var DISPLAY_MODE_KEY = 80;  // P
 
 var currentMode = 'pickup';
+var displayMode = 'raw';
 var isHoldDown = false;
 var isEraseDown = false;
 var countyMode = 'show';
@@ -145,6 +147,9 @@ d3.select("body")
     } else if (ev.keyCode == ERASE_KEY) {
       isEraseDown = true;
       isHoldDown = false;
+    } else if (ev.keyCode == DISPLAY_MODE_KEY) {
+      displayMode = displayMode === 'raw' ? 'percent' : 'raw';
+      update();
     }
   })
   .on("keyup", function(ev) {
@@ -316,9 +321,21 @@ var update = function() {
     .join("tr")
     .selectAll("td")
     .data(function (d, i) {
-      var state = stateTotals[STATE_ABBREVS[i]];
-      return [STATE_ABBREVS[i], state.population, state.electors,
-              state.dem, state.gop, state.grn, state.lib, state.una, state.oth];
+      let state = stateTotals[STATE_ABBREVS[i]];
+      if (displayMode === 'raw') {
+        return [STATE_ABBREVS[i], state.population, state.electors,
+                state.dem, state.gop, state.grn, state.lib, state.una, state.oth];
+      } else {
+        let totalVotes = state.dem + state.gop + state.grn + state.lib + state.una + state.oth;
+        return [STATE_ABBREVS[i], state.population, state.electors,
+                (state.dem / totalVotes * 100).toFixed(2) + '%',
+                (state.gop / totalVotes * 100).toFixed(2) + '%',
+                (state.grn / totalVotes * 100).toFixed(2) + '%',
+                (state.lib / totalVotes * 100).toFixed(2) + '%',
+                (state.una / totalVotes * 100).toFixed(2) + '%',
+                (state.oth / totalVotes * 100).toFixed(2) + '%'
+              ];
+      }
 
     })
     .join("td")
@@ -332,11 +349,9 @@ var update = function() {
     });
 
   /* Draw United States with colors! */
-  var mapPath;
-
   if (countyMode === 'show') {
     // We do a full, county level rendering
-    mapPath = g.selectAll("path.county-path")
+    g.selectAll("path.county-path")
       .data(topojson.feature(us, us.objects.counties).features)
       .join("path")
       .attr("d", path)
@@ -429,7 +444,7 @@ var update = function() {
   }
 
   // Draw state boundaries
-  mapPath = g.selectAll("path.state-boundary")
+  g.selectAll("path.state-boundary")
     .data(
       d3.group(
         us.objects.counties.geometries,
