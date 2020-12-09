@@ -32,8 +32,8 @@ def twenty_sixteen_command(filename: str, census_api_key: str):
     data = nyt2016.pull_data()
     parsed = nyt2016.parse_data(data)
 
-    tjson = shared.pull_topojson()
-    gdf = shared.fix_topojson(tjson)
+    tjson = shared.get_county_boundaries()
+    gdf = shared.flatten_counties(tjson)
 
     # Make sure vote data and map data match
     tjson_counties = set(gdf.id)
@@ -76,8 +76,8 @@ def twenty_twenty_command(max_connections: int, filename: str, census_api_key: s
 
     parsed = sorted(nyt.parse_data(data))
 
-    tjson = shared.pull_topojson()
-    gdf = shared.fix_topojson(tjson)
+    tjson = shared.get_county_boundaries()
+    gdf = shared.flatten_counties(tjson)
 
     tjson_counties = set(gdf.id)
     parsed_counties = {county.fips for county in parsed}

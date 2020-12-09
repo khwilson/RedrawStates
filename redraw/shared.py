@@ -13,10 +13,8 @@ import requests
 import us
 from census import Census
 
-TOPOJSON_URL = "https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json"
 
-
-def pull_population(api_key: str) -> pd.DataFrame:
+def pull_population(api_key: str, year: int = 2020) -> pd.DataFrame:
     """
     Pull county population data from the Census API. Also, make some clean ups
     for our data set. In particular:
@@ -25,13 +23,18 @@ def pull_population(api_key: str) -> pd.DataFrame:
 
     Args:
         api_key: Your census API key
+        year: The decennial Census year you're using. Must be in [1990, 2022)
 
     Returns:
         A DataFrame with columns "id" (which is the 5-digit county FIPS as a str) and
             "population" which is the integer population.
     """
+    decennial_year = ((year - 2) // 10) * 10
+    if decennial_year not in [1990, 2000, 2010]:
+        raise ValueError(f'Year must be in [1992, 2022), not {year}')
+
     census = Census(api_key)
-    df = pd.DataFrame(census.sf1.state_county("P001001", "*", "*")).rename(
+    df = pd.DataFrame(census.sf1.state_county("P001001", "*", "*", year=decennial_year)).rename(
         columns={"P001001": "population"}
     )
     df["population"] = df["population"].astype(int)
@@ -51,39 +54,27 @@ def pull_population(api_key: str) -> pd.DataFrame:
     df = df.drop(columns=["state", "county"])
 
     # Finally, Shannon County South Dakota got renamed in 2015. Fix this.
-    df["id"] = df["id"].apply(lambda x: "46102" if x == "46113" else x)
+    if year >= 2015:
+        df["id"] = df["id"].apply(lambda x: "46102" if x == "46113" else x)
+
     return df
 
 
-def pull_topojson(url: str = TOPOJSON_URL, num_attempts: int = 3) -> dict:
-    """
-    Pull a US topojson file from `url`. Attempt it `num_attempts` times
-    with exponential backoff
-    """
-    data = None
-    for num_attempt in range(num_attempts):
-        try:
-            response = requests.get(url, stream=True)
-            response.raise_for_status()
-            break
-        except requests.exceptions.HTTPError:
-            time.sleep(2 ** (num_attempt - 2))
-            continue
-
-    data = response.content.decode("utf8")
-    return json.loads(data)
+def get_county_boundaries(year: int) -> gpd.GeoDataFrame:
+    # For now, we take the year to be 2011 or later because TIGER totally
+    # rearranged its files in 2011, making this function a lot harder to accomplish.
+    year = max(year, 2011)
+    gdf = gpd.read_file(f'https://www2.census.gov/geo/tiger/TIGER{year}/COUNTY/tl_{year}_us_county.zip')
+    gdf = gdf[['GEOID', 'NAME', 'geometry']].rename(columns={'GEOID': 'id', 'NAME': 'name'})
+    gdf['name'] = gdf['name'].apply(lambda x: x.decode('latin1') if type(x) == bytes else x)
+    return gdf
 
 
-def fix_topojson(topojson: dict):
+def flatten_counties(gdf: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     """
     Make some adjustments to the topojson file we pull to align to
     election data we pull from the NYT.
     """
-    with tempfile.NamedTemporaryFile("wt") as outfile:
-        json.dump(topojson, outfile)
-        outfile.flush()
-        gdf = gpd.read_file(outfile.name)
-
     fips_to_state = {
         state.fips: state.abbr for state in us.STATES + [us.states.lookup("DC")]
     }
