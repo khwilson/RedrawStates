@@ -22,7 +22,45 @@ var year = null,
     partyToCandidate = null;
 
 var setYear = function(newYear) {
-  if (newYear === '2012') {
+  // Currently the 1990 SF1 API is down :-/
+  // if (newYear === '2000') {
+  //   year = newYear;
+  //   dataFile = 'data/us2000.json';
+  //   partyToCandidate = {
+  //     'dem': 'Al Gore',
+  //     'gop': 'George W. Bush',
+  //     'grn': "Green Party",
+  //     'lib': 'Libertarian Party',
+  //     'una': 'Unaffiliated',
+  //     'oth': 'Other'
+  //   }
+  //   loser = 'Al Gore';
+  // } else
+  if (newYear === '2004') {
+    year = newYear;
+    dataFile = 'data/us2004.json';
+    partyToCandidate = {
+      'dem': 'John Kerry',
+      'gop': 'George W. Bush',
+      'grn': "Green Party",
+      'lib': 'Libertarian Party',
+      'una': 'Unaffiliated',
+      'oth': 'Other'
+    }
+    loser = 'John Kerry';
+  } else if (newYear === '2008') {
+    year = newYear;
+    dataFile = 'data/us2008.json';
+    partyToCandidate = {
+      'dem': 'Barack Obama',
+      'gop': 'John McCain',
+      'grn': "Green Party",
+      'lib': 'Libertarian Party',
+      'una': 'Unaffiliated',
+      'oth': 'Other'
+    }
+    loser = 'John McCain';
+  } else if (newYear === '2012') {
     year = newYear;
     dataFile = 'data/us2012.json';
     partyToCandidate = {
@@ -136,6 +174,7 @@ var switchModeFunction = function() {
   }
 }
 switchModeButton.on('click', switchModeFunction);
+
 // keyboard shortcut to activate moving counties
 d3.select("body")
   .on("keydown", function(ev) {
@@ -350,6 +389,14 @@ var update = function() {
 
   /* Draw United States with colors! */
   if (countyMode === 'show') {
+    // get current zoom level
+    let zoomLevel = 1;
+    if (g.attr("transform")) {
+      zoomLevel = parseInt(g.attr("transform").match(/scale\((\d+)/)[1]);
+    }
+
+    g.classed('wide-zoom-stroke', zoomLevel < 5).classed('close-zoom-level', zoomLevel >= 5);
+
     // We do a full, county level rendering
     g.selectAll("path.county-path")
       .data(topojson.feature(us, us.objects.counties).features)
@@ -473,7 +520,7 @@ var update = function() {
     })
 
   // Setup zoom. Order seems to be important, so it should go here.
-  svg.call(d3.zoom().extent([[0, 0], [960, 500]]).scaleExtent([1, 10]).on("zoom", zoomed));
+  svg.call(d3.zoom().extent([[0, 0], [960, 500]]).scaleExtent([1, 12]).on("zoom", zoomed));
 
   // Recompute the total number of electoral votes
   var demTotal = 0;
@@ -648,5 +695,10 @@ d3.select("#selectYear").on("change", function(ev) {
 })
 
 var zoomed = function({transform}) {
-  g.attr("transform", transform);
+  g.attr("transform", transform)
+  if (transform.k >= 5) {
+    g.classed('wide-zoom-stroke', false).classed('close-zoom-stroke', true);
+  } else {
+    g.classed('wide-zoom-stroke', true).classed('close-zoom-stroke', false);
+  }
 }

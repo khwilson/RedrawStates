@@ -12,3 +12,4 @@ node_modules/
 
 # Secrets
 .env
+.redraw_cache

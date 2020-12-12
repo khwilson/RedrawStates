@@ -3,10 +3,12 @@ Parsing and using the MIT data::
 
     https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VOQCHQ
 """
-import pandas as pd
+import dataclasses
 from dataclasses import dataclass
-
 from typing import List, Optional
+
+import geopandas as gpd
+import pandas as pd
 
 
 @dataclass(frozen=True, order=True)
@@ -56,6 +58,47 @@ def read_data(filename: str, year: int) -> pd.DataFrame:
     df.loc[df["state_po"] == "DC", "county"] = "Washington"
     df.loc[df["state_po"] == "DC", "FIPS"] = "11001"
 
+    # Kansas City, Missouri, actual spans parts of four counties. The MIT data reports
+    # the results for KCMO separately (with FIPS 36000). We follow what appears to be
+    # the New York Times' convention and simply add these votes to Jackson County's
+    # total (FIPS 29095)
+    kcmo_only = df[df["FIPS"].isin(["36000", "29095"])]
+    kcmo_only = (
+        kcmo_only.groupby(
+            ["year", "state", "state_po", "office", "party", "candidate", "version"]
+        )["candidatevotes"]
+        .sum()
+        .reset_index()
+    )
+    kcmo_only["county"] = "Jackson"
+    kcmo_only["FIPS"] = "29095"
+    kcmo_only["totalvotes"] = kcmo_only.groupby("county")["candidatevotes"].transform(
+        "sum"
+    )
+
+    df = pd.concat([df[~df["FIPS"].isin(["36000", "29095"])], kcmo_only])
+
+    # Broomfield County, Colorado, came into being in 2001. However, the Census
+    # doesn't have easily parsed cartographic boundaries for the years 2001-2009.
+    # As such, we just merge Broomfield (FIPS 08014) into Boulder (FIPS 08013)
+    # for the years 2004 and 2008
+    if year == 2004 or year == 2008:
+        brco_only = df[df["FIPS"].isin(["08013", "08014"])]
+        brco_only = (
+            brco_only.groupby(
+                ["year", "state", "state_po", "office", "party", "candidate", "version"]
+            )["candidatevotes"]
+            .sum()
+            .reset_index()
+        )
+        brco_only["county"] = "Boulder"
+        brco_only["FIPS"] = "08013"
+        brco_only["totalvotes"] = brco_only.groupby("county")[
+            "candidatevotes"
+        ].transform("sum")
+
+        df = pd.concat([df[~df["FIPS"].isin(["08013", "08014"])], brco_only])
+
     return df
 
 
@@ -93,3 +136,28 @@ def parse_data(df: pd.DataFrame) -> List[CountyResult]:
         )
 
     return output
+
+
+def merge_data(parsed: List[CountyResult], gdf: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
+    """
+    Merge together the parsed data from `parsed_data` with the GeoDataFrame
+    from the Census. Note that this standardizes for the column headers the
+    javascript app expects.
+    """
+    df = pd.DataFrame(
+        [dataclasses.astuple(row) for row in parsed],
+        columns=[field.name for field in dataclasses.fields(CountyResult)],
+    )
+
+    gdf = gdf.merge(df.drop(columns=["state"]), left_on="id", right_on="fips")
+    gdf = gdf.rename(
+        columns={
+            "dem_vote": "dem",
+            "gop_vote": "gop",
+            "green_vote": "grn",
+            "other_vote": "oth",
+        }
+    )
+    gdf["una"] = 0
+
+    return gdf

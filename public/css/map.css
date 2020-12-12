@@ -149,31 +149,39 @@ table.county-results>tbody>tr>td {
 
 /* Map coloring */
 
+.wide-zoom-stroke {
+  stroke-width: .5px;
+}
+
+.close-zoom-stroke {
+  stroke-width: .1px;
+}
+
 /* Counties: Dems won the state */
-.dem-95 { fill: rgb(42,161,236); stroke: #ccf; stroke-width: .5px; }
-.dem-90 { fill: rgb(79,169,238); stroke: #ccf; stroke-width: .5px; }
-.dem-85 { fill: rgb(105,178,240); stroke: #ccf; stroke-width: .5px; }
-.dem-80 { fill: rgb(125,185,242); stroke: #ccf; stroke-width: .5px; }
-.dem-75 { fill: rgb(144,194,243); stroke: #ccf; stroke-width: .5px; }
-.dem-70 { fill: rgb(162,203,245); stroke: #ccf; stroke-width: .5px; }
-.dem-65 { fill: rgb(178,211,247); stroke: #ccf; stroke-width: .5px; }
-.dem-60 { fill: rgb(194,220,249); stroke: #ccf; stroke-width: .5px; }
-.dem-55 { fill: rgb(210,228,250); stroke: #ccf; stroke-width: .5px; }
-.dem-50 { fill: rgb(226,237,252); stroke: #ccf; stroke-width: .5px; }
-.dem-less-than-50 { fill: rgb(255,255,255); stroke: #ccf; stroke-width: .5px; }
+.dem-95 { fill: rgb(42,161,236); stroke: #ccf; }
+.dem-90 { fill: rgb(79,169,238); stroke: #ccf; }
+.dem-85 { fill: rgb(105,178,240); stroke: #ccf; }
+.dem-80 { fill: rgb(125,185,242); stroke: #ccf; }
+.dem-75 { fill: rgb(144,194,243); stroke: #ccf; }
+.dem-70 { fill: rgb(162,203,245); stroke: #ccf; }
+.dem-65 { fill: rgb(178,211,247); stroke: #ccf; }
+.dem-60 { fill: rgb(194,220,249); stroke: #ccf; }
+.dem-55 { fill: rgb(210,228,250); stroke: #ccf; }
+.dem-50 { fill: rgb(226,237,252); stroke: #ccf; }
+.dem-less-than-50 { fill: rgb(255,255,255); stroke: #ccf; }
 
 /* Counties: GOP won the state */
-.dem-0 { fill: rgb(254,106,89); stroke: #fcc; stroke-width: .5px; }
-.dem-5 { fill: rgb(255,122,104); stroke: #fcc; stroke-width: .5px; }
-.dem-10 { fill: rgb(255,139,120); stroke: #fcc; stroke-width: .5px; }
-.dem-15 { fill: rgb(255,153,135); stroke: #fcc; stroke-width: .5px; }
-.dem-20 { fill: rgb(255,167,150); stroke: #fcc; stroke-width: .5px; }
-.dem-25 { fill: rgb(255,180,166); stroke: #fcc; stroke-width: .5px; }
-.dem-30 { fill: rgb(255,194,181); stroke: #fcc; stroke-width: .5px; }
-.dem-35 { fill: rgb(255,206,196); stroke: #fcc; stroke-width: .5px; }
-.dem-40 { fill: rgb(255,219,210); stroke: #fcc; stroke-width: .5px; }
-.dem-45 { fill: rgb(255,231,225); stroke: #fcc; stroke-width: .5px; }
-.dem-greater-than-50 { fill: #fff; stroke: #fcc; stroke-width: .5px; }
+.dem-0 { fill: rgb(254,106,89); stroke: #fcc; }
+.dem-5 { fill: rgb(255,122,104); stroke: #fcc; }
+.dem-10 { fill: rgb(255,139,120); stroke: #fcc; }
+.dem-15 { fill: rgb(255,153,135); stroke: #fcc; }
+.dem-20 { fill: rgb(255,167,150); stroke: #fcc; }
+.dem-25 { fill: rgb(255,180,166); stroke: #fcc; }
+.dem-30 { fill: rgb(255,194,181); stroke: #fcc; }
+.dem-35 { fill: rgb(255,206,196); stroke: #fcc; }
+.dem-40 { fill: rgb(255,219,210); stroke: #fcc; }
+.dem-45 { fill: rgb(255,231,225); stroke: #fcc; }
+.dem-greater-than-50 { fill: #fff; stroke: #fcc; }
 
 /* States: Dems won the state */
 .dem-95-state { fill: rgb(42,161,236); stroke: #000; stroke-width: .5px; }

@@ -38,7 +38,7 @@ To grab data and structure it for production, you will need to have both Python 
 
 ```bash
 poetry install
-npm install -g topojson-server
+npm install
 ```
 
 After that, you can create the 2016 and 2020 data sets by running:
@@ -47,6 +47,22 @@ After that, you can create the 2016 and 2020 data sets by running:
 poetry run redraw 2016 public/data/us.json
 poetry run redraw 2020 public/data/us2020.json
 ```
+
+If you'd like to recreate the 2012, 2008, and 2004 files, you need to grab the
+data set at::
+
+    https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VOQCHQ
+
+Supposed you saved it as `countypres_2000-2016.csv`. Then you would run the commands:
+
+```
+poetry run redraw mit 2012 countypres_2000-2016.csv public/data/us2012.json
+poetry run redraw mit 2008 countypres_2000-2016.csv public/data/us2008.json
+poetry run redraw mit 2004 countypres_2000-2016.csv public/data/us2004.json
+```
+
+Unfortunately, at this time, the Census Bureau's API for 1990 SF1 data seems to be
+down, and so we cannot create a file for the year 2000. :-/
 
 ## Acknowledgements
 
