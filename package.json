@@ -1,0 +1,23 @@
+{
+  "name": "redrawstates",
+  "version": "1.0.0",
+  "description": "This visualization was an attempt by me to: 1. Understand d3 (one day I should really learn it. :) ), and 2. More importantly, to understand just how janky the electoral college is.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khwilson/RedrawStates.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khwilson/RedrawStates/issues"
+  },
+  "homepage": "https://github.com/khwilson/RedrawStates#readme",
+  "dependencies": {
+    "topojson-server": "^3.0.1",
+    "topojson-simplify": "^3.0.3"
+  }
+}
