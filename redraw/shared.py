@@ -5,11 +5,13 @@ import json
 import subprocess
 import tempfile
 import time
+import zipfile
 from pathlib import Path
 
 import geopandas as gpd
 import pandas as pd
 import requests
+import simpledbf
 import us
 from census import Census
 
@@ -35,10 +37,11 @@ def pull_population(api_key: str, year: int = 2020) -> pd.DataFrame:
 
     census = Census(api_key)
 
-    if year == 2010:
+    if decennial_year == 2010:
         data = census.sf1.state_county("P001001", "*", "*", year=decennial_year)
         df = pd.DataFrame(data).rename(columns={"P001001": "population"})
-    else:
+
+    elif decennial_year == 2000:
         # Something is busted with the Census package for 2000 SF1s
         # Note that the 1990 SF1 is down :-/
         df = pd.read_json(
@@ -47,6 +50,30 @@ def pull_population(api_key: str, year: int = 2020) -> pd.DataFrame:
         )
         df = df.iloc[1:]
         df.columns = ["population", "state", "county"]
+
+    elif decennial_year == 1990:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmpdir = Path(tmpdir)
+            cnty_zipfile = tmpdir / "cnty.zip"
+            with requests.get(
+                "https://www2.cdc.gov/nceh/lead/census90/house11/files/cnty.zip",
+                stream=True,
+            ) as response:
+                response.raise_for_status()
+                with open(cnty_zipfile, "wb") as outfile:
+                    for chunk in response.iter_content(chunk_size=8192):
+                        outfile.write(chunk)
+
+            with zipfile.ZipFile(cnty_zipfile) as infile:
+                infile.extract("CNTY.dbf", path=tmpdir)
+
+            dbf = simpledbf.Dbf5(str(tmpdir / "CNTY.dbf"))
+            df = dbf.to_dataframe()
+            df = df[["P0010001", "STATEFP", "CNTY"]].rename(
+                columns={"P0010001": "population", "STATEFP": "state", "CNTY": "county"}
+            )
+    else:
+        raise NotImplementedError("Only support years 1990, 2000, and 2010")
 
     df["population"] = df["population"].astype(int)
 

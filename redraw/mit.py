@@ -29,6 +29,8 @@ class CountyResult:
 def read_data(filename: str, year: int) -> pd.DataFrame:
     df = pd.read_csv(filename)
 
+    # Drop all rows without a FIPS code
+    #
     # NOTE: This is a bit dangerous, but the main effect is that Connecticut
     #       seems to have had about 70k write in votes in 2012 (about 2% of
     #       their total vote) which is counted at the state level and so
@@ -39,7 +41,8 @@ def read_data(filename: str, year: int) -> pd.DataFrame:
 
     df["party"] = df["party"].fillna("other")
 
-    # Fix Alaska
+    # Merge all of Alaska's election districts (which do not really align
+    # with their counties) into just the whole state.
     ak_only = df[df["state_po"] == "AK"]
     ak_only = (
         ak_only.groupby(
@@ -54,11 +57,12 @@ def read_data(filename: str, year: int) -> pd.DataFrame:
 
     df = pd.concat([df[df["state_po"] != "AK"], ak_only])
 
-    # Fix DC
+    # Keep our conventions for the name of DC's "county" (Washington) and
+    # its FIPS code (which is its actual FIPS code)
     df.loc[df["state_po"] == "DC", "county"] = "Washington"
     df.loc[df["state_po"] == "DC", "FIPS"] = "11001"
 
-    # Kansas City, Missouri, actual spans parts of four counties. The MIT data reports
+    # Kansas City, Missouri, spans parts of four counties. The MIT data reports
     # the results for KCMO separately (with FIPS 36000). We follow what appears to be
     # the New York Times' convention and simply add these votes to Jackson County's
     # total (FIPS 29095)

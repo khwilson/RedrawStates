@@ -1167,6 +1167,14 @@ test = ["pytest", "pytest-cov"]
 vectorized = ["numpy"]
 
 [[package]]
+name = "simpledbf"
+version = "0.2.6"
+description = "Convert DBF files to CSV, DataFrames, HDF5 tables, and SQL tables. Python3 compatible."
+category = "dev"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "six"
 version = "1.15.0"
 description = "Python 2 and 3 compatibility utilities"
@@ -1318,7 +1326,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "b43e42cfe31e47041aa393b203c43f36477c7b2895bf0aab502ee086efd3d9b0"
+content-hash = "b30cfbde1963f908ea10e1a4ff996ef0ba70dc0fa1da3fda91a25a50d38c8351"
 
 [metadata.files]
 aiodns = [
@@ -2213,6 +2221,9 @@ shapely = [
     {file = "Shapely-1.7.1-cp38-cp38-win32.whl", hash = "sha256:a3774516c8a83abfd1ddffb8b6ec1b0935d7fe6ea0ff5c31a18bfdae567b4eba"},
     {file = "Shapely-1.7.1-cp38-cp38-win_amd64.whl", hash = "sha256:6593026cd3f5daaea12bcc51ae5c979318070fefee210e7990cb8ac2364e79a1"},
     {file = "Shapely-1.7.1.tar.gz", hash = "sha256:1641724c1055459a7e2b8bbe47ba25bdc89554582e62aec23cb3f3ca25f9b129"},
+]
+simpledbf = [
+    {file = "simpledbf-0.2.6.tar.gz", hash = "sha256:345d4f1e58549c4a6ad8079d6ed65ad8550ccdc1acd8444a946cdb04d0212af4"},
 ]
 six = [
     {file = "six-1.15.0-py2.py3-none-any.whl", hash = "sha256:8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced"},

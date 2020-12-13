@@ -111,14 +111,10 @@ var setYear = function(newYear) {
   }
 }
 
-if (getParameterByName('year') === '2012') {
-  setYear('2012');
-} else if (getParameterByName('year') === '2016i') {
-  setYear('2016i');
-} else if (getParameterByName('year') == '2016') {
-  setYear('2016');
-} else {
-  setYear('2020');
+{
+  let paramYear = getParameterByName('year') || '2020';
+  setYear(paramYear);
+  document.querySelector("#selectYear option[value='" + year + "']").setAttribute("selected", "selected");
 }
 
 var numberToLetter = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
@@ -666,7 +662,7 @@ var getShareUrl = function() {
 
 /* Setup sharing URL in the share box */
 var doShare = function() {
-  d3.select("#clipboard-target").attr("value", getShareUrl());
+  $("#clipboard-target").val(getShareUrl());
 }
 
 $("#shareGroup").hide();
@@ -678,7 +674,7 @@ $("#shareButton").popover({
   html: true,
   placement: "left",
   trigger: "focus"
-}).on('show.bs.popover', function() { doShare(); $("#shareGroup").show(); });
+}).on("click", doShare).on('show.bs.popover', () => $("#shareGroup").show());
 
 var clipboard = new Clipboard('[data-clipboard-tooltip]');
 clipboard.on('success', function(e) {

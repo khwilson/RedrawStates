@@ -27,6 +27,7 @@ ipdb = "^0.13.4"
 jupyter = "^1.0.0"
 descartes = "^1.1.0"
 Rtree = "^0.9.4"
+simpledbf = "^0.2.6"
 
 [tool.isort]
 multi_line_output = 3
