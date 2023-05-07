@@ -32,12 +32,16 @@ def pull_population(api_key: str, year: int = 2020) -> pd.DataFrame:
             "population" which is the integer population.
     """
     decennial_year = ((year - 2) // 10) * 10
-    if decennial_year not in [1990, 2000, 2010]:
-        raise ValueError(f"Year must be in [1992, 2022), not {year}")
+    if decennial_year not in [1990, 2000, 2010, 2020]:
+        raise ValueError(f"Year must be in [1992, 2032), not {year}")
 
     census = Census(api_key)
 
-    if decennial_year == 2010:
+    if decennial_year == 2020:
+        data = census.pl.state_county("P1_001N", "*", "*", year=decennial_year)
+        df = pd.DataFrame(data).rename(columns={"P1_001N": "population"})
+
+    elif decennial_year == 2010:
         data = census.sf1.state_county("P001001", "*", "*", year=decennial_year)
         df = pd.DataFrame(data).rename(columns={"P001001": "population"})
 

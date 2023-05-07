@@ -111,7 +111,7 @@ def twenty_sixteen_command(filename: str, census_api_key: str, force: bool = Fal
 
     # Pull populations
     click.echo("Getting populations from Census...")
-    pop_df = shared.pull_population(census_api_key)
+    pop_df = shared.pull_population(census_api_key, year=2016)
 
     # Then merge the two together
     click.echo("Merging data...")
@@ -142,8 +142,10 @@ def twenty_sixteen_command(filename: str, census_api_key: str, force: bool = Fal
 @click.option(
     "--force", "-f", "force", is_flag=True, help="Force redownloading NYT data"
 )
+@click.option("--population-year", "-y", default=2020, help="Pretend like the population was this year")
 def twenty_twenty_command(
-    max_connections: int, filename: str, census_api_key: str, force: bool = False
+    max_connections: int, filename: str, census_api_key: str, force: bool = False,
+    population_year: int = 2020,
 ):
     """
     Pull data from the NYT API
@@ -180,7 +182,7 @@ def twenty_twenty_command(
 
     # Pull populations
     click.echo("Getting populations from Census...")
-    pop_df = shared.pull_population(census_api_key)
+    pop_df = shared.pull_population(census_api_key, year=population_year)
 
     # Then merge the two together
     click.echo("Merging data and geographies...")

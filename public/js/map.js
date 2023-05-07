@@ -96,6 +96,17 @@ var setYear = function(newYear) {
       'oth': 'Other'
     };
     loser = 'Donald Trump';
+  } else if (newYear == '2020s') {
+    year = newYear;
+    dataFile = 'data/us2020-new-pop.json',
+    partyToCandidate = {
+      'dem': 'Joe Biden',
+      'gop': 'Donald Trump',
+      'grn': 'Green',
+      'lib': 'Jo Jorgensen',
+      'una': 'Unaffiliated',
+      'oth': 'Other'
+    }
   } else {
     year = newYear;
     dataFile = 'data/us.json';
