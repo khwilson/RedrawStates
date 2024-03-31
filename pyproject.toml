@@ -8,13 +8,13 @@ authors = ["Kevin Wilson <khwilson@gmail.com>"]
 python = "^3.8"
 pandas = "^1.1.4"
 aiohttp = "^3.8.5"
-cchardet = "^2.1.7"
 us = "^2.0.2"
 requests = "^2.31.0"
 geopandas = "^0.8.1"
 Rtree = "^0.9.4"
 census = "^0.8.15"
 python-dotenv = "^1.0.0"
+faust-cchardet = "^2.1.19"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.1.2"
