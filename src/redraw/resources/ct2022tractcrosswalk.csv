@@ -1,0 +1,880 @@
+﻿tract_fips_2020,Tract_fips_2022,tract_name,town_name,town_fips_2020,town_fips_2022,county_name,county_fips_2020,ce_name_2022,ce_fips_2022,PUMA2020code,PUMA2020name,school_district_code,school_district_name,zip5_zcta2020
+9009350400,9140350400,3504,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06704
+9009350500,9140350500,3505,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06706
+9009352701,9140352701,3527.01,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06705
+9009352702,9140352702,3527.02,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06705
+9009352800,9140352800,3528,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06706
+9009166002,9170166002,1660.02,Hamden,900935650,917035650,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,62,Hamden,06518
+9009194202,9170194202,1942.02,Madison,900944560,917044560,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,76,Madison,06443
+9009346102,9140346102,3461.02,Oxford,900958300,914058300,New Haven,9009,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,108,Oxford,06478
+9009351100,9140351100,3511,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06704
+9009361300,9140361300,3613,Wolcott,900987560,914087560,New Haven,9009,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,166,Wolcott,06716
+9009190303,9170190303,1903.03,Guilford,900934950,917034950,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,60,Guilford,06437
+9009341100,9140341100,3411,Beacon Falls,900903250,914003250,New Haven,9009,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,216,Region 16,06403
+9009343200,9140343200,3432,Cheshire,900914160,914014160,New Haven,9009,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,25,Cheshire,06410
+9009350800,9140350800,3508,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06710
+9009351800,9140351800,3518,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06708
+9009351000,9140351000,3510,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06704
+9009351200,9140351200,3512,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06704
+9009351300,9140351300,3513,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06705
+9009351400,9140351400,3514,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06706
+9009350900,9140350900,3509,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06710
+9009345100,9140345100,3451,Naugatuck,900949950,914049950,New Haven,9009,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,88,Naugatuck,06770
+9009345202,9140345202,3452.02,Naugatuck,900949950,914049950,New Haven,9009,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,88,Naugatuck,06770
+9009347100,9140347100,3471,Prospect,900962290,914062290,New Haven,9009,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,216,Region 16,06712
+9009347200,9140347200,3472,Prospect,900962290,914062290,New Haven,9009,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,216,Region 16,06712
+9009352200,9140352200,3522,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06704
+9009352500,9140352500,3525,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06704
+9009352600,9140352600,3526,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06705
+9009352100,9140352100,3521,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06708
+9015907200,9150907200,9072,Plainfield,901559980,915059980,Windham,9015,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,109,Plainfield,06354
+9003460204,9110460204,4602.04,Farmington,900327600,911027600,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,52,Farmington,06032
+9003410101,9160410101,4101.01,Burlington,900310100,916010100,Hartford,9003,Northwest Hills Planning Region,9160,20100,Northwest Hills,210,Region 10,06013
+9003410102,9160410102,4101.02,Burlington,900310100,916010100,Hartford,9003,Northwest Hills Planning Region,9160,20100,Northwest Hills,210,Region 10,06013
+9003524501,9110524501,5245.01,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06106
+9005320200,9160320200,3202,Winchester,900586440,916086440,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,162,Winchester,06098
+9005266100,9160266100,2661,Kent,900540290,916040290,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,201,Region 1,06757
+9005298400,9160298400,2984,Harwinton,900537280,916037280,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,210,Region 10,06791
+9005342100,9140342100,3421,Bethlehem,900504930,914004930,Litchfield,9005,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,214,Region 14,06751
+9005310602,9160310602,3106.02,Torrington,900576570,916076570,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,143,Torrington,06790
+9005250100,9190250100,2501,Bridgewater,900508210,919008210,Litchfield,9005,Western Connecticut Planning Region,9190,20804,Western North,212,Region 12,06752
+9005265100,9160265100,2651,Warren,900579510,916079510,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,206,Region 6,06754
+9005253100,9190253100,2531,New Milford,900552630,919052630,Litchfield,9005,Western Connecticut Planning Region,9190,20804,Western North,96,New Milford,06776
+9009345400,9140345400,3454,Naugatuck,900949950,914049950,New Haven,9009,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,88,Naugatuck,06770
+9009346101,9140346101,3461.01,Oxford,900958300,914058300,New Haven,9009,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,108,Oxford,06478
+9009352400,9140352400,3524,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06704
+9009186200,9170186200,1862,North Branford,900953890,917053890,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,99,North Branford,06472
+9009170500,9170170500,1705,Meriden,900946520,917046520,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,80,Meriden,06451
+9009361200,9140361200,3612,Wolcott,900987560,914087560,New Haven,9009,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,166,Wolcott,06716
+9009351602,9140351602,3516.02,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06708
+9009352000,9140352000,3520,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06708
+9009167201,9170167201,1672.01,North Haven,900954870,917054870,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,101,North Haven,06473
+9009186100,9170186100,1861,North Branford,900953890,917053890,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,99,North Branford,06471
+9009170900,9170170900,1709,Meriden,900946520,917046520,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,80,Meriden,06451
+9009142000,9170142000,1420,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06511
+9009343300,9140343300,3433,Cheshire,900914160,914014160,New Haven,9009,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,25,Cheshire,06410
+9009184300,9170184300,1843,Branford,900907310,917007310,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,14,Branford,06405
+9009151200,9170151200,1512,Milford,900947535,917047535,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,84,Milford,06460
+9009176000,9170176000,1760,Wallingford,900978740,917078740,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,148,Wallingford,06492
+9009167202,9170167202,1672.02,North Haven,900954870,917054870,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,101,North Haven,06473
+9009155000,9170155000,1550,West Haven,900982870,917082870,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,156,West Haven,06516
+9009351900,9140351900,3519,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06708
+9009125200,9140125200,1252,Ansonia,900901220,914001220,New Haven,9009,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,2,Ansonia,06401
+9009184200,9170184200,1842,Branford,900907310,917007310,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,14,Branford,06405
+9009190100,9170190100,1901,Guilford,900934950,917034950,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,60,Guilford,06437
+9005310803,9160310803,3108.03,Torrington,900576570,916076570,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,143,Torrington,06790
+9005310804,9160310804,3108.04,Torrington,900576570,916076570,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,143,Torrington,06790
+9009140900,9170140900,1409,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06511
+9009190200,9170190200,1902,Guilford,900934950,917034950,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,60,Guilford,06437
+9009175800,9170175800,1758,Wallingford,900978740,917078740,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,148,Wallingford,06492
+9009344100,9140344100,3441,Middlebury,900946940,914046940,New Haven,9009,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,215,Region 15,06762
+9009343101,9140343101,3431.01,Cheshire,900914160,914014160,New Haven,9009,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,25,Cheshire,06410
+9009160100,9170160100,1601,Woodbridge,900987700,917087700,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,205,Region 5,06525
+9009351700,9140351700,3517,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06708
+9009151100,9170151100,1511,Milford,900947535,917047535,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,84,Milford,06460
+9009348111,9140348111,3481.11,Southbury,900969640,914069640,New Haven,9009,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,215,Region 15,06488
+9009343400,9140343400,3434,Cheshire,900914160,914014160,New Haven,9009,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,25,Cheshire,06410
+9009150900,9170150900,1509,Milford,900947535,917047535,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,84,Milford,06460
+9009170100,9170170100,1701,Meriden,900946520,917046520,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,80,Meriden,06450
+9009157400,9170157400,1574,Orange,900957600,917057600,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,205,Region 5,06477
+9009157100,9170157100,1571,Orange,900957600,917057600,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,205,Region 5,06477
+9009361100,9140361100,3611,Wolcott,900987560,914087560,New Haven,9009,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,166,Wolcott,06716
+9009345201,9140345201,3452.01,Naugatuck,900949950,914049950,New Haven,9009,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,88,Naugatuck,06770
+9009142800,9170142800,1428,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06512
+9009190302,9170190302,1903.02,Guilford,900934950,917034950,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,60,Guilford,06437
+9005262100,9160262100,2621,Sharon,900567960,916067960,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,201,Region 1,06069
+9005310300,9160310300,3103,Torrington,900576570,916076570,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,143,Torrington,06790
+9005310801,9160310801,3108.01,Torrington,900576570,916076570,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,143,Torrington,06790
+9005360200,9140360200,3602,Watertown,900580490,914080490,Litchfield,9005,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,153,Watertown,06795
+9005425400,9140425400,4254,Plymouth,900560750,914060750,Litchfield,9005,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,111,Plymouth,06786
+9005425500,9140425500,4255,Plymouth,900560750,914060750,Litchfield,9005,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,111,Plymouth,06786
+9005260200,9160260200,2602,North Canaan,900554030,916054030,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,201,Region 1,06024
+9005267100,9160267100,2671,Washington,900579720,916079720,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,212,Region 12,06794
+9005298300,9160298300,2983,Harwinton,900537280,916037280,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,210,Region 10,06791
+9005310700,9160310700,3107,Torrington,900576570,916076570,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,143,Torrington,06790
+9005360300,9140360300,3603,Watertown,900580490,914080490,Litchfield,9005,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,153,Watertown,06779
+9009171100,9170171100,1711,Meriden,900946520,917046520,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,80,Meriden,06450
+9009175400,9170175400,1754,Wallingford,900978740,917078740,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,148,Wallingford,06492
+9009190301,9170190301,1903.01,Guilford,900934950,917034950,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,60,Guilford,06437
+9009194201,9170194201,1942.01,Madison,900944560,917044560,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,76,Madison,06443
+9009343102,9140343102,3431.02,Cheshire,900914160,914014160,New Haven,9009,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,25,Cheshire,06410
+9009344200,9140344200,3442,Middlebury,900946940,914046940,New Haven,9009,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,215,Region 15,06762
+9009352300,9140352300,3523,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06704
+9009154700,9170154700,1547,West Haven,900982870,917082870,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,156,West Haven,06516
+9009160200,9170160200,1602,Woodbridge,900987700,917087700,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,205,Region 5,06525
+9009345300,9140345300,3453,Naugatuck,900949950,914049950,New Haven,9009,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,88,Naugatuck,06770
+9009141200,9170141200,1412,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06515
+9005425601,9160425601,4256.01,Norfolk,900553470,916053470,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,207,Region 7,06058
+9005320101,9160320101,3201.01,Winchester,900586440,916086440,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,162,Winchester,06098
+9005320102,9160320102,3201.02,Winchester,900586440,916086440,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,162,Winchester,06098
+9005425700,9190425700,4257,New Milford,900552630,919052630,Litchfield,9005,Western Connecticut Planning Region,9190,20804,Western North,96,New Milford,06776
+9005425602,9160425602,4256.02,Canaan,900510940,916010940,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,201,Region 1,06031
+9005360400,9140360400,3604,Watertown,900580490,914080490,Litchfield,9005,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,153,Watertown,06779
+9001043800,9190043800,438,Norwalk,900156060,919056060,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,103,Norwalk,06854
+9001061100,9120061100,611,Fairfield,900126620,912026620,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,51,Fairfield,06825
+9009170600,9170170600,1706,Meriden,900946520,917046520,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,80,Meriden,06451
+9009170700,9170170700,1707,Meriden,900946520,917046520,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,80,Meriden,06451
+9009170800,9170170800,1708,Meriden,900946520,917046520,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,80,Meriden,06451
+9009171000,9170171000,1710,Meriden,900946520,917046520,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,80,Meriden,06450
+9001061300,9120061300,613,Fairfield,900126620,912026620,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,51,Fairfield,06825
+9009165600,9170165600,1656,Hamden,900935650,917035650,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,62,Hamden,06514
+9009165700,9170165700,1657,Hamden,900935650,917035650,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,62,Hamden,06514
+9009165801,9170165801,1658.01,Hamden,900935650,917035650,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,62,Hamden,06514
+9009165802,9170165802,1658.02,Hamden,900935650,917035650,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,62,Hamden,06514
+9009165500,9170165500,1655,Hamden,900935650,917035650,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,62,Hamden,06514
+9003514400,9110514400,5144,Manchester,900344700,911044700,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",77,Manchester,06040
+9015902200,9150902200,9022,Eastford,901521860,915021860,Windham,9015,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,39,Eastford,06242
+9007541100,9130541100,5411,Middletown,900747360,913047360,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,83,Middletown,06457
+9007541500,9130541500,5415,Middletown,900747360,913047360,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,83,Middletown,06459
+9015800300,9180800300,8003,Windham,901586790,918086790,Windham,9015,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,163,Windham,06226
+9015902500,9150902500,9025,Pomfret,901561030,915061030,Windham,9015,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,112,Pomfret,06259
+9015904500,9150904500,9045,Killingly,901540500,915040500,Windham,9015,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,69,Killingly,06239
+9015800400,9180800400,8004,Windham,901586790,918086790,Windham,9015,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,163,Windham,06226
+9015800600,9180800600,8006,Windham,901586790,918086790,Windham,9015,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,163,Windham,06226
+9015907100,9150907100,9071,Plainfield,901559980,915059980,Windham,9015,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,109,Plainfield,06374
+9015900100,9150900100,9001,Thompson,901575870,915075870,Windham,9015,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,141,Thompson,06277
+9015830100,9150830100,8301,Ashford,901501430,915001430,Windham,9015,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,219,Region 19,06278
+9001230502,9190230502,2305.02,Newtown,900152980,919052980,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,97,Newtown,06482
+9001230501,9190230501,2305.01,Newtown,900152980,919052980,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,97,Newtown,06482
+9003514500,9110514500,5145,Manchester,900344700,911044700,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",77,Manchester,06040
+9003514600,9110514600,5146,Manchester,900344700,911044700,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",77,Manchester,06040
+9003514700,9110514700,5147,Manchester,900344700,911044700,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",77,Manchester,06040
+9003514800,9110514800,5148,Manchester,900344700,911044700,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",77,Manchester,06040
+9003514900,9110514900,5149,Manchester,900344700,911044700,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",77,Manchester,06042
+9003515000,9110515000,5150,Manchester,900344700,911044700,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",77,Manchester,06040
+9003515200,9110515200,5152,Manchester,900344700,911044700,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",77,Manchester,06040
+9003500500,9110500500,5005,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06106
+9003520201,9110520201,5202.01,Glastonbury,900331240,911031240,Hartford,9003,Capitol Planning Region,9110,20206,"Glastonbury, Wethersfield, Rocky Hill & Newington Towns",54,Glastonbury,06033
+9013533103,9110533103,5331.03,Tolland,901376290,911076290,Tolland,9013,Capitol Planning Region,9110,20203,Capitol East,142,Tolland,06084
+9013533104,9110533104,5331.04,Tolland,901376290,911076290,Tolland,9013,Capitol Planning Region,9110,20203,Capitol East,142,Tolland,06084
+9013535102,9110535102,5351.02,Ellington,901325360,911025360,Tolland,9013,Capitol Planning Region,9110,20203,Capitol East,48,Ellington,06029
+9013535101,9110535101,5351.01,Ellington,901325360,911025360,Tolland,9013,Capitol Planning Region,9110,20203,Capitol East,48,Ellington,06029
+9009184101,9170184101,1841.01,Branford,900907310,917007310,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,14,Branford,06405
+9009167101,9170167101,1671.01,North Haven,900954870,917054870,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,101,North Haven,06473
+9009180101,9170180101,1801.01,East Haven,900922910,917022910,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,44,East Haven,06512
+9009350101,9140350101,3501.01,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06702
+9009166003,9170166003,1660.03,Hamden,900935650,917035650,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,62,Hamden,06518
+9009142605,9170142605,1426.05,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06513
+9009175502,9170175502,1755.02,Wallingford,900978740,917078740,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,148,Wallingford,06492
+9009180102,9170180102,1801.02,East Haven,900922910,917022910,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,44,East Haven,06512
+9009130202,9140130202,1302.02,Seymour,900967610,914067610,New Haven,9009,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,124,Seymour,06483
+9009140102,9170140102,1401.02,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06510
+9009141301,9170141301,1413.01,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06515
+9009167102,9170167102,1671.02,North Haven,900954870,917054870,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,101,North Haven,06473
+9009166004,9170166004,1660.04,Hamden,900935650,917035650,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,62,Hamden,06518
+9009154102,9170154102,1541.02,West Haven,900982870,917082870,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,156,West Haven,06516
+9009171202,9170171202,1712.02,Meriden,900946520,917046520,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,80,Meriden,06450
+9009167301,9170167301,1673.01,North Haven,900954870,917054870,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,101,North Haven,06473
+9009175501,9170175501,1755.01,Wallingford,900978740,917078740,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,148,Wallingford,06492
+9009194101,9170194101,1941.01,Madison,900944560,917044560,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,76,Madison,06443
+9009154101,9170154101,1541.01,West Haven,900982870,917082870,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,156,West Haven,06516
+9009194102,9170194102,1941.02,Madison,900944560,917044560,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,76,Madison,06443
+9009171201,9170171201,1712.01,Meriden,900946520,917046520,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,80,Meriden,06450
+9009130201,9140130201,1302.01,Seymour,900967610,914067610,New Haven,9009,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,124,Seymour,06483
+9009140101,9170140101,1401.01,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06510
+9009351601,9140351601,3516.01,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06708
+9009351500,9140351500,3515,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06706
+9009150300,9170150300,1503,Milford,900947535,917047535,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,84,Milford,06460
+9009150600,9170150600,1506,Milford,900947535,917047535,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,84,Milford,06461
+9009165200,9170165200,1652,Hamden,900935650,917035650,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,62,Hamden,06517
+9009171300,9170171300,1713,Meriden,900946520,917046520,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,80,Meriden,06450
+9009171400,9170171400,1714,Meriden,900946520,917046520,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,80,Meriden,06450
+9009171500,9170171500,1715,Meriden,900946520,917046520,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,80,Meriden,06450
+9009171600,9170171600,1716,Meriden,900946520,917046520,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,80,Meriden,06451
+9011696300,9180696300,6963,Norwich,901156270,918056270,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,104,Norwich,06360
+9011702100,9180702100,7021,Groton,901134250,918034250,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,59,Groton,06355
+9009171700,9170171700,1717,Meriden,900946520,917046520,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,80,Meriden,06450
+9009175100,9170175100,1751,Wallingford,900978740,917078740,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,148,Wallingford,06492
+9009175200,9170175200,1752,Wallingford,900978740,917078740,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,148,Wallingford,06492
+9009175300,9170175300,1753,Wallingford,900978740,917078740,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,148,Wallingford,06492
+9011700100,9180700100,7001,Preston,901162150,918062150,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,114,Preston,06365
+9011660101,9130660101,6601.01,Old Lyme,901157040,913057040,New London,9011,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,218,Region 18,06371
+9011709100,9180709100,7091,Griswold,901133900,918033900,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,58,Griswold,06351
+9011710100,9180710100,7101,Lisbon,901143230,918043230,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,73,Lisbon,06351
+9011696100,9180696100,6961,Norwich,901156270,918056270,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,104,Norwich,06360
+9011696200,9180696200,6962,Norwich,901156270,918056270,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,104,Norwich,06360
+9011708100,9150708100,7081,Voluntown,901178600,915078600,New London,9011,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,147,Voluntown,06384
+9011870100,9180870100,8701,Lebanon,901142390,918042390,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,71,Lebanon,06249
+9011702800,9180702800,7028,Groton,901134250,918034250,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,59,Groton,06340
+9011702900,9180702900,7029,Groton,901134250,918034250,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,59,Groton,06340
+9011703000,9180703000,7030,Groton,901134250,918034250,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,59,Groton,06355
+9005253200,9190253200,2532,New Milford,900552630,919052630,Litchfield,9005,Western Connecticut Planning Region,9190,20804,Western North,96,New Milford,06776
+9005349200,9140349200,3492,Thomaston,900575730,914075730,Litchfield,9005,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,140,Thomaston,06787
+9005362101,9140362101,3621.01,Woodbury,900587910,914087910,Litchfield,9005,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,214,Region 14,06798
+9005300400,9160300400,3004,Litchfield,900543370,916043370,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,74,Litchfield,06759
+9005300500,9160300500,3005,Litchfield,900543370,916043370,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,74,Litchfield,06759
+9005360100,9140360100,3601,Watertown,900580490,914080490,Litchfield,9005,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,153,Watertown,06795
+9005425300,9140425300,4253,Plymouth,900560750,914060750,Litchfield,9005,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,111,Plymouth,06786
+9005261100,9160261100,2611,Salisbury,900566420,916066420,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,201,Region 1,06068
+9005253400,9190253400,2534,New Milford,900552630,919052630,Litchfield,9005,Western Connecticut Planning Region,9190,20804,Western North,96,New Milford,06776
+9005349100,9140349100,3491,Thomaston,900575730,914075730,Litchfield,9005,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,140,Thomaston,06787
+9005253500,9190253500,2535,New Milford,900552630,919052630,Litchfield,9005,Western Connecticut Planning Region,9190,20804,Western North,96,New Milford,06776
+9005296100,9160296100,2961,Goshen,900532290,916032290,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,206,Region 6,06756
+9005310601,9160310601,3106.01,Torrington,900576570,916076570,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,143,Torrington,06790
+9005306100,9160306100,3061,New Hartford,900551350,916051350,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,207,Region 7,06057
+9005263200,9160263200,2632,Cornwall,900517240,916017240,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,201,Region 1,06796
+9005300100,9160300100,3001,Litchfield,900543370,916043370,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,74,Litchfield,06759
+9005362102,9140362102,3621.02,Woodbury,900587910,914087910,Litchfield,9005,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,214,Region 14,06798
+9011715100,9180715100,7151,Salem,901166210,918066210,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,121,Salem,06420
+9001110601,9140110601,1106.01,Shelton,900168170,914068170,Fairfield,9001,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,126,Shelton,06484
+9001110602,9140110602,1106.02,Shelton,900168170,914068170,Fairfield,9001,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,126,Shelton,06484
+9001035102,9190035102,351.02,New Canaan,900150580,919050580,Fairfield,9001,Western Connecticut Planning Region,9190,20802,Western Central,90,New Canaan,06840
+9001035101,9190035101,351.01,New Canaan,900150580,919050580,Fairfield,9001,Western Connecticut Planning Region,9190,20802,Western Central,90,New Canaan,06840
+9001210502,9190210502,2105.02,Danbury,900118500,919018500,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,34,Danbury,06810
+9001021701,9190021701,217.01,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06902
+9001021602,9190021602,216.02,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06905
+9001021502,9190021502,215.02,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06902
+9001211202,9190211202,2112.02,Danbury,900118500,919018500,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,34,Danbury,06811
+9001210202,9190210202,2102.02,Danbury,900118500,919018500,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,34,Danbury,06810
+9001210201,9190210201,2102.01,Danbury,900118500,919018500,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,34,Danbury,06810
+9001210102,9190210102,2101.02,Danbury,900118500,919018500,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,34,Danbury,06810
+9001210401,9190210401,2104.01,Danbury,900118500,919018500,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,34,Danbury,06810
+9001050302,9190050302,503.02,Westport,900183500,919083500,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,158,Westport,06880
+9001021401,9190021401,214.01,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06902
+9001021402,9190021402,214.02,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06902
+9001021601,9190021601,216.01,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06905
+9001020101,9190020101,201.01,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06901
+9001021702,9190021702,217.02,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06901
+9001021501,9190021501,215.01,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06902
+9001211201,9190211201,2112.01,Danbury,900118500,919018500,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,34,Danbury,06811
+9001210101,9190210101,2101.01,Danbury,900118500,919018500,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,34,Danbury,06810
+9001020102,9190020102,201.02,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06901
+9001210501,9190210501,2105.01,Danbury,900118500,919018500,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,34,Danbury,06810
+9001210402,9190210402,2104.02,Danbury,900118500,919018500,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,34,Danbury,06810
+9001050301,9190050301,503.01,Westport,900183500,919083500,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,158,Westport,06880
+9013881500,9110881500,8815,Mansfield,901344910,911044910,Tolland,9013,Capitol Planning Region,9110,20203,Capitol East,219,Region 19,06268
+9003430604,9110430604,4306.04,Southington,900370550,911070550,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",131,Southington,06489
+9003430501,9110430501,4305.01,Southington,900370550,911070550,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",131,Southington,06479
+9003430502,9110430502,4305.02,Southington,900370550,911070550,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",131,Southington,06479
+9003980002,9110980002,9800.02,Windsor Locks,900387070,911087070,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,165,Windsor Locks,06096
+9003417200,9110417200,4172,New Britain,900350440,911050440,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",89,New Britain,06053
+9003417300,9110417300,4173,New Britain,900350440,911050440,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",89,New Britain,06053
+9003980003,9110980003,9800.03,Suffield,900374540,911074540,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,139,Suffield,06078
+9003980100,9110980100,9801,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06120
+9003980001,9110980001,9800.01,East Granby,900322070,911022070,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,40,East Granby,06026
+9009142604,9170142604,1426.04,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06513
+9009361401,9170361401,3614.01,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06511
+9003460100,9110460100,4601,Farmington,900327600,911027600,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,52,Farmington,06032
+9001257200,9120257200,2572,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06606
+9003405402,9140405402,4054.02,Bristol,900308490,914008490,Hartford,9003,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,17,Bristol,06010
+9003524502,9110524502,5245.02,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06105
+9003524200,9110524200,5242,Rocky Hill,900365370,911065370,Hartford,9003,Capitol Planning Region,9110,20206,"Glastonbury, Wethersfield, Rocky Hill & Newington Towns",119,Rocky Hill,06067
+9003460203,9110460203,4602.03,Farmington,900327600,911027600,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,52,Farmington,06032
+9003487201,9110487201,4872.01,South Windsor,900371390,911071390,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,132,South Windsor,06074
+9003487202,9110487202,4872.02,South Windsor,900371390,911071390,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,132,South Windsor,06074
+9003514101,9110514101,5141.01,Manchester,900344700,911044700,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",77,Manchester,06042
+9003520302,9110520302,5203.02,Glastonbury,900331240,911031240,Hartford,9003,Capitol Planning Region,9110,20206,"Glastonbury, Wethersfield, Rocky Hill & Newington Towns",54,Glastonbury,06033
+9003520301,9110520301,5203.01,Glastonbury,900331240,911031240,Hartford,9003,Capitol Planning Region,9110,20206,"Glastonbury, Wethersfield, Rocky Hill & Newington Towns",54,Glastonbury,06033
+9003524300,9110524300,5243,Enfield,900325990,911025990,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,49,Enfield,06082
+9003524700,9110524700,5247,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06106
+9003524400,9110524400,5244,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06120
+9003524600,9110524600,5246,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06105
+9015903101,9150903101,9031.01,Putnam,901562710,915062710,Windham,9015,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,116,Putnam,06260
+9015904102,9150904102,9041.02,Killingly,901540500,915040500,Windham,9015,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,69,Killingly,06239
+9015905101,9150905101,9051.01,Brooklyn,901509190,915009190,Windham,9015,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,19,Brooklyn,06234
+9015800502,9180800502,8005.02,Windham,901586790,918086790,Windham,9015,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,163,Windham,06280
+9015903102,9150903102,9031.02,Putnam,901562710,915062710,Windham,9015,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,116,Putnam,06260
+9015901102,9150901102,9011.02,Woodstock,901588190,915088190,Windham,9015,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,169,Woodstock,06281
+9015901101,9150901101,9011.01,Woodstock,901588190,915088190,Windham,9015,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,169,Woodstock,06281
+9015904101,9150904101,9041.01,Killingly,901540500,915040500,Windham,9015,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,69,Killingly,06241
+9015800501,9180800501,8005.01,Windham,901586790,918086790,Windham,9015,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,163,Windham,06256
+9015905102,9150905102,9051.02,Brooklyn,901509190,915009190,Windham,9015,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,19,Brooklyn,06234
+9009142700,9170142700,1427,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06512
+9011714104,9180714104,7141.04,Colchester,901115910,918015910,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,28,Colchester,06415
+9011870704,9180870704,8707.04,East Lyme,901123400,918023400,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,45,East Lyme,06357
+9011870701,9180870701,8707.01,East Lyme,901123400,918023400,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,45,East Lyme,06357
+9011705102,9180705102,7051.02,Stonington,901173770,918073770,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,137,Stonington,06379
+9011705101,9180705101,7051.01,Stonington,901173770,918073770,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,137,Stonington,06379
+9011870300,9180870300,8703,New London,901152350,918052350,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,95,New London,06320
+9013529100,9110529100,5291,Bolton,901306260,911006260,Tolland,9013,Capitol Planning Region,9110,20203,Capitol East,12,Bolton,06043
+9013530100,9110530100,5301,Vernon,901378250,911078250,Tolland,9013,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",146,Vernon,06066
+9003524100,9110524100,5241,Marlborough,900345820,911045820,Hartford,9003,Capitol Planning Region,9110,20203,Capitol East,208,Region 8,06447
+9013530301,9110530301,5303.01,Vernon,901378250,911078250,Tolland,9013,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",146,Vernon,06066
+9013530302,9110530302,5303.02,Vernon,901378250,911078250,Tolland,9013,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",146,Vernon,06066
+9013530400,9110530400,5304,Vernon,901378250,911078250,Tolland,9013,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",146,Vernon,06066
+9013530500,9110530500,5305,Vernon,901378250,911078250,Tolland,9013,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",146,Vernon,06066
+9013881100,9110881100,8811,Mansfield,901344910,911044910,Tolland,9013,Capitol Planning Region,9110,20203,Capitol East,219,Region 19,06250
+9013850200,9110850200,8502,Coventry,901317800,911017800,Tolland,9013,Capitol Planning Region,9110,20203,Capitol East,32,Coventry,06238
+9003420400,9110420400,4204,Plainville,900360120,911060120,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",110,Plainville,06062
+9009141500,9170141500,1415,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06511
+9009141600,9170141600,1416,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06511
+9009141800,9170141800,1418,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06511
+9009141900,9170141900,1419,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06511
+9009142100,9170142100,1421,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06511
+9011690800,9180690800,6908,New London,901152350,918052350,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,95,New London,06320
+9011690900,9180690900,6909,New London,901152350,918052350,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,95,New London,06320
+9011693500,9180693500,6935,Waterford,901180280,918080280,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,152,Waterford,06385
+9011693600,9180693600,6936,Waterford,901180280,918080280,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,152,Waterford,06375
+9011696800,9180696800,6968,Norwich,901156270,918056270,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,104,Norwich,06360
+9011697000,9180697000,6970,Norwich,901156270,918056270,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,104,Norwich,06360
+9007610300,9130610300,6103,Clinton,900715350,913015350,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,27,Clinton,06413
+9011702300,9180702300,7023,Groton,901134250,918034250,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,59,Groton,06340
+9011702400,9180702400,7024,Groton,901134250,918034250,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,59,Groton,06340
+9001042600,9190042600,426,Norwalk,900156060,919056060,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,103,Norwalk,06851
+9001042900,9190042900,429,Norwalk,900156060,919056060,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,103,Norwalk,06850
+9001071000,9120071000,710,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06605
+9001071100,9120071100,711,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06605
+9001071200,9120071200,712,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06605
+9001071300,9120071300,713,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06604
+9001071400,9120071400,714,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06604
+9003430100,9110430100,4301,Southington,900370550,911070550,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",131,Southington,06489
+9001071600,9120071600,716,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06604
+9003487100,9110487100,4871,South Windsor,900371390,911071390,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,132,South Windsor,06074
+9001043400,9190043400,434,Norwalk,900156060,919056060,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,103,Norwalk,06851
+9001043500,9190043500,435,Norwalk,900156060,919056060,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,103,Norwalk,06851
+9001071900,9120071900,719,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06606
+9001072000,9120072000,720,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06604
+9001072200,9120072200,722,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06606
+9001043600,9190043600,436,Norwalk,900156060,919056060,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,103,Norwalk,06851
+9001072300,9120072300,723,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06606
+9001072400,9120072400,724,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06606
+9001072500,9120072500,725,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06606
+9011705400,9180705400,7054,Stonington,901173770,918073770,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,137,Stonington,06378
+9011716101,9180716101,7161.01,East Lyme,901123400,918023400,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,45,East Lyme,06333
+9011695202,9180695202,6952.02,Montville,901148900,918048900,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,86,Montville,06370
+9011711100,9180711100,7111,Sprague,901171670,918071670,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,133,Sprague,06330
+9011705200,9180705200,7052,Stonington,901173770,918073770,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,137,Stonington,06378
+9011701100,9180701100,7011,Ledyard,901142600,918042600,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,72,Ledyard,06339
+9001072600,9120072600,726,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06606
+9001072700,9120072700,727,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06606
+9001043900,9190043900,439,Norwalk,900156060,919056060,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,103,Norwalk,06854
+9001043700,9190043700,437,Norwalk,900156060,919056060,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,103,Norwalk,06850
+9001072800,9120072800,728,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06606
+9011693300,9180693300,6933,Waterford,901180280,918080280,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,152,Waterford,06385
+9011714101,9180714101,7141.01,Colchester,901115910,918015910,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,28,Colchester,06415
+9011707100,9180707100,7071,North Stonington,901155500,918055500,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,102,North Stonington,06359
+9011701200,9180701200,7012,Ledyard,901142600,918042600,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,72,Ledyard,06335
+9011695201,9180695201,6952.01,Montville,901148900,918048900,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,86,Montville,06382
+9011650100,9130650100,6501,Lyme,901144210,913044210,New London,9011,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,218,Region 18,06371
+9011696600,9180696600,6966,Norwich,901156270,918056270,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,104,Norwich,06360
+9011693400,9180693400,6934,Waterford,901180280,918080280,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,152,Waterford,06385
+9001044000,9190044000,440,Norwalk,900156060,919056060,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,103,Norwalk,06854
+9001044100,9190044100,441,Norwalk,900156060,919056060,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,103,Norwalk,06854
+9001044200,9190044200,442,Norwalk,900156060,919056060,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,103,Norwalk,06855
+9001073000,9120073000,730,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06610
+9001073200,9120073200,732,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06610
+9001073300,9120073300,733,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06610
+9001073400,9120073400,734,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06610
+9001073500,9120073500,735,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06608
+9001073700,9120073700,737,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06610
+9001073800,9120073800,738,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06608
+9001074300,9120074300,743,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06607
+9001074400,9120074400,744,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06607
+9001080100,9120080100,801,Stratford,900174190,912074190,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,138,Stratford,06614
+9001021801,9190021801,218.01,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06906
+9001021802,9190021802,218.02,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06906
+9001080200,9120080200,802,Stratford,900174190,912074190,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,138,Stratford,06615
+9001080500,9120080500,805,Stratford,900174190,912074190,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,138,Stratford,06615
+9001080600,9120080600,806,Stratford,900174190,912074190,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,138,Stratford,06615
+9001080700,9120080700,807,Stratford,900174190,912074190,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,138,Stratford,06615
+9001044300,9190044300,443,Norwalk,900156060,919056060,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,103,Norwalk,06855
+9001044400,9190044400,444,Norwalk,900156060,919056060,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,103,Norwalk,06855
+9001044500,9190044500,445,Norwalk,900156060,919056060,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,103,Norwalk,06854
+9001044600,9190044600,446,Norwalk,900156060,919056060,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,103,Norwalk,06853
+9001090700,9120090700,907,Trumbull,900177200,912077200,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,144,Trumbull,06611
+9001110100,9140110100,1101,Shelton,900168170,914068170,Fairfield,9001,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,126,Shelton,06484
+9001200302,9190200302,2003.02,Bethel,900104720,919004720,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,9,Bethel,06801
+9001210300,9190210300,2103,Danbury,900118500,919018500,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,34,Danbury,06810
+9001080900,9120080900,809,Stratford,900174190,912074190,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,138,Stratford,06614
+9011693700,9180693700,6937,Waterford,901180280,918080280,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,152,Waterford,06375
+9011716102,9180716102,7161.02,East Lyme,901123400,918023400,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,45,East Lyme,06333
+9011713100,9180713100,7131,Bozrah,901106820,918006820,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,13,Bozrah,06334
+9011696500,9180696500,6965,Norwich,901156270,918056270,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,104,Norwich,06360
+9003405600,9140405600,4056,Bristol,900308490,914008490,Hartford,9003,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,17,Bristol,06010
+9003510200,9110510200,5102,East Hartford,900322630,911022630,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",43,East Hartford,06108
+9003510400,9110510400,5104,East Hartford,900322630,911022630,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",43,East Hartford,06108
+9003510300,9110510300,5103,East Hartford,900322630,911022630,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",43,East Hartford,06108
+9003492400,9110492400,4924,Wethersfield,900384900,911084900,Hartford,9003,Capitol Planning Region,9110,20206,"Glastonbury, Wethersfield, Rocky Hill & Newington Towns",159,Wethersfield,06109
+9003405200,9140405200,4052,Bristol,900308490,914008490,Hartford,9003,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,17,Bristol,06010
+9001022201,9190022201,222.01,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06902
+9001022202,9190022202,222.02,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06902
+9001022101,9190022101,221.01,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06902
+9001022102,9190022102,221.02,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06902
+9001020302,9190020302,203.02,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06903
+9001020301,9190020301,203.01,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06903
+9003415300,9110415300,4153,New Britain,900350440,911050440,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",89,New Britain,06051
+9003492500,9110492500,4925,Wethersfield,900384900,911084900,Hartford,9003,Capitol Planning Region,9110,20206,"Glastonbury, Wethersfield, Rocky Hill & Newington Towns",159,Wethersfield,06109
+9003494100,9110494100,4941,Newington,900352140,911052140,Hartford,9003,Capitol Planning Region,9110,20206,"Glastonbury, Wethersfield, Rocky Hill & Newington Towns",94,Newington,06111
+9003494201,9110494201,4942.01,Newington,900352140,911052140,Hartford,9003,Capitol Planning Region,9110,20206,"Glastonbury, Wethersfield, Rocky Hill & Newington Towns",94,Newington,06111
+9003494202,9110494202,4942.02,Newington,900352140,911052140,Hartford,9003,Capitol Planning Region,9110,20206,"Glastonbury, Wethersfield, Rocky Hill & Newington Towns",94,Newington,06111
+9003494300,9110494300,4943,Newington,900352140,911052140,Hartford,9003,Capitol Planning Region,9110,20206,"Glastonbury, Wethersfield, Rocky Hill & Newington Towns",94,Newington,06111
+9003510700,9110510700,5107,East Hartford,900322630,911022630,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",43,East Hartford,06118
+9003510900,9110510900,5109,East Hartford,900322630,911022630,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",43,East Hartford,06118
+9003510800,9110510800,5108,East Hartford,900322630,911022630,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",43,East Hartford,06118
+9003502300,9110502300,5023,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06114
+9003415500,9110415500,4155,New Britain,900350440,911050440,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",89,New Britain,06051
+9003415600,9110415600,4156,New Britain,900350440,911050440,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",89,New Britain,06051
+9003415700,9110415700,4157,New Britain,900350440,911050440,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",89,New Britain,06052
+9003415800,9110415800,4158,New Britain,900350440,911050440,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",89,New Britain,06052
+9003415900,9110415900,4159,New Britain,900350440,911050440,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",89,New Britain,06053
+9003416000,9110416000,4160,New Britain,900350440,911050440,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",89,New Britain,06053
+9003416100,9110416100,4161,New Britain,900350440,911050440,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",89,New Britain,06051
+9003494400,9110494400,4944,Newington,900352140,911052140,Hartford,9003,Capitol Planning Region,9110,20206,"Glastonbury, Wethersfield, Rocky Hill & Newington Towns",94,Newington,06111
+9003494500,9110494500,4945,Newington,900352140,911052140,Hartford,9003,Capitol Planning Region,9110,20206,"Glastonbury, Wethersfield, Rocky Hill & Newington Towns",94,Newington,06111
+9003502400,9110502400,5024,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06114
+9003416200,9110416200,4162,New Britain,900350440,911050440,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",89,New Britain,06051
+9003416300,9110416300,4163,New Britain,900350440,911050440,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",89,New Britain,06051
+9003416400,9110416400,4164,New Britain,900350440,911050440,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",89,New Britain,06052
+9003416600,9110416600,4166,New Britain,900350440,911050440,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",89,New Britain,06053
+9003416700,9110416700,4167,New Britain,900350440,911050440,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",89,New Britain,06053
+9003416800,9110416800,4168,New Britain,900350440,911050440,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",89,New Britain,06053
+9003417100,9110417100,4171,New Britain,900350440,911050440,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",89,New Britain,06051
+9003417400,9110417400,4174,New Britain,900350440,911050440,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",89,New Britain,06053
+9003417500,9110417500,4175,New Britain,900350440,911050440,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",89,New Britain,06053
+9007590102,9130590102,5901.02,Haddam,900735230,913035230,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,217,Region 17,06441
+9007680102,9130680102,6801.02,Westbrook,900781680,913081680,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,154,Westbrook,06498
+9007630101,9130630101,6301.01,Essex,900726270,913026270,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,204,Region 4,06442
+9007590101,9130590101,5901.01,Haddam,900735230,913035230,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,217,Region 17,06438
+9007680101,9130680101,6801.01,Westbrook,900781680,913081680,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,154,Westbrook,06498
+9007541301,9130541301,5413.01,Middletown,900747360,913047360,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,83,Middletown,06457
+9007541302,9130541302,5413.02,Middletown,900747360,913047360,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,83,Middletown,06457
+9007630102,9130630102,6301.02,Essex,900726270,913026270,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,204,Region 4,06426
+9003504800,9110504800,5048,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06106
+9003420500,9110420500,4205,Plainville,900360120,911060120,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",110,Plainville,06062
+9003430201,9110430201,4302.01,Southington,900370550,911070550,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",131,Southington,06489
+9003430302,9110430302,4303.02,Southington,900370550,911070550,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",131,Southington,06479
+9003430602,9110430602,4306.02,Southington,900370550,911070550,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",131,Southington,06489
+9003497700,9110497700,4977,West Hartford,900382590,911082590,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,155,West Hartford,06117
+9003500200,9110500200,5002,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06114
+9003500300,9110500300,5003,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06106
+9007585100,9130585100,5851,Durham,900720810,913020810,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,213,Region 13,06422
+9007610400,9130610400,6104,Clinton,900715350,913015350,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,27,Clinton,06413
+9009125300,9140125300,1253,Ansonia,900901220,914001220,New Haven,9009,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,2,Ansonia,06401
+9009125400,9140125400,1254,Ansonia,900901220,914001220,New Haven,9009,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,2,Ansonia,06401
+9003460301,9110460301,4603.01,Farmington,900327600,911027600,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,52,Farmington,06085
+9003462202,9110462202,4622.02,Avon,900302060,911002060,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,4,Avon,06001
+9003466201,9110466201,4662.01,Simsbury,900368940,911068940,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,128,Simsbury,06070
+9003466400,9110466400,4664,Simsbury,900368940,911068940,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,128,Simsbury,06070
+9003492100,9110492100,4921,Wethersfield,900384900,911084900,Hartford,9003,Capitol Planning Region,9110,20206,"Glastonbury, Wethersfield, Rocky Hill & Newington Towns",159,Wethersfield,06109
+9009140200,9170140200,1402,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06519
+9009140300,9170140300,1403,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06519
+9009140400,9170140400,1404,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06519
+9009140500,9170140500,1405,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06519
+9009140600,9170140600,1406,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06519
+9009140700,9170140700,1407,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06511
+9003492600,9110492600,4926,Wethersfield,900384900,911084900,Hartford,9003,Capitol Planning Region,9110,20206,"Glastonbury, Wethersfield, Rocky Hill & Newington Towns",159,Wethersfield,06109
+9003471200,9110471200,4712,Bloomfield,900305910,911005910,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,11,Bloomfield,06002
+9003511300,9110511300,5113,East Hartford,900322630,911022630,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",43,East Hartford,06108
+9003480800,9110480800,4808,Enfield,900325990,911025990,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,49,Enfield,06082
+9003520400,9110520400,5204,Glastonbury,900331240,911031240,Hartford,9003,Capitol Planning Region,9110,20206,"Glastonbury, Wethersfield, Rocky Hill & Newington Towns",54,Glastonbury,06033
+9003515101,9110515101,5151.01,Manchester,900344700,911044700,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",77,Manchester,06040
+9003490100,9110490100,4901,Rocky Hill,900365370,911065370,Hartford,9003,Capitol Planning Region,9110,20206,"Glastonbury, Wethersfield, Rocky Hill & Newington Towns",119,Rocky Hill,06067
+9003406002,9140406002,4060.02,Bristol,900308490,914008490,Hartford,9003,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,17,Bristol,06010
+9003471100,9110471100,4711,Bloomfield,900305910,911005910,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,11,Bloomfield,06002
+9003471500,9110471500,4715,Bloomfield,900305910,911005910,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,11,Bloomfield,06002
+9003473400,9110473400,4734,Windsor,900387000,911087000,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,164,Windsor,06095
+9003473602,9110473602,4736.02,Windsor,900387000,911087000,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,164,Windsor,06095
+9003492200,9110492200,4922,Wethersfield,900384900,911084900,Hartford,9003,Capitol Planning Region,9110,20206,"Glastonbury, Wethersfield, Rocky Hill & Newington Towns",159,Wethersfield,06109
+9003492300,9110492300,4923,Wethersfield,900384900,911084900,Hartford,9003,Capitol Planning Region,9110,20206,"Glastonbury, Wethersfield, Rocky Hill & Newington Towns",159,Wethersfield,06109
+9003500400,9110500400,5004,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06114
+9003501200,9110501200,5012,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06120
+9011702500,9180702500,7025,Groton,901134250,918034250,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,59,Groton,06340
+9011702600,9180702600,7026,Groton,901134250,918034250,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,59,Groton,06340
+9011702700,9180702700,7027,Groton,901134250,918034250,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,59,Groton,06340
+9011980000,9180980000,9800,Groton,901134250,918034250,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,59,Groton,06340
+9011705300,9180705300,7053,Stonington,901173770,918073770,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,137,Stonington,06355
+9011709200,9180709200,7092,Griswold,901133900,918033900,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,58,Griswold,06351
+9011712100,9180712100,7121,Franklin,901129910,918029910,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,53,Franklin,06254
+9001090300,9120090300,903,Trumbull,900177200,912077200,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,144,Trumbull,06611
+9001010101,9190010101,101.01,Greenwich,900133620,919033620,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,57,Greenwich,06831
+9001020600,9190020600,206,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06905
+9001021300,9190021300,213,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06905
+9001021100,9190021100,211,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06906
+9001035300,9190035300,353,New Canaan,900150580,919050580,Fairfield,9001,Western Connecticut Planning Region,9190,20802,Western Central,90,New Canaan,06840
+9001073600,9120073600,736,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06608
+9001050100,9190050100,501,Westport,900183500,919083500,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,158,Westport,06880
+9001060500,9120060500,605,Fairfield,900126620,912026620,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,51,Fairfield,06890
+9001100300,9120100300,1003,Monroe,900148620,912048620,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,85,Monroe,06468
+9001045300,9190045300,453,Wilton,900186370,919086370,Fairfield,9001,Western Connecticut Planning Region,9190,20802,Western Central,161,Wilton,06897
+9001061000,9120061000,610,Fairfield,900126620,912026620,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,51,Fairfield,06825
+9001080800,9120080800,808,Stratford,900174190,912074190,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,138,Stratford,06614
+9003490304,9110490304,4903.04,Rocky Hill,900365370,911065370,Hartford,9003,Capitol Planning Region,9110,20206,"Glastonbury, Wethersfield, Rocky Hill & Newington Towns",119,Rocky Hill,06067
+9003490303,9110490303,4903.03,Rocky Hill,900365370,911065370,Hartford,9003,Capitol Planning Region,9110,20206,"Glastonbury, Wethersfield, Rocky Hill & Newington Towns",119,Rocky Hill,06067
+9003400102,9110400102,4001.02,Berlin,900304300,911004300,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",7,Berlin,06037
+9003400101,9110400101,4001.01,Berlin,900304300,911004300,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",7,Berlin,06037
+9003420602,9110420602,4206.02,Plainville,900360120,911060120,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",110,Plainville,06062
+9003420601,9110420601,4206.01,Plainville,900360120,911060120,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",110,Plainville,06062
+9003514104,9110514104,5141.04,Manchester,900344700,911044700,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",77,Manchester,06042
+9003405801,9140405801,4058.01,Bristol,900308490,914008490,Hartford,9003,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,17,Bristol,06010
+9003430603,9110430603,4306.03,Southington,900370550,911070550,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",131,Southington,06489
+9003477104,9110477104,4771.04,Suffield,900374540,911074540,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,139,Suffield,06078
+9003405802,9140405802,4058.02,Bristol,900308490,914008490,Hartford,9003,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,17,Bristol,06010
+9003477103,9110477103,4771.03,Suffield,900374540,911074540,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,139,Suffield,06078
+9003502700,9110502700,5027,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06106
+9003503102,9110503102,5031.02,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06105
+9003514103,9110514103,5141.03,Manchester,900344700,911044700,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",77,Manchester,06042
+9003503101,9110503101,5031.01,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06105
+9003405401,9140405401,4054.01,Bristol,900308490,914008490,Hartford,9003,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,17,Bristol,06010
+9001030300,9190030300,303,Darien,900118850,919018850,Fairfield,9001,Western Connecticut Planning Region,9190,20802,Western Central,35,Darien,06820
+9001210702,9190210702,2107.02,Danbury,900118500,919018500,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,34,Danbury,06810
+9001210701,9190210701,2107.01,Danbury,900118500,919018500,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,34,Danbury,06810
+9013526102,9110526102,5261.02,Hebron,901337910,911037910,Tolland,9013,Capitol Planning Region,9110,20203,Capitol East,208,Region 8,06248
+9013526101,9110526101,5261.01,Hebron,901337910,911037910,Tolland,9013,Capitol Planning Region,9110,20203,Capitol East,208,Region 8,06231
+9013890202,9110890202,8902.02,Stafford,901372090,911072090,Tolland,9013,Capitol Planning Region,9110,20204,Northeastern Planning Region & Stafford Town,134,Stafford,06076
+9009151000,9170151000,1510,Milford,900947535,917047535,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,84,Milford,06460
+9007542000,9130542000,5420,Middletown,900747360,913047360,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,83,Middletown,06457
+9007640100,9130640100,6401,Killingworth,900740710,913040710,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,217,Region 17,06419
+9007570300,9130570300,5703,Cromwell,900718080,913018080,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,33,Cromwell,06416
+9007560200,9130560200,5602,Portland,900761800,913061800,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,113,Portland,06480
+9007560100,9130560100,5601,Portland,900761800,913061800,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,113,Portland,06480
+9007670100,9130670100,6701,Old Saybrook,900757320,913057320,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,106,Old Saybrook,06475
+9007542100,9130542100,5421,Middletown,900747360,913047360,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,83,Middletown,06457
+9007541200,9130541200,5412,Middletown,900747360,913047360,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,83,Middletown,06457
+9007620100,9130620100,6201,Deep River,900719130,913019130,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,204,Region 4,06417
+9007610100,9130610100,6101,Clinton,900715350,913015350,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,27,Clinton,06413
+9007670200,9130670200,6702,Old Saybrook,900757320,913057320,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,106,Old Saybrook,06475
+9007570200,9130570200,5702,Cromwell,900718080,913018080,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,33,Cromwell,06416
+9009120100,9140120100,1201,Derby,900919550,914019550,New Haven,9009,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,37,Derby,06418
+9009120200,9140120200,1202,Derby,900919550,914019550,New Haven,9009,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,37,Derby,06418
+9007541402,9130541402,5414.02,Middletown,900747360,913047360,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,83,Middletown,06457
+9007541401,9130541401,5414.01,Middletown,900747360,913047360,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,83,Middletown,06457
+9007550202,9130550202,5502.02,East Hampton,900722490,913022490,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,42,East Hampton,06424
+9007595102,9130595102,5951.02,East Haddam,900722280,913022280,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,41,East Haddam,06469
+9007550201,9130550201,5502.01,East Hampton,900722490,913022490,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,42,East Hampton,06424
+9007595101,9130595101,5951.01,East Haddam,900722280,913022280,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,41,East Haddam,06423
+9007680200,9130680200,6802,Middletown,900747360,913047360,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,83,Middletown,06457
+9009361402,9170361402,3614.02,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06511
+9009348122,9140348122,3481.22,Southbury,900969640,914069640,New Haven,9009,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,215,Region 15,06488
+9009348123,9140348123,3481.23,Southbury,900969640,914069640,New Haven,9009,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,215,Region 15,06488
+9009348124,9140348124,3481.24,Southbury,900969640,914069640,New Haven,9009,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,215,Region 15,06488
+9009348125,9140348125,3481.25,Southbury,900969640,914069640,New Haven,9009,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,215,Region 15,06488
+9011870703,9180870703,8707.03,East Lyme,901123400,918023400,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,45,East Lyme,06357
+9011870502,9180870502,8705.02,Montville,901148900,918048900,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,86,Montville,06382
+9011870501,9180870501,8705.01,Montville,901148900,918048900,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,86,Montville,06382
+9011714103,9180714103,7141.03,Colchester,901115910,918015910,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,28,Colchester,06415
+9011870200,9180870200,8702,Groton,901134250,918034250,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,59,Groton,06340
+9009150500,9170150500,1505,Milford,900947535,917047535,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,84,Milford,06460
+9009150400,9170150400,1504,Milford,900947535,917047535,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,84,Milford,06460
+9011690300,9180690300,6903,New London,901152350,918052350,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,95,New London,06320
+9011690400,9180690400,6904,New London,901152350,918052350,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,95,New London,06320
+9011690500,9180690500,6905,New London,901152350,918052350,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,95,New London,06320
+9011690700,9180690700,6907,New London,901152350,918052350,New London,9011,Southeastern Connecticut Planning Region,9180,20301,Shoreline Southeastern,95,New London,06320
+9009154200,9170154200,1542,West Haven,900982870,917082870,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,156,West Haven,06516
+9009154500,9170154500,1545,West Haven,900982870,917082870,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,156,West Haven,06516
+9009154600,9170154600,1546,West Haven,900982870,917082870,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,156,West Haven,06516
+9009154800,9170154800,1548,West Haven,900982870,917082870,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,156,West Haven,06516
+9009154900,9170154900,1549,West Haven,900982870,917082870,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,156,West Haven,06516
+9009155100,9170155100,1551,West Haven,900982870,917082870,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,156,West Haven,06516
+9009150700,9170150700,1507,Milford,900947535,917047535,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,84,Milford,06461
+9009157300,9170157300,1573,Orange,900957600,917057600,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,205,Region 5,06477
+9009161100,9170161100,1611,Bethany,900904580,917004580,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,205,Region 5,06524
+9009165100,9170165100,1651,Hamden,900935650,917035650,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,62,Hamden,06517
+9009157200,9170157200,1572,Orange,900957600,917057600,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,205,Region 5,06477
+9015800700,9180800700,8007,Windham,901586790,918086790,Windham,9015,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,163,Windham,06226
+9015815000,9150815000,8150,Chaplin,901513810,915013810,Windham,9015,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,211,Region 11,06235
+9001010400,9190010400,104,Greenwich,900133620,919033620,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,57,Greenwich,06831
+9013528100,9110528100,5281,Andover,901301080,911001080,Tolland,9013,Capitol Planning Region,9110,20203,Capitol East,208,Region 8,06232
+9001050400,9190050400,504,Westport,900183500,919083500,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,158,Westport,06855
+9001060700,9120060700,607,Fairfield,900126620,912026620,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,51,Fairfield,06824
+9001060800,9120060800,608,Fairfield,900126620,912026620,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,51,Fairfield,06824
+9001060900,9120060900,609,Fairfield,900126620,912026620,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,51,Fairfield,06824
+9001211300,9190211300,2113,Danbury,900118500,919018500,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,34,Danbury,06811
+9001020200,9190020200,202,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06903
+9001020700,9190020700,207,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06905
+9001045101,9190045101,451.01,Wilton,900186370,919086370,Fairfield,9001,Western Connecticut Planning Region,9190,20802,Western Central,161,Wilton,06897
+9001050600,9190050600,506,Westport,900183500,919083500,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,158,Westport,06880
+9001060600,9120060600,606,Fairfield,900126620,912026620,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,51,Fairfield,06890
+9001072900,9120072900,729,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06606
+9001211100,9190211100,2111,Danbury,900118500,919018500,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,34,Danbury,06811
+9001074000,9120074000,740,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06608
+9001110301,9140110301,1103.01,Shelton,900168170,914068170,Fairfield,9001,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,126,Shelton,06484
+9001211400,9190211400,2114,Danbury,900118500,919018500,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,34,Danbury,06811
+9001220100,9190220100,2201,New Fairfield,900150860,919050860,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,91,New Fairfield,06812
+9001220300,9190220300,2203,New Fairfield,900150860,919050860,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,91,New Fairfield,06812
+9001245300,9190245300,2453,Ridgefield,900163970,919063970,Fairfield,9001,Western Connecticut Planning Region,9190,20802,Western Central,118,Ridgefield,06877
+9007580100,9130580100,5801,Middlefield,900747080,913047080,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,213,Region 13,06455
+9015820000,9150820000,8200,Hampton,901536000,915036000,Windham,9015,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,211,Region 11,06247
+9015825000,9150825000,8250,Scotland,901567400,915067400,Windham,9015,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,211,Region 11,06264
+9015906100,9150906100,9061,Canterbury,901512130,915012130,Windham,9015,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,22,Canterbury,06331
+9015907300,9150907300,9073,Plainfield,901559980,915059980,Windham,9015,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,109,Plainfield,06374
+9015900200,9150900200,9002,Thompson,901575870,915075870,Windham,9015,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,141,Thompson,06255
+9015903200,9150903200,9032,Putnam,901562710,915062710,Windham,9015,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,116,Putnam,06260
+9001021900,9190021900,219,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06902
+9001022000,9190022000,220,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06902
+9015908100,9150908100,9081,Sterling,901573420,915073420,Windham,9015,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,136,Sterling,06377
+9001061200,9120061200,612,Fairfield,900126620,912026620,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,51,Fairfield,06825
+9001061500,9120061500,615,Fairfield,900126620,912026620,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,51,Fairfield,06824
+9001061600,9120061600,616,Fairfield,900126620,912026620,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,51,Fairfield,06824
+9001070100,9120070100,701,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06605
+9013530200,9110530200,5302,Vernon,901378250,911078250,Tolland,9013,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",146,Vernon,06066
+9015904400,9150904400,9044,Killingly,901540500,915040500,Windham,9015,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,69,Killingly,06241
+9013850100,9110850100,8501,Coventry,901317800,911017800,Tolland,9013,Capitol Planning Region,9110,20203,Capitol East,32,Coventry,06238
+9001022400,9190022400,224,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06902
+9001022300,9190022300,223,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06902
+9001070300,9120070300,703,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06605
+9001070400,9120070400,704,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06604
+9001070500,9120070500,705,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06604
+9001070600,9120070600,706,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06604
+9001070900,9120070900,709,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06605
+9001070200,9120070200,702,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06605
+9007541700,9130541700,5417,Middletown,900747360,913047360,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,83,Middletown,06457
+9007542200,9130542200,5422,Middletown,900747360,913047360,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,83,Middletown,06457
+9007570100,9130570100,5701,Cromwell,900718080,913018080,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,33,Cromwell,06416
+9003501300,9110501300,5013,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06120
+9003501500,9110501500,5015,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06112
+9011696401,9180696401,6964.01,Norwich,901156270,918056270,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,104,Norwich,06360
+9011696701,9180696701,6967.01,Norwich,901156270,918056270,New London,9011,Southeastern Connecticut Planning Region,9180,20302,Inland Southeastern,104,Norwich,06360
+9011660104,9130660104,6601.04,Old Lyme,901157040,913057040,New London,9011,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,218,Region 18,06371
+9011660103,9130660103,6601.03,Old Lyme,901157040,913057040,New London,9011,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,218,Region 18,06371
+9009140800,9170140800,1408,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06511
+9009141000,9170141000,1410,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06515
+9009141100,9170141100,1411,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06515
+9003473100,9110473100,4731,Windsor,900387000,911087000,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,164,Windsor,06095
+9009130101,9140130101,1301.01,Seymour,900967610,914067610,New Haven,9009,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,124,Seymour,06483
+9009130102,9140130102,1301.02,Seymour,900967610,914067610,New Haven,9009,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,124,Seymour,06483
+9009361500,9170361500,3615,West Haven,900982870,917082870,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,156,West Haven,06516
+9007541600,9130541600,5416,Middletown,900747360,913047360,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,83,Middletown,06457
+9003473700,9110473700,4737,Windsor,900387000,911087000,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,164,Windsor,06095
+9003473800,9110473800,4738,Windsor,900387000,911087000,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,164,Windsor,06095
+9003476200,9110476200,4762,Windsor Locks,900387070,911087070,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,165,Windsor Locks,06096
+9003480300,9110480300,4803,Enfield,900325990,911025990,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,49,Enfield,06082
+9003484200,9110484200,4842,East Windsor,900324800,911024800,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,47,East Windsor,06016
+9003500900,9110500900,5009,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06120
+9003487500,9110487500,4875,South Windsor,900371390,911071390,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,132,South Windsor,06074
+9003503300,9110503300,5033,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06105
+9003466101,9110466101,4661.01,Simsbury,900368940,911068940,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,128,Simsbury,06070
+9003477101,9110477101,4771.01,Suffield,900374540,911074540,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,139,Suffield,06078
+9003481300,9110481300,4813,Enfield,900325990,911025990,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,49,Enfield,06082
+9003473601,9110473601,4736.01,Windsor,900387000,911087000,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,164,Windsor,06095
+9003480400,9110480400,4804,Enfield,900325990,911025990,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,49,Enfield,06082
+9003480500,9110480500,4805,Enfield,900325990,911025990,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,49,Enfield,06082
+9003480600,9110480600,4806,Enfield,900325990,911025990,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,49,Enfield,06082
+9003480700,9110480700,4807,Enfield,900325990,911025990,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,49,Enfield,06082
+9003480900,9110480900,4809,Enfield,900325990,911025990,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,49,Enfield,06082
+9003510500,9110510500,5105,East Hartford,900322630,911022630,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",43,East Hartford,06118
+9003511000,9110511000,5110,East Hartford,900322630,911022630,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",43,East Hartford,06118
+9003511100,9110511100,5111,East Hartford,900322630,911022630,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",43,East Hartford,06118
+9003511200,9110511200,5112,East Hartford,900322630,911022630,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",43,East Hartford,06108
+9003511400,9110511400,5114,East Hartford,900322630,911022630,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",43,East Hartford,06108
+9003481200,9110481200,4812,Enfield,900325990,911025990,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,49,Enfield,06082
+9003494600,9110494600,4946,Newington,900352140,911052140,Hartford,9003,Capitol Planning Region,9110,20206,"Glastonbury, Wethersfield, Rocky Hill & Newington Towns",94,Newington,06111
+9003496100,9110496100,4961,West Hartford,900382590,911082590,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,155,West Hartford,06110
+9003496200,9110496200,4962,West Hartford,900382590,911082590,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,155,West Hartford,06110
+9003496300,9110496300,4963,West Hartford,900382590,911082590,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,155,West Hartford,06107
+9003430203,9110430203,4302.03,Southington,900370550,911070550,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",131,Southington,06489
+9003477200,9110477200,4772,Suffield,900374540,911074540,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,139,Suffield,06093
+9003462201,9110462201,4622.01,Avon,900302060,911002060,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,4,Avon,06001
+9003464102,9110464102,4641.02,Canton,900312270,911012270,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,23,Canton,06019
+9003520100,9110520100,5201,Glastonbury,900331240,911031240,Hartford,9003,Capitol Planning Region,9110,20206,"Glastonbury, Wethersfield, Rocky Hill & Newington Towns",54,Glastonbury,06033
+9003520202,9110520202,5202.02,Glastonbury,900331240,911031240,Hartford,9003,Capitol Planning Region,9110,20206,"Glastonbury, Wethersfield, Rocky Hill & Newington Towns",54,Glastonbury,06073
+9003501700,9110501700,5017,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06120
+9003466202,9110466202,4662.02,Simsbury,900368940,911068940,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,128,Simsbury,06092
+9003415400,9110415400,4154,New Britain,900350440,911050440,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",89,New Britain,06051
+9003416500,9110416500,4165,New Britain,900350440,911050440,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",89,New Britain,06053
+9003462102,9110462102,4621.02,Avon,900302060,911002060,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,4,Avon,06001
+9003405500,9140405500,4055,Bristol,900308490,914008490,Hartford,9003,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,17,Bristol,06010
+9003464101,9110464101,4641.01,Canton,900312270,911012270,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,23,Canton,06019
+9003473502,9110473502,4735.02,Windsor,900387000,911087000,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,164,Windsor,06095
+9003500100,9110500100,5001,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06114
+9003501800,9110501800,5018,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06120
+9003510600,9110510600,5106,East Hartford,900322630,911022630,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",43,East Hartford,06118
+9003515102,9110515102,5151.02,Manchester,900344700,911044700,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",77,Manchester,06040
+9003330100,9160330100,3301,Hartland,900337140,916037140,Hartford,9003,Northwest Hills Planning Region,9160,20100,Northwest Hills,65,Hartland,06091
+9003400200,9110400200,4002,Berlin,900304300,911004300,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",7,Berlin,06037
+9003497100,9110497100,4971,West Hartford,900382590,911082590,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,155,West Hartford,06119
+9003405100,9140405100,4051,Bristol,900308490,914008490,Hartford,9003,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,17,Bristol,06010
+9003405300,9140405300,4053,Bristol,900308490,914008490,Hartford,9003,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,17,Bristol,06010
+9003406100,9140406100,4061,Bristol,900308490,914008490,Hartford,9003,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,17,Bristol,06010
+9003496400,9110496400,4964,West Hartford,900382590,911082590,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,155,West Hartford,06107
+9003496500,9110496500,4965,West Hartford,900382590,911082590,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,155,West Hartford,06107
+9003496600,9110496600,4966,West Hartford,900382590,911082590,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,155,West Hartford,06107
+9003496700,9110496700,4967,West Hartford,900382590,911082590,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,155,West Hartford,06119
+9003468101,9110468101,4681.01,Granby,900332640,911032640,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,56,Granby,06090
+9003466102,9110466102,4661.02,Simsbury,900368940,911068940,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,128,Simsbury,06070
+9003487400,9110487400,4874,South Windsor,900371390,911071390,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,132,South Windsor,06074
+9003471300,9110471300,4713,Bloomfield,900305910,911005910,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,11,Bloomfield,06002
+9003460302,9110460302,4603.02,Farmington,900327600,911027600,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,52,Farmington,06085
+9003430202,9110430202,4302.02,Southington,900370550,911070550,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",131,Southington,06489
+9003430400,9110430400,4304,Southington,900370550,911070550,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",131,Southington,06479
+9003462101,9110462101,4621.01,Avon,900302060,911002060,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,4,Avon,06001
+9003470100,9110470100,4701,East Granby,900322070,911022070,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,40,East Granby,06026
+9003484100,9110484100,4841,East Windsor,900324800,911024800,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,47,East Windsor,06088
+9003520501,9110520501,5205.01,Glastonbury,900331240,911031240,Hartford,9003,Capitol Planning Region,9110,20206,"Glastonbury, Wethersfield, Rocky Hill & Newington Towns",54,Glastonbury,06073
+9003468102,9110468102,4681.02,Granby,900332640,911032640,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,56,Granby,06035
+9003466300,9110466300,4663,Simsbury,900368940,911068940,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,128,Simsbury,06070
+9003481000,9110481000,4810,Enfield,900325990,911025990,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,49,Enfield,06082
+9003481100,9110481100,4811,Enfield,900325990,911025990,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,49,Enfield,06082
+9003460202,9110460202,4602.02,Farmington,900327600,911027600,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,52,Farmington,06032
+9003501400,9110501400,5014,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06112
+9003473501,9110473501,4735.01,Windsor,900387000,911087000,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,164,Windsor,06095
+9003476100,9110476100,4761,Windsor Locks,900387070,911087070,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,165,Windsor Locks,06096
+9003420700,9110420700,4207,Plainville,900360120,911060120,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",110,Plainville,06062
+9003430301,9110430301,4303.01,Southington,900370550,911070550,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",131,Southington,06489
+9003471400,9110471400,4714,Bloomfield,900305910,911005910,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,11,Bloomfield,06002
+9003405900,9140405900,4059,Bristol,900308490,914008490,Hartford,9003,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,17,Bristol,06010
+9003476300,9110476300,4763,Windsor Locks,900387070,911087070,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,165,Windsor Locks,06096
+9003406001,9140406001,4060.01,Bristol,900308490,914008490,Hartford,9003,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,17,Bristol,06010
+9003496800,9110496800,4968,West Hartford,900382590,911082590,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,155,West Hartford,06110
+9003496900,9110496900,4969,West Hartford,900382590,911082590,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,155,West Hartford,06119
+9003497000,9110497000,4970,West Hartford,900382590,911082590,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,155,West Hartford,06119
+9003497200,9110497200,4972,West Hartford,900382590,911082590,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,155,West Hartford,06117
+9003502100,9110502100,5021,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06103
+9001205100,9190205100,2051,Brookfield,900108980,919008980,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,18,Brookfield,06804
+9001210900,9190210900,2109,Danbury,900118500,919018500,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,34,Danbury,06811
+9001042500,9190042500,425,Norwalk,900156060,919056060,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,103,Norwalk,06851
+9001105100,9120105100,1051,Easton,900123890,912023890,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,209,Region 9,06612
+9001060400,9120060400,604,Fairfield,900126620,912026620,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,51,Fairfield,06824
+9001050500,9190050500,505,Westport,900183500,919083500,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,158,Westport,06880
+9001010102,9190010102,101.02,Greenwich,900133620,919033620,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,57,Greenwich,06831
+9001060200,9120060200,602,Fairfield,900126620,912026620,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,51,Fairfield,06825
+9001240200,9190240200,2402,Redding,900163480,919063480,Fairfield,9001,Western Connecticut Planning Region,9190,20802,Western Central,209,Region 9,06896
+9001205300,9190205300,2053,Brookfield,900108980,919008980,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,18,Brookfield,06804
+9001081000,9120081000,810,Stratford,900174190,912074190,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,138,Stratford,06614
+9001220200,9190220200,2202,New Fairfield,900150860,919050860,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,91,New Fairfield,06812
+9001230400,9190230400,2304,Newtown,900152980,919052980,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,97,Newtown,06470
+9001245400,9190245400,2454,Ridgefield,900163970,919063970,Fairfield,9001,Western Connecticut Planning Region,9190,20802,Western Central,118,Ridgefield,06877
+9001100200,9120100200,1002,Monroe,900148620,912048620,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,85,Monroe,06468
+9001090100,9120090100,901,Trumbull,900177200,912077200,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,144,Trumbull,06611
+9001055200,9190055200,552,Weston,900183430,919083430,Fairfield,9001,Western Connecticut Planning Region,9190,20802,Western Central,157,Weston,06883
+9001045400,9190045400,454,Wilton,900186370,919086370,Fairfield,9001,Western Connecticut Planning Region,9190,20802,Western Central,161,Wilton,06897
+9001035400,9190035400,354,New Canaan,900150580,919050580,Fairfield,9001,Western Connecticut Planning Region,9190,20802,Western Central,90,New Canaan,06840
+9001042800,9190042800,428,Norwalk,900156060,919056060,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,103,Norwalk,06851
+9001245600,9190245600,2456,Ridgefield,900163970,919063970,Fairfield,9001,Western Connecticut Planning Region,9190,20802,Western Central,118,Ridgefield,06877
+9001020400,9190020400,204,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06903
+9001090600,9120090600,906,Trumbull,900177200,912077200,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,144,Trumbull,06611
+9001011300,9190011300,113,Greenwich,900133620,919033620,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,57,Greenwich,06830
+9001230300,9190230300,2303,Newtown,900152980,919052980,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,97,Newtown,06470
+9001021000,9190021000,210,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06907
+9001030500,9190030500,305,Darien,900118850,919018850,Fairfield,9001,Western Connecticut Planning Region,9190,20802,Western Central,35,Darien,06820
+9001073900,9120073900,739,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06608
+9001081300,9120081300,813,Stratford,900174190,912074190,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,138,Stratford,06614
+9001010800,9190010800,108,Greenwich,900133620,919033620,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,57,Greenwich,06807
+9001020500,9190020500,205,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06902
+9001020800,9190020800,208,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06905
+9001043300,9190043300,433,Norwalk,900156060,919056060,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,103,Norwalk,06850
+9001080400,9120080400,804,Stratford,900174190,912074190,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,138,Stratford,06615
+9001110302,9140110302,1103.02,Shelton,900168170,914068170,Fairfield,9001,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,126,Shelton,06484
+9001030200,9190030200,302,Darien,900118850,919018850,Fairfield,9001,Western Connecticut Planning Region,9190,20802,Western Central,35,Darien,06820
+9001045102,9190045102,451.02,Wilton,900186370,919086370,Fairfield,9001,Western Connecticut Planning Region,9190,20802,Western Central,161,Wilton,06897
+9001010900,9190010900,109,Greenwich,900133620,919033620,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,57,Greenwich,06878
+9001011000,9190011000,110,Greenwich,900133620,919033620,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,57,Greenwich,06870
+9001100100,9120100100,1001,Monroe,900148620,912048620,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,85,Monroe,06468
+9001205200,9190205200,2052,Brookfield,900108980,919008980,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,18,Brookfield,06804
+9001230100,9190230100,2301,Newtown,900152980,919052980,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,97,Newtown,06470
+9001257100,9190257100,2571,Sherman,900168310,919068310,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,127,Sherman,06784
+9001210800,9190210800,2108,Danbury,900118500,919018500,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,34,Danbury,06811
+9001210600,9190210600,2106,Danbury,900118500,919018500,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,34,Danbury,06810
+9001110500,9140110500,1105,Shelton,900168170,914068170,Fairfield,9001,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,126,Shelton,06484
+9001110400,9140110400,1104,Shelton,900168170,914068170,Fairfield,9001,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,126,Shelton,06484
+9001043100,9190043100,431,Norwalk,900156060,919056060,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,103,Norwalk,06850
+9001245200,9190245200,2452,Ridgefield,900163970,919063970,Fairfield,9001,Western Connecticut Planning Region,9190,20802,Western Central,118,Ridgefield,06877
+9001110202,9140110202,1102.02,Shelton,900168170,914068170,Fairfield,9001,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,126,Shelton,06484
+9001045200,9190045200,452,Wilton,900186370,919086370,Fairfield,9001,Western Connecticut Planning Region,9190,20802,Western Central,161,Wilton,06897
+9001035200,9190035200,352,New Canaan,900150580,919050580,Fairfield,9001,Western Connecticut Planning Region,9190,20802,Western Central,90,New Canaan,06840
+9001060100,9120060100,601,Fairfield,900126620,912026620,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,51,Fairfield,06825
+9001020900,9190020900,209,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06907
+9001200200,9190200200,2002,Bethel,900104720,919004720,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,9,Bethel,06801
+9001055100,9190055100,551,Weston,900183430,919083430,Fairfield,9001,Western Connecticut Planning Region,9190,20802,Western Central,157,Weston,06883
+9001200301,9190200301,2003.01,Bethel,900104720,919004720,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,9,Bethel,06801
+9001073100,9120073100,731,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06610
+9001211000,9190211000,2110,Danbury,900118500,919018500,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,34,Danbury,06811
+9001105200,9120105200,1052,Easton,900123890,912023890,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,209,Region 9,06612
+9001060300,9120060300,603,Fairfield,900126620,912026620,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,51,Fairfield,06824
+9001090500,9120090500,905,Trumbull,900177200,912077200,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,144,Trumbull,06611
+9001110201,9140110201,1102.01,Shelton,900168170,914068170,Fairfield,9001,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,126,Shelton,06484
+9001030100,9190030100,301,Darien,900118850,919018850,Fairfield,9001,Western Connecticut Planning Region,9190,20802,Western Central,35,Darien,06820
+9001090200,9120090200,902,Trumbull,900177200,912077200,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,144,Trumbull,06611
+9001010300,9190010300,103,Greenwich,900133620,919033620,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,57,Greenwich,06831
+9001050200,9190050200,502,Westport,900183500,919083500,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,158,Westport,06880
+9001081100,9120081100,811,Stratford,900174190,912074190,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,138,Stratford,06614
+9001042700,9190042700,427,Norwalk,900156060,919056060,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,103,Norwalk,06851
+9001240100,9190240100,2401,Redding,900163480,919063480,Fairfield,9001,Western Connecticut Planning Region,9190,20802,Western Central,209,Region 9,06896
+9001043200,9190043200,432,Norwalk,900156060,919056060,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,103,Norwalk,06854
+9001090400,9120090400,904,Trumbull,900177200,912077200,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,144,Trumbull,06611
+9001081200,9120081200,812,Stratford,900174190,912074190,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,138,Stratford,06614
+9001021200,9190021200,212,Stamford,900173070,919073070,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,135,Stamford,06905
+9001230200,9190230200,2302,Newtown,900152980,919052980,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,97,Newtown,06470
+9001010201,9190010201,102.01,Greenwich,900133620,919033620,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,57,Greenwich,06830
+9001010202,9190010202,102.02,Greenwich,900133620,919033620,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,57,Greenwich,06807
+9001200100,9190200100,2001,Bethel,900104720,919004720,Fairfield,9001,Western Connecticut Planning Region,9190,20804,Western North,9,Bethel,06801
+9001245100,9190245100,2451,Ridgefield,900163970,919063970,Fairfield,9001,Western Connecticut Planning Region,9190,20802,Western Central,118,Ridgefield,06877
+9001245500,9190245500,2455,Ridgefield,900163970,919063970,Fairfield,9001,Western Connecticut Planning Region,9190,20802,Western Central,118,Ridgefield,06877
+9001011100,9190011100,111,Greenwich,900133620,919033620,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,57,Greenwich,06878
+9001010500,9190010500,105,Greenwich,900133620,919033620,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,57,Greenwich,06830
+9001010700,9190010700,107,Greenwich,900133620,919033620,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,57,Greenwich,06830
+9001010600,9190010600,106,Greenwich,900133620,919033620,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,57,Greenwich,06830
+9001011200,9190011200,112,Greenwich,900133620,919033620,Fairfield,9001,Western Connecticut Planning Region,9190,20801,Stamford & Greenwich Towns,57,Greenwich,06830
+9009150100,9170150100,1501,Milford,900947535,917047535,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,84,Milford,06460
+9003514200,9110514200,5142,Manchester,900344700,911044700,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",77,Manchester,06042
+9003514300,9110514300,5143,Manchester,900344700,911044700,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",77,Manchester,06040
+9009150200,9170150200,1502,Milford,900947535,917047535,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,84,Milford,06460
+9009175600,9170175600,1756,Wallingford,900978740,917078740,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,148,Wallingford,06492
+9009175700,9170175700,1757,Wallingford,900978740,917078740,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,148,Wallingford,06492
+9009175900,9170175900,1759,Wallingford,900978740,917078740,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,148,Wallingford,06492
+9009180300,9170180300,1803,East Haven,900922910,917022910,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,44,East Haven,06512
+9009180400,9170180400,1804,East Haven,900922910,917022910,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,44,East Haven,06512
+9009180500,9170180500,1805,East Haven,900922910,917022910,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,44,East Haven,06513
+9009180601,9170180601,1806.01,East Haven,900922910,917022910,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,44,East Haven,06512
+9009180200,9170180200,1802,East Haven,900922910,917022910,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,44,East Haven,06512
+9009180602,9170180602,1806.02,East Haven,900922910,917022910,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,44,East Haven,06513
+9009184400,9170184400,1844,Branford,900907310,917007310,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,14,Branford,06405
+9009184500,9170184500,1845,Branford,900907310,917007310,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,14,Branford,06405
+9009184600,9170184600,1846,Branford,900907310,917007310,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,14,Branford,06405
+9009184700,9170184700,1847,Branford,900907310,917007310,New Haven,9009,South Central Connecticut Planning Region,9170,20504,South Central East,14,Branford,06405
+9009350200,9140350200,3502,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06704
+9009350300,9140350300,3503,Waterbury,900980070,914080070,New Haven,9009,Naugatuck Valley Planning Region,9140,20601,Waterbury Town,151,Waterbury,06704
+9009170200,9170170200,1702,Meriden,900946520,917046520,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,80,Meriden,06451
+9009170300,9170170300,1703,Meriden,900946520,917046520,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,80,Meriden,06451
+9009170400,9170170400,1704,Meriden,900946520,917046520,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,80,Meriden,06451
+9001043000,9190043000,430,Norwalk,900156060,919056060,Fairfield,9001,Western Connecticut Planning Region,9190,20803,Norwalk & Westport Towns,103,Norwalk,06850
+9009165900,9170165900,1659,Hamden,900935650,917035650,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,62,Hamden,06518
+9001030400,9190030400,304,Darien,900118850,919018850,Fairfield,9001,Western Connecticut Planning Region,9190,20802,Western Central,35,Darien,06820
+9009150800,9170150800,1508,Milford,900947535,917047535,New Haven,9009,South Central Connecticut Planning Region,9170,20502,South Central West,84,Milford,06461
+9009165300,9170165300,1653,Hamden,900935650,917035650,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,62,Hamden,06517
+9009165400,9170165400,1654,Hamden,900935650,917035650,New Haven,9009,South Central Connecticut Planning Region,9170,20503,South Central North,62,Hamden,06517
+9005268100,9160268100,2681,Roxbury,900565930,916065930,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,212,Region 12,06783
+9005290100,9160290100,2901,Barkhamsted,900502760,916002760,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,207,Region 7,06063
+9005293100,9160293100,2931,Colebrook,900516050,916016050,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,207,Region 7,06021
+9005303100,9160303100,3031,Morris,900549460,916049460,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,206,Region 6,06763
+9001061400,9120061400,614,Fairfield,900126620,912026620,Fairfield,9001,Greater Bridgeport Planning Region,9120,20702,Bridgeport Suburban,51,Fairfield,06825
+9005310100,9160310100,3101,Torrington,900576570,916076570,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,143,Torrington,06790
+9005310200,9160310200,3102,Torrington,900576570,916076570,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,143,Torrington,06790
+9005310400,9160310400,3104,Torrington,900576570,916076570,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,143,Torrington,06790
+9005310500,9160310500,3105,Torrington,900576570,916076570,Litchfield,9005,Northwest Hills Planning Region,9160,20100,Northwest Hills,143,Torrington,06790
+9001072100,9120072100,721,Bridgeport,900108070,912008070,Fairfield,9001,Greater Bridgeport Planning Region,9120,20701,Bridgeport Town,15,Bridgeport,06604
+9009141400,9170141400,1414,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06511
+9003487300,9110487300,4873,South Windsor,900371390,911071390,Hartford,9003,Capitol Planning Region,9110,20202,Connecticut River North,132,South Windsor,06074
+9007600100,9130600100,6001,Chester,900714300,913014300,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,204,Region 4,06412
+9007610200,9130610200,6102,Clinton,900715350,913015350,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,27,Clinton,06413
+9007550100,9130550100,5501,East Hampton,900722490,913022490,Middlesex,9007,Lower Connecticut River Valley Planning Region,9130,20400,Lower Connecticut River Valley,42,East Hampton,06424
+9009125100,9140125100,1251,Ansonia,900901220,914001220,New Haven,9009,Naugatuck Valley Planning Region,9140,20603,Naugatuck Valley South,2,Ansonia,06401
+9009142200,9170142200,1422,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06511
+9009142300,9170142300,1423,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06513
+9009142400,9170142400,1424,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06513
+9009142500,9170142500,1425,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06513
+9009142601,9170142601,1426.01,New Haven,900952070,917052070,New Haven,9009,South Central Connecticut Planning Region,9170,20501,New Haven Town,93,New Haven,06513
+9003503700,9110503700,5037,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06112
+9003503800,9110503800,5038,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06112
+9003503900,9110503900,5039,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06112
+9003504000,9110504000,5040,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06112
+9003503500,9110503500,5035,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06112
+9013890100,9110890100,8901,Stafford,901372090,911072090,Tolland,9013,Capitol Planning Region,9110,20204,Northeastern Planning Region & Stafford Town,134,Stafford,06076
+9013538201,9110538201,5382.01,Somers,901369220,911069220,Tolland,9013,Capitol Planning Region,9110,20203,Capitol East,129,Somers,06071
+9013533102,9110533102,5331.02,Tolland,901376290,911076290,Tolland,9013,Capitol Planning Region,9110,20203,Capitol East,142,Tolland,06084
+9013890204,9110890204,8902.04,Stafford,901372090,911072090,Tolland,9013,Capitol Planning Region,9110,20204,Northeastern Planning Region & Stafford Town,134,Stafford,06076
+9013890203,9150890203,8902.03,Union,901377830,915077830,Tolland,9013,Northeastern Connecticut Planning Region,9150,20204,Northeastern Planning Region & Stafford Town,145,Union,06076
+9003504200,9110504200,5042,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06105
+9003504300,9110504300,5043,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06106
+9003504500,9110504500,5045,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06106
+9003504100,9110504100,5041,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06106
+9003504900,9110504900,5049,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06106
+9003400300,9110400300,4003,Berlin,900304300,911004300,Hartford,9003,Capitol Planning Region,9110,20207,"New Britain, Southington, Berlin & Plainville Towns",7,Berlin,06037
+9003510100,9110510100,5101,East Hartford,900322630,911022630,Hartford,9003,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",43,East Hartford,06108
+9003405700,9140405700,4057,Bristol,900308490,914008490,Hartford,9003,Naugatuck Valley Planning Region,9140,20602,Naugatuck Valley North,17,Bristol,06010
+9013535200,9110535200,5352,Ellington,901325360,911025360,Tolland,9013,Capitol Planning Region,9110,20203,Capitol East,48,Ellington,06029
+9013881200,9110881200,8812,Mansfield,901344910,911044910,Tolland,9013,Capitol Planning Region,9110,20203,Capitol East,219,Region 19,06269
+9013530600,9110530600,5306,Vernon,901378250,911078250,Tolland,9013,Capitol Planning Region,9110,20205,"East Hartford, Manchester & Vernon Towns",146,Vernon,06066
+9013881300,9110881300,8813,Mansfield,901344910,911044910,Tolland,9013,Capitol Planning Region,9110,20203,Capitol East,219,Region 19,06268
+9013538100,9110538100,5381,Somers,901369220,911069220,Tolland,9013,Capitol Planning Region,9110,20203,Capitol East,129,Somers,06071
+9013860100,9110860100,8601,Columbia,901316400,911016400,Tolland,9013,Capitol Planning Region,9110,20203,Capitol East,30,Columbia,06237
+9013538202,9110538202,5382.02,Somers,901369220,911069220,Tolland,9013,Capitol Planning Region,9110,20203,Capitol East,129,Somers,06071
+9013840100,9110840100,8401,Willington,901385950,911085950,Tolland,9013,Capitol Planning Region,9110,20203,Capitol East,219,Region 19,06279
+9003502800,9110502800,5028,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06106
+9003502900,9110502900,5029,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06106
+9003502500,9110502500,5025,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06114
+9003503000,9110503000,5030,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06106
+9003502600,9110502600,5026,Hartford,900337070,911037070,Hartford,9003,Capitol Planning Region,9110,20201,Hartford Town,64,Hartford,06114
+9003497300,9110497300,4973,West Hartford,900382590,911082590,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,155,West Hartford,06117
+9003497400,9110497400,4974,West Hartford,900382590,911082590,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,155,West Hartford,06117
+9003497500,9110497500,4975,West Hartford,900382590,911082590,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,155,West Hartford,06117
+9003497600,9110497600,4976,West Hartford,900382590,911082590,Hartford,9003,Capitol Planning Region,9110,20208,Capitol West,155,West Hartford,06107

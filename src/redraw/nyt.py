@@ -103,7 +103,7 @@ async def fetch_all_states(
         [state abbreviation] -> [raw data from NYT]
     """
     sem = asyncio.Semaphore(max_connections)
-    states = us.STATES + [us.states.lookup("DC")]
+    states = us.STATES + [us.states.DC]
     async with aiohttp.ClientSession() as session:
         data = await asyncio.gather(
             *[

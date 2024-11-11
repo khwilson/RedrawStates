@@ -9,7 +9,7 @@ from pathlib import Path
 import click
 from dotenv import load_dotenv
 
-from . import mit, nyt, nyt2016, shared
+from . import mit, nyt, nyt2016, nyt2024, shared
 
 load_dotenv()
 
@@ -148,7 +148,7 @@ def twenty_twenty_command(
     population_year: int = 2020,
 ):
     """
-    Pull data from the NYT API
+    Pull data from the NYT API for 2020
     """
     CACHE_DIR.mkdir(exist_ok=True)
     results_cache_file = CACHE_DIR / "nyt2020.pkl"
@@ -187,6 +187,82 @@ def twenty_twenty_command(
     # Then merge the two together
     click.echo("Merging data and geographies...")
     final = nyt.merge_data(parsed, gdf).merge(pop_df, on="id")
+
+    click.echo("Topojsonifying...")
+    shared.gdf_to_topojson(final, filename)
+
+    click.echo("Done.")
+
+
+@cli.command("2024")
+@click.argument("filename", type=click.Path())
+@click.option(
+    "--api-key",
+    "-k",
+    "census_api_key",
+    envvar="CENSUS_API_KEY",
+    help="Your Census API key",
+)
+@click.option(
+    "--max-connections",
+    "-m",
+    "max_connections",
+    default=3,
+    help="The maximum number of connections to open to the NYT API",
+)
+@click.option(
+    "--force", "-f", "force", is_flag=True, help="Force redownloading NYT data"
+)
+@click.option("--population-year", "-y", default=2024, help="Pretend like the population was this year")
+def twenty_twenty_four_command(
+    max_connections: int, filename: str, census_api_key: str, force: bool = False,
+    population_year: int = 2024,
+):
+    """
+    Pull data from the NYT API for 2024
+    """
+    CACHE_DIR.mkdir(exist_ok=True)
+    results_cache_file = CACHE_DIR / "nyt2024.pkl"
+
+    click.echo("Pulling data from NYT...")
+    if force or not results_cache_file.exists():
+        loop = asyncio.get_event_loop()
+        data = loop.run_until_complete(
+            nyt2024.fetch_all_states(max_connections=max_connections)
+        )
+
+        click.echo("Parsing data...")
+        parsed = sorted(nyt2024.parse_data(data))
+
+        with open(results_cache_file, "wb") as outfile:
+            pickle.dump(parsed, outfile)
+    else:
+        with open(results_cache_file, "rb") as infile:
+            parsed = pickle.load(infile)
+
+    click.echo("Getting county boundaries from Census...")
+    tjson = shared.get_county_boundaries(2023)
+
+    click.echo("Flattening counties...")
+    gdf = shared.flatten_counties(tjson)
+
+    tjson_counties = set(gdf.id)
+    parsed_counties = {county.fips for county in parsed}
+    assert len(tjson_counties - parsed_counties) == 0
+    assert len(parsed_counties - tjson_counties) == 0
+
+    # Pull populations
+    click.echo("Getting populations from Census...")
+    pop_df = shared.pull_population(census_api_key, year=population_year)
+
+    # Then merge the two together
+    click.echo("Merging data and geographies...")
+    final = nyt2024.merge_data(parsed, gdf).merge(pop_df, on="id")
+
+    # Fix CT names one last time :-/
+    # TODO(khw): For some reason I have both a "name" and a "county" field which should be
+    # identical but debugging will take too long
+    final.loc[final["state"] == "CT", "name"] = final.loc[final["state"] == "CT", "county"]
 
     click.echo("Topojsonifying...")
     shared.gdf_to_topojson(final, filename)

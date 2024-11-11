@@ -1,6 +1,7 @@
 """
 A file for shared utilities
 """
+import importlib
 import json
 import subprocess
 import tempfile
@@ -16,6 +17,35 @@ import us
 from census import Census
 
 
+def get_new_ct_populations(c: Census) -> pd.DataFrame:
+    """
+    Get populations of CT planning regions given 2020 PL94 data.
+
+    Returns:
+        Output has columns P1_001N, state, county, tract
+    """
+    df = pd.DataFrame.from_records(c.pl.state_county_tract("P1_001N", "09", "*", "*"))
+    with importlib.resources.open_text("redraw.resources", "ct2022tractcrosswalk.csv") as infile:
+        conv_df = pd.read_csv(infile)
+
+    # Get data ready for merging
+    df["fips"] = df["state"] + df["county"] + df["tract"]
+    conv_df["tract_fips_2020"] = "0" + conv_df["tract_fips_2020"].astype(str)
+    conv_df["Tract_fips_2022"] = "0" + conv_df["Tract_fips_2022"].astype(str)
+
+    # Merge and clean
+    merged_df = df.merge(conv_df, left_on="fips", right_on="tract_fips_2020", how="left", indicator=True)
+    assert merged_df.loc[merged_df["_merge"] == "left_only", "P1_001N"].sum() == 0
+    merged_df = merged_df[merged_df["_merge"] == "both"][["P1_001N", "Tract_fips_2022"]]
+    merged_df["state"] = "09"
+    merged_df["county"] = merged_df["Tract_fips_2022"].str[2:5]
+    merged_df["tract"] = merged_df["Tract_fips_2022"].str[5:]
+    merged_df = merged_df.drop(columns="Tract_fips_2022")
+
+    return merged_df
+
+
+
 def pull_population(api_key: str, year: int = 2020) -> pd.DataFrame:
     """
     Pull county population data from the Census API. Also, make some clean ups
@@ -25,7 +55,9 @@ def pull_population(api_key: str, year: int = 2020) -> pd.DataFrame:
 
     Args:
         api_key: Your census API key
-        year: The decennial Census year you're using. Must be in [1990, 2022)
+        year: The decennial Census year you're using. Must be in [1990, 2025)
+            Can also be 2024 in which case we replace CT populations with their
+            planning regions instead of counties
 
     Returns:
         A DataFrame with columns "id" (which is the 5-digit county FIPS as a str) and
@@ -37,7 +69,14 @@ def pull_population(api_key: str, year: int = 2020) -> pd.DataFrame:
 
     census = Census(api_key)
 
-    if decennial_year == 2020:
+    if year == 2024:
+        data = census.pl.state_county("P1_001N", "*", "*", year=decennial_year)
+        init_df = pd.DataFrame(data)
+        ct_df = get_new_ct_populations(census)
+        init_df = init_df[init_df["state"] != "09"]
+        df = pd.concat([init_df, ct_df]).rename(columns={"P1_001N": "population"})
+
+    elif decennial_year == 2020:
         data = census.pl.state_county("P1_001N", "*", "*", year=decennial_year)
         df = pd.DataFrame(data).rename(columns={"P1_001N": "population"})
 
@@ -77,7 +116,7 @@ def pull_population(api_key: str, year: int = 2020) -> pd.DataFrame:
                 columns={"P0010001": "population", "STATEFP": "state", "CNTY": "county"}
             )
     else:
-        raise NotImplementedError("Only support years 1990, 2000, and 2010")
+        raise NotImplementedError("Only support years 1990, 2000, 2020, and 2024")
 
     df["population"] = df["population"].astype(int)
 
@@ -179,7 +218,7 @@ def flatten_counties(gdf: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     election data we pull from the NYT.
     """
     fips_to_state = {
-        state.fips: state.abbr for state in us.STATES + [us.states.lookup("DC")]
+        state.fips: state.abbr for state in us.STATES + [us.states.DC]
     }
     gdf["state"] = gdf["id"].apply(lambda x: x[:2]).map(fips_to_state)
 

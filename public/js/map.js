@@ -107,6 +107,17 @@ var setYear = function(newYear) {
       'una': 'Unaffiliated',
       'oth': 'Other'
     }
+  } else if (newYear == '2024') {
+    year = newYear;
+    dataFile = 'data/us2024.json',
+    partyToCandidate = {
+      'dem': 'Kamala Harris',
+      'gop': 'Donald Trump',
+      'grn': 'Jill Stein',
+      'una': 'Robert Kennedy',
+      'lib': 'Libertarian',
+      'oth': 'Other',
+    }
   } else {
     year = newYear;
     dataFile = 'data/us.json';
@@ -123,7 +134,7 @@ var setYear = function(newYear) {
 }
 
 {
-  let paramYear = getParameterByName('year') || '2020';
+  let paramYear = getParameterByName('year') || '2024';
   setYear(paramYear);
   document.querySelector("#selectYear option[value='" + year + "']").setAttribute("selected", "selected");
 }

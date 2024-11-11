@@ -79,7 +79,7 @@ I ganked a lot of stuff from the interwebs to make this. Here is a list:
   * The copy-paste examples from [clipboard.js](www.clipboardjs.com) are copied verbatim
   * [Bootstrap](www.getbootstrap.com), [D3](www.d3js.com), and [jQuery](www.jquery.com) are, of course, indispensable
   * [css-element-queries](https://github.com/marcj/css-element-queries) from @marcj were super useful for zooming in the previous version of this tool
-
+  * [Connecticut county crosswalk](https://github.com/CT-Data-Collaborative/2022-tract-crosswalk) for Connecticut's updated county equivalents in 2022.
 ## Contributors
 
 Kevin Wilson (the owner of the repo) is the main contributor. But some others have helped as well.
