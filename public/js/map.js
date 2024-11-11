@@ -46,7 +46,7 @@ var setYear = function(newYear) {
       'lib': 'Libertarian Party',
       'una': 'Unaffiliated',
       'oth': 'Other'
-    }
+    };
     loser = 'John Kerry';
   } else if (newYear === '2008') {
     year = newYear;
@@ -58,7 +58,7 @@ var setYear = function(newYear) {
       'lib': 'Libertarian Party',
       'una': 'Unaffiliated',
       'oth': 'Other'
-    }
+    };
     loser = 'John McCain';
   } else if (newYear === '2012') {
     year = newYear;
@@ -70,7 +70,7 @@ var setYear = function(newYear) {
       'lib': 'Gary Johnson',
       'una': 'Unaffiliated',
       'oth': 'Other'
-    }
+    };
     loser = 'Mitt Romney';
   } else if (newYear === '2016i') {
     year = newYear;
@@ -82,7 +82,7 @@ var setYear = function(newYear) {
       'lib': 'Gary Johnson',
       'una': 'Evan McMullin',
       'oth': 'Other'
-    }
+    };
     loser = 'Hillary Clinton';
   } else if (newYear == '2020') {
     year = newYear;
@@ -106,7 +106,7 @@ var setYear = function(newYear) {
       'lib': 'Jo Jorgensen',
       'una': 'Unaffiliated',
       'oth': 'Other'
-    }
+    };
   } else if (newYear == '2024') {
     year = newYear;
     dataFile = 'data/us2024.json',
@@ -117,7 +117,8 @@ var setYear = function(newYear) {
       'una': 'Robert Kennedy',
       'lib': 'Libertarian',
       'oth': 'Other',
-    }
+    };
+    loser = 'Kamala Harris';
   } else {
     year = newYear;
     dataFile = 'data/us.json';
@@ -128,7 +129,7 @@ var setYear = function(newYear) {
       'lib': 'Gary Johnson',
       'una': 'Evan McMullin',
       'oth': 'Other'
-    }
+    };
     loser = 'Hillary Clinton';
   }
 }
