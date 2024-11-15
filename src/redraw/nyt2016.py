@@ -60,7 +60,6 @@ def pull_data(url: str = URL, num_attempts: int = 3) -> list:
     """
     data = None
     for num_attempt in range(num_attempts):
-
         try:
             response = requests.get(url)
             response.raise_for_status()

@@ -1,6 +1,7 @@
 """
 A CLI for manipulating NYT API election data into our format
 """
+
 import asyncio
 import os
 import pickle
@@ -142,9 +143,17 @@ def twenty_sixteen_command(filename: str, census_api_key: str, force: bool = Fal
 @click.option(
     "--force", "-f", "force", is_flag=True, help="Force redownloading NYT data"
 )
-@click.option("--population-year", "-y", default=2020, help="Pretend like the population was this year")
+@click.option(
+    "--population-year",
+    "-y",
+    default=2020,
+    help="Pretend like the population was this year",
+)
 def twenty_twenty_command(
-    max_connections: int, filename: str, census_api_key: str, force: bool = False,
+    max_connections: int,
+    filename: str,
+    census_api_key: str,
+    force: bool = False,
     population_year: int = 2020,
 ):
     """
@@ -213,9 +222,17 @@ def twenty_twenty_command(
 @click.option(
     "--force", "-f", "force", is_flag=True, help="Force redownloading NYT data"
 )
-@click.option("--population-year", "-y", default=2024, help="Pretend like the population was this year")
+@click.option(
+    "--population-year",
+    "-y",
+    default=2024,
+    help="Pretend like the population was this year",
+)
 def twenty_twenty_four_command(
-    max_connections: int, filename: str, census_api_key: str, force: bool = False,
+    max_connections: int,
+    filename: str,
+    census_api_key: str,
+    force: bool = False,
     population_year: int = 2024,
 ):
     """
@@ -262,7 +279,9 @@ def twenty_twenty_four_command(
     # Fix CT names one last time :-/
     # TODO(khw): For some reason I have both a "name" and a "county" field which should be
     # identical but debugging will take too long
-    final.loc[final["state"] == "CT", "name"] = final.loc[final["state"] == "CT", "county"]
+    final.loc[final["state"] == "CT", "name"] = final.loc[
+        final["state"] == "CT", "county"
+    ]
 
     click.echo("Topojsonifying...")
     shared.gdf_to_topojson(final, filename)

@@ -1,6 +1,7 @@
 """
 A file for shared utilities
 """
+
 import importlib
 import json
 import subprocess
@@ -25,7 +26,9 @@ def get_new_ct_populations(c: Census) -> pd.DataFrame:
         Output has columns P1_001N, state, county, tract
     """
     df = pd.DataFrame.from_records(c.pl.state_county_tract("P1_001N", "09", "*", "*"))
-    with importlib.resources.open_text("redraw.resources", "ct2022tractcrosswalk.csv") as infile:
+    with importlib.resources.open_text(
+        "redraw.resources", "ct2022tractcrosswalk.csv"
+    ) as infile:
         conv_df = pd.read_csv(infile)
 
     # Get data ready for merging
@@ -34,16 +37,16 @@ def get_new_ct_populations(c: Census) -> pd.DataFrame:
     conv_df["Tract_fips_2022"] = "0" + conv_df["Tract_fips_2022"].astype(str)
 
     # Merge and clean
-    merged_df = df.merge(conv_df, left_on="fips", right_on="tract_fips_2020", how="left", indicator=True)
+    merged_df = df.merge(
+        conv_df, left_on="fips", right_on="tract_fips_2020", how="left", indicator=True
+    )
     assert merged_df.loc[merged_df["_merge"] == "left_only", "P1_001N"].sum() == 0
     merged_df = merged_df[merged_df["_merge"] == "both"][["P1_001N", "Tract_fips_2022"]]
     merged_df["state"] = "09"
     merged_df["county"] = merged_df["Tract_fips_2022"].str[2:5]
-    merged_df["tract"] = merged_df["Tract_fips_2022"].str[5:]
-    merged_df = merged_df.drop(columns="Tract_fips_2022")
+    merged_df = merged_df.drop(columns=["Tract_fips_2022"])
 
-    return merged_df
-
+    return merged_df.groupby(["state", "county"])["P1_001N"].sum().reset_index()
 
 
 def pull_population(api_key: str, year: int = 2020) -> pd.DataFrame:
@@ -162,7 +165,6 @@ def _pull_2000_counties(year: int):
     #
     # N.B. Yes, this "area" computation is meaningless because we're in lat/lon
     #      but this process seems to work OK in practice
-    # import ipdb; ipdb.set_trace()
     bad_fips = [("08005", True), ("51685", False)]
     bad_gdfs = []
     for bad_fip, keep_largest in bad_fips:
@@ -217,9 +219,7 @@ def flatten_counties(gdf: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     Make some adjustments to the topojson file we pull to align to
     election data we pull from the NYT.
     """
-    fips_to_state = {
-        state.fips: state.abbr for state in us.STATES + [us.states.DC]
-    }
+    fips_to_state = {state.fips: state.abbr for state in us.STATES + [us.states.DC]}
     gdf["state"] = gdf["id"].apply(lambda x: x[:2]).map(fips_to_state)
 
     # Merge all of Alaska

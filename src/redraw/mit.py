@@ -3,6 +3,7 @@ Parsing and using the MIT data::
 
     https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VOQCHQ
 """
+
 import dataclasses
 from dataclasses import dataclass
 from typing import List, Optional
@@ -107,7 +108,6 @@ def read_data(filename: str, year: int) -> pd.DataFrame:
 
 
 def parse_data(df: pd.DataFrame) -> List[CountyResult]:
-
     # Pivot the data and if greens are not present add them
     df = (
         df[["state_po", "county", "FIPS", "party", "candidatevotes"]]

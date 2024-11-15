@@ -1,6 +1,7 @@
 """
 Interacting with the NYT Elections data API for 2020
 """
+
 import asyncio
 import dataclasses
 from dataclasses import dataclass

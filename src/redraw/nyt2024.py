@@ -1,6 +1,7 @@
 """
 Interacting with the NYT Elections data API for 2020
 """
+
 import asyncio
 import dataclasses
 import importlib
@@ -21,7 +22,9 @@ import us
 
 from .constants import CACHE_DIR
 
-COUNTY_TIGER = "https://www2.census.gov/geo/tiger/TIGER{year}/COUNTY/tl_{year}_us_county.zip"
+COUNTY_TIGER = (
+    "https://www2.census.gov/geo/tiger/TIGER{year}/COUNTY/tl_{year}_us_county.zip"
+)
 
 
 class KEYS(StrEnum):
@@ -33,6 +36,7 @@ class KEYS(StrEnum):
     TRUMP = "trump-d"
     KENNEDY = "kennedy-r"
     STEIN = "stein-j"
+    OLIVER = "oliver-c"
 
 
 @dataclass(frozen=True, order=True)
@@ -48,6 +52,7 @@ class CountyResult:
     trump_vote: int
     kennedy_vote: int
     stein_vote: int
+    oliver_vote: int
 
 
 @contextmanager
@@ -83,21 +88,27 @@ def get_fips_to_county_name(force: bool = False) -> dict[str, str]:
     )
 
 
-def generate_ct_mapping(force: bool = False) -> tuple[dict[str, str], list[tuple[str, str]]]:
+def generate_ct_mapping(
+    force: bool = False,
+) -> tuple[dict[str, str], list[tuple[str, str]]]:
     """
 
     Returns:
         * Map from old county + town FIPS to new county fips
         * List of pairs (county fips, name)
     """
-    with importlib.resources.open_text("redraw.resources", "ct2022tractcrosswalk.csv") as infile:
+    with importlib.resources.open_text(
+        "redraw.resources", "ct2022tractcrosswalk.csv"
+    ) as infile:
         df = pd.read_csv(infile)
 
     # Old county + Town FIPS
     df["town_fips_2020"] = df["town_fips_2020"].astype(str)
     df["town_fips_2022"] = df["town_fips_2022"].astype(str)
     df["Tract_fips_2022"] = df["Tract_fips_2022"].astype(str)
-    county_town_to_new_county = dict(zip(df["town_fips_2020"].str[1:], df["town_fips_2022"].str[1:4]))
+    county_town_to_new_county = dict(
+        zip(df["town_fips_2020"].str[1:], df["town_fips_2022"].str[1:4])
+    )
 
     # Make the names short enough to fit on screen
     cogs = [
@@ -208,8 +219,7 @@ def parse_data(results: dict[str, dict]) -> list[CountyResult]:
                     continue
 
                 votes = {
-                    c["nyt_id"]: c["votes"]["total"]
-                    for c in county_data["candidates"]
+                    c["nyt_id"]: c["votes"]["total"] for c in county_data["candidates"]
                 }
 
                 output.append(
@@ -221,6 +231,7 @@ def parse_data(results: dict[str, dict]) -> list[CountyResult]:
                         trump_vote=votes.get(KEYS.TRUMP, 0),
                         kennedy_vote=votes.get(KEYS.KENNEDY, 0),
                         stein_vote=votes.get(KEYS.STEIN, 0),
+                        oliver_vote=votes.get(KEYS.OLIVER, 0),
                     )
                 )
 
@@ -229,12 +240,7 @@ def parse_data(results: dict[str, dict]) -> list[CountyResult]:
             # So we have to do some surgery
             county_to_cog, cogs = generate_ct_mapping()
 
-            counts = {
-                fips: {
-                    val: 0 for val in KEYS
-                }
-                for fips, _ in cogs
-            }
+            counts = {fips: {val: 0 for val in KEYS} for fips, _ in cogs}
 
             for township_data in data["races"][0]["reporting_units"]:
                 if township_data["level"] != "township":
@@ -246,7 +252,11 @@ def parse_data(results: dict[str, dict]) -> list[CountyResult]:
                 }
 
                 for key in KEYS:
-                    counts[county_to_cog[township_data["fips_county"] + township_data["fips_suffix"]]][key] += votes.get(key, 0)
+                    counts[
+                        county_to_cog[
+                            township_data["fips_county"] + township_data["fips_suffix"]
+                        ]
+                    ][key] += votes.get(key, 0)
 
             for fips, name in cogs:
                 output.append(
@@ -258,6 +268,7 @@ def parse_data(results: dict[str, dict]) -> list[CountyResult]:
                         trump_vote=counts[fips][KEYS.TRUMP],
                         kennedy_vote=counts[fips][KEYS.KENNEDY],
                         stein_vote=counts[fips][KEYS.STEIN],
+                        oliver_vote=counts[fips][KEYS.OLIVER],
                     )
                 )
 
@@ -289,12 +300,15 @@ def parse_data(results: dict[str, dict]) -> list[CountyResult]:
                 output.append(
                     CountyResult(
                         state=state,
-                        county=county_fips_to_name[full_fips],  # Not sure if I actually need the name...
+                        county=county_fips_to_name[
+                            full_fips
+                        ],  # Not sure if I actually need the name...
                         fips=full_fips,
                         harris_vote=vals[KEYS.HARRIS],
                         trump_vote=vals[KEYS.TRUMP],
                         kennedy_vote=vals[KEYS.KENNEDY],
                         stein_vote=vals[KEYS.STEIN],
+                        oliver_vote=vals[KEYS.OLIVER],
                     )
                 )
 
@@ -314,6 +328,7 @@ def parse_data(results: dict[str, dict]) -> list[CountyResult]:
                     trump_vote=votes.get(KEYS.TRUMP, 0),
                     kennedy_vote=votes.get(KEYS.KENNEDY, 0),
                     stein_vote=votes.get(KEYS.STEIN, 0),
+                    oliver_vote=votes.get(KEYS.OLIVER, 0),
                 )
             )
     return output
@@ -332,8 +347,13 @@ def merge_data(parsed: list[CountyResult], gdf: gpd.GeoDataFrame) -> gpd.GeoData
 
     gdf = gdf.merge(df.drop(columns=["state"]), left_on="id", right_on="fips")
     gdf = gdf.rename(
-        columns={"harris_vote": "dem", "trump_vote": "gop", "stein_vote": "grn", "kennedy_vote": "una"}
+        columns={
+            "harris_vote": "dem",
+            "trump_vote": "gop",
+            "stein_vote": "grn",
+            "kennedy_vote": "una",
+            "oliver_vote": "lib",
+        }
     )
-    gdf["lib"] = 0
 
     return gdf
