@@ -223,17 +223,17 @@ def twenty_twenty_command(
     "--force", "-f", "force", is_flag=True, help="Force redownloading NYT data"
 )
 @click.option(
-    "--population-year",
-    "-y",
-    default=2024,
-    help="Pretend like the population was this year",
+    "--use-new-ct-counties",
+    is_flag=True,
+    default=False,
+    help="If set, use the new CT counties. Will cause issues with sharing code",
 )
 def twenty_twenty_four_command(
     max_connections: int,
     filename: str,
     census_api_key: str,
     force: bool = False,
-    population_year: int = 2024,
+    use_new_ct_counties: bool = False,
 ):
     """
     Pull data from the NYT API for 2024
@@ -258,7 +258,7 @@ def twenty_twenty_four_command(
             parsed = pickle.load(infile)
 
     click.echo("Getting county boundaries from Census...")
-    tjson = shared.get_county_boundaries(2023)
+    tjson = shared.get_county_boundaries(2019)
 
     click.echo("Flattening counties...")
     gdf = shared.flatten_counties(tjson)
@@ -270,7 +270,10 @@ def twenty_twenty_four_command(
 
     # Pull populations
     click.echo("Getting populations from Census...")
-    pop_df = shared.pull_population(census_api_key, year=population_year)
+    pop_df = shared.pull_population(
+        census_api_key,
+        year=2024 if use_new_ct_counties else 2022,
+    )
 
     # Then merge the two together
     click.echo("Merging data and geographies...")

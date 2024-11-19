@@ -114,7 +114,7 @@ var setYear = function(newYear) {
       'dem': 'Kamala Harris',
       'gop': 'Donald Trump',
       'grn': 'Jill Stein',
-      'lib': 'Libertarian',
+      'lib': 'Oliver Chase',
       'una': 'Robert Kennedy',
       'oth': 'Other',
     };

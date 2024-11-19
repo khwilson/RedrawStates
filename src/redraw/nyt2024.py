@@ -90,7 +90,7 @@ def get_fips_to_county_name(force: bool = False) -> dict[str, str]:
 
 def generate_ct_mapping(
     force: bool = False,
-) -> tuple[dict[str, str], list[tuple[str, str]]]:
+) -> tuple[dict[str, str], dict[str, str]]:
     """
 
     Returns:
@@ -105,23 +105,35 @@ def generate_ct_mapping(
     # Old county + Town FIPS
     df["town_fips_2020"] = df["town_fips_2020"].astype(str)
     df["town_fips_2022"] = df["town_fips_2022"].astype(str)
-    df["Tract_fips_2022"] = df["Tract_fips_2022"].astype(str)
+    # With new counties
+    # county_town_to_new_county = dict(
+    #     zip(df["town_fips_2020"].str[1:], df["town_fips_2022"].str[1:4])
+    # )
+    # With old counties
     county_town_to_new_county = dict(
-        zip(df["town_fips_2020"].str[1:], df["town_fips_2022"].str[1:4])
+        zip(df["town_fips_2020"].str[1:], df["town_fips_2020"].str[1:4])
     )
 
     # Make the names short enough to fit on screen
-    cogs = [
-        ("110", "Capitol"),
-        ("120", "Bridgeport"),
-        ("130", "Lower CT"),
-        ("140", "Naugatuck"),
-        ("150", "NE CT"),
-        ("160", "NW Hills CT"),
-        ("170", "S Central CT"),
-        ("180", "SE CT"),
-        ("190", "Western CT"),
-    ]
+    cogs = {
+        "001": "Fairfield",
+        "003": "Hartford",
+        "005": "Litchfield",
+        "007": "Middlesex",
+        "009": "New Haven",
+        "011": "New London",
+        "013": "Tolland",
+        "015": "Windham",
+        "110": "Capitol",
+        "120": "Bridgeport",
+        "130": "Lower CT",
+        "140": "Naugatuck",
+        "150": "NE CT",
+        "160": "NW Hills CT",
+        "170": "S Central CT",
+        "180": "SE CT",
+        "190": "Western CT",
+    }
 
     return county_town_to_new_county, cogs
 
@@ -240,7 +252,7 @@ def parse_data(results: dict[str, dict]) -> list[CountyResult]:
             # So we have to do some surgery
             county_to_cog, cogs = generate_ct_mapping()
 
-            counts = {fips: {val: 0 for val in KEYS} for fips, _ in cogs}
+            counts = defaultdict(lambda: {val: 0 for val in KEYS})
 
             for township_data in data["races"][0]["reporting_units"]:
                 if township_data["level"] != "township":
@@ -258,17 +270,17 @@ def parse_data(results: dict[str, dict]) -> list[CountyResult]:
                         ]
                     ][key] += votes.get(key, 0)
 
-            for fips, name in cogs:
+            for fips, count in counts.items():
                 output.append(
                     CountyResult(
                         state="CT",
-                        county=name,
+                        county=cogs[fips],
                         fips=f"09{fips}",
-                        harris_vote=counts[fips][KEYS.HARRIS],
-                        trump_vote=counts[fips][KEYS.TRUMP],
-                        kennedy_vote=counts[fips][KEYS.KENNEDY],
-                        stein_vote=counts[fips][KEYS.STEIN],
-                        oliver_vote=counts[fips][KEYS.OLIVER],
+                        harris_vote=count[KEYS.HARRIS],
+                        trump_vote=count[KEYS.TRUMP],
+                        kennedy_vote=count[KEYS.KENNEDY],
+                        stein_vote=count[KEYS.STEIN],
+                        oliver_vote=count[KEYS.OLIVER],
                     )
                 )
 
