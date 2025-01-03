@@ -683,9 +683,7 @@ var getShareUrl = function() {
   shareUrl.push(curStreak + curLetter);
 
   var baseUrl = window.location.origin + window.location.pathname + '?';
-  if (year !== '2020') {
-    baseUrl += 'year=' + year + '&';
-  }
+  baseUrl += 'year=' + year + '&';
   return baseUrl + 'share=' + shareUrl.join('');
 }
 
