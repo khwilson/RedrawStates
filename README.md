@@ -37,15 +37,16 @@ and then point your browser to `localhost:8080/map.html`. Or, if you want, go
 To grab data and structure it for production, you will need to have both Python 3.8 or above installed as well as node 12 or above. After that, you'll need to install dependencies with:
 
 ```bash
-poetry install
+uv sync
 npm install
 ```
 
-After that, you can create the 2016 and 2020 data sets by running:
+After that, you can create the 2016, 2020, and 2024 data sets by running:
 
 ```bash
-poetry run redraw 2016 public/data/us.json
-poetry run redraw 2020 public/data/us2020.json
+uv run redraw 2016 public/data/us.json
+uv run redraw 2020 public/data/us2020.json
+uv run redraw 2024 public/data/us2024.json
 ```
 
 If you'd like to recreate the 2012, 2008, and 2004 files, you need to grab the
@@ -55,10 +56,10 @@ data set at::
 
 Supposed you saved it as `countypres_2000-2016.csv`. Then you would run the commands:
 
-```
-poetry run redraw mit 2012 countypres_2000-2016.csv public/data/us2012.json
-poetry run redraw mit 2008 countypres_2000-2016.csv public/data/us2008.json
-poetry run redraw mit 2004 countypres_2000-2016.csv public/data/us2004.json
+```bash
+uv run redraw mit 2012 countypres_2000-2016.csv public/data/us2012.json
+uv run redraw mit 2008 countypres_2000-2016.csv public/data/us2008.json
+uv run redraw mit 2004 countypres_2000-2016.csv public/data/us2004.json
 ```
 
 Unfortunately, at this time, the Census Bureau's API for 1990 SF1 data seems to be
@@ -80,6 +81,7 @@ I ganked a lot of stuff from the interwebs to make this. Here is a list:
   * [Bootstrap](www.getbootstrap.com), [D3](www.d3js.com), and [jQuery](www.jquery.com) are, of course, indispensable
   * [css-element-queries](https://github.com/marcj/css-element-queries) from @marcj were super useful for zooming in the previous version of this tool
   * [Connecticut county crosswalk](https://github.com/CT-Data-Collaborative/2022-tract-crosswalk) for Connecticut's updated county equivalents in 2022.
+
 ## Contributors
 
 Kevin Wilson (the owner of the repo) is the main contributor. But some others have helped as well.
