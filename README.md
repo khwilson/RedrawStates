@@ -34,7 +34,7 @@ and then point your browser to `localhost:8080/map.html`. Or, if you want, go
 
 ## Grabbing data
 
-To grab data and structure it for production, you will need to have both Python 3.8 or above installed as well as node 12 or above. After that, you'll need to install dependencies with:
+To grab data and structure it for production, you will need to have both `uv` and `node` 12+ installed. After that, you'll need to install dependencies with:
 
 ```bash
 uv sync
